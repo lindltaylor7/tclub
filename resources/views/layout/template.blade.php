@@ -18,7 +18,8 @@
     <link rel="stylesheet" href="{{asset('css/slick.css')}}">
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
 
-    <title>Document</title>
+    <title> </title>
+
 </head>
 <body>
     @yield('content')
@@ -38,7 +39,8 @@
     <script src="{{asset('js/locator.js')}}"></script>
     <script src="{{asset('js/main.js')}}"></script>
     <script src="{{asset('js/map.js')}}"></script>
-
 </body>
 
 </html>
+
+

@@ -24,3 +24,12 @@ Route::get('/rubro_unico', function () {
 Route::get('/busqueda_avanzada', function () {
     return view('busqueda_avanzada');
 })->name("busqueda_avanzada");
+
+Route::get('/ciudades', function () {
+    return view('ciudades');
+})->name('ciudades');
+
+Route::get('/rubros', function () {
+    return view('rubros');
+})->name('rubros');
+

@@ -69,4 +69,7 @@
                 </div>
             </div>
         </div>
-    </div>
+
+    </div><!-- ends: .footer-bottom -->
+</footer>
+

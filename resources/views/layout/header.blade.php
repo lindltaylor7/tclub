@@ -22,13 +22,17 @@
                                             <div class="collapse navbar-collapse" id="direo-navbar-collapse">
                                                 <ul class="navbar-nav">
                                                     <li>
+
                                                         <a href="{{route('home')}}">Home</a>
+
                                                     </li>
                                                     <li class="dropdown has_dropdown">
                                                         <a href="#" class="dropdown-toggle" id="drop3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Listings</a>
                                                         <ul class="dropdown-menu" aria-labelledby="drop3">
+
                                                             <li><a href="{{route('rubrounico')}}">Rubro unico</a></li>
                                                             <li><a href="{{route('busqueda_avanzada')}}">Busqueda avanzada</a></li>
+
                                                             <li><a href="all-listings-grid.html">Listing Grid</a></li>
                                                             <li><a href="all-listings-list.html">Listing List</a></li>
                                                             <li><a href="listing-details.html">Listing Details</a></li>
@@ -169,6 +173,7 @@
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
                             <li class="breadcrumb-item active" aria-current="page"></li>
+
                         </ol>
                     </nav>
                 </div>
@@ -176,3 +181,4 @@
         </div>
     </div><!-- ends: .breadcrumb-wrapper -->
 </section>
+
