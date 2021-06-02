@@ -1,5 +1,5 @@
-<section class="intro-wrapper bgimage overlay overlay--dark">
-    <div class="bg_image_holder"><img src="img/intro.jpg" alt=""></div>
+<section class="header-breadcrumb bgimage overlay overlay--dark">
+    <div class="bg_image_holder"><img src="img/breadcrumb1.jpg" alt=""></div>
     <div class="mainmenu-wrapper">
         <div class="menu-area menu1 menu--light">
             <div class="top-menu-area">
@@ -22,12 +22,12 @@
                                             <div class="collapse navbar-collapse" id="direo-navbar-collapse">
                                                 <ul class="navbar-nav">
                                                     <li>
-                                                        <a href="index.html">Home</a>
+                                                        <a href="{{route('index')}}">Home</a>
                                                     </li>
                                                     <li class="dropdown has_dropdown">
                                                         <a href="#" class="dropdown-toggle" id="drop3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Listings</a>
                                                         <ul class="dropdown-menu" aria-labelledby="drop3">
-                                                            <li><a href="#">Listing Grid</a></li>
+                                                            <li><a href="all-listings-grid.html">Listing Grid</a></li>
                                                             <li><a href="all-listings-list.html">Listing List</a></li>
                                                             <li><a href="listing-details.html">Listing Details</a></li>
                                                             <li><a href="add-listing.html">Add Listing</a></li>
@@ -158,70 +158,20 @@
             <!-- end  -->
         </div>
     </div><!-- ends: .mainmenu-wrapper -->
-    <div class="directory_content_area">
+
+    <div class="breadcrumb-wrapper content_above">
         <div class="container">
             <div class="row">
-                <div class="col-lg-10 offset-lg-1">
-                    <div class="search_title_area">
-                        <h2 class="title">Find the Best Places to Be</h2>
-                        <p class="sub_title">All the top locations – from restaurants and clubs, to galleries, famous places and more..</p>
-                    </div><!-- ends: .search_title_area -->
-                    <form action="/" class="search_form">
-                        <div class="atbd_seach_fields_wrapper">
-                            <div class="single_search_field search_query">
-                                <input class="form-control search_fields" type="text" placeholder="What are you looking for?">
-                            </div>
-                            <div class="single_search_field search_category">
-                                <select class="search_fields" id="at_biz_dir-category">
-                                    <option value="">Select a category</option>
-                                    <option value="automobile">Automobile</option>
-                                    <option value="education">Education</option>
-                                    <option value="event">Event</option>
-                                </select>
-                            </div>
-                            <div class="single_search_field search_location">
-                                <select class="search_fields" id="at_biz_dir-location">
-                                    <option value="">Select a location</option>
-                                    <option value="ab">AB Simple</option>
-                                    <option value="australia">Australia</option>
-                                    <option value="australia-australia">Australia</option>
-                                </select>
-                            </div>
-                            <div class="atbd_submit_btn">
-                                <button type="submit" class="btn btn-block btn-gradient btn-gradient-one btn-md btn_search">Search</button>
-                            </div>
-                        </div>
-                    </form><!-- ends: .search_form -->
-                    <div class="directory_home_category_area">
-                        <ul class="categories">
-                            <li>
-                                <a href="">
-                                    <span class="color-primary"><i class="la la-cutlery"></i></span>
-                                    Restaurants
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <span class="color-success"><i class="la la-map-marker"></i></span>
-                                    Places
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <span class="color-warning"><i class="la la-shopping-cart"></i></span>
-                                    Shopping
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <span class="color-danger"><i class="la la-bed"></i></span>
-                                    Hotels
-                                </a>
-                            </li>
-                        </ul>
-                    </div><!-- ends: .directory_home_category_area -->
-                </div><!-- ends: .col-lg-10 -->
+                <div class="col-lg-12 text-center">
+                    <h1 class="page-title">@yield('name_page')</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">All Listings</li>
+                        </ol>
+                    </nav>
+                </div>
             </div>
         </div>
-    </div><!-- ends: .directory_search_area -->
-</section><!-- ends: .intro-wrapper -->
+    </div><!-- ends: .breadcrumb-wrapper -->
+</section>
