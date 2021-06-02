@@ -22,13 +22,17 @@
                                             <div class="collapse navbar-collapse" id="direo-navbar-collapse">
                                                 <ul class="navbar-nav">
                                                     <li>
-                                                        <a href="{{route('index')}}">Home</a>
+                                                        <a href="{{route('home')}}">Home</a>
+
                                                     </li>
                                                     <li class="dropdown has_dropdown">
                                                         <a href="#" class="dropdown-toggle" id="drop3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Listings</a>
                                                         <ul class="dropdown-menu" aria-labelledby="drop3">
-                                                            <li><a href="all-listings-grid.html">Listing Grid</a></li>
+                                                            <li><a href="{{route('rubrounico')}}">Rubro unico</a></li>
+                                                            <li><a href="{{route('busqueda_avanzada')}}">Busqueda avanzada</a></li>
                                                             <li><a href="all-listings-list.html">Listing List</a></li>
+                                                            
+
                                                             <li><a href="listing-details.html">Listing Details</a></li>
                                                             <li><a href="add-listing.html">Add Listing</a></li>
                                                         </ul>
@@ -163,6 +167,7 @@
             <div class="row">
                 <div class="col-lg-10 offset-lg-1">
                     <div class="search_title_area">
+
                         <h2 class="title">Triad Club</h2>
                         <p class="sub_title">All the top locations – from restaurants and clubs, to galleries, famous places and more..</p>
                     </div><!-- ends: .search_title_area -->
@@ -201,6 +206,7 @@
                                 </a>
                             </li>
                             <li>
+
                                 <a href="{{route('ciudades')}}">
                                     <span class="color-success"><i class="la la-map-marker"></i></span>
                                     Ciudades
@@ -224,4 +230,6 @@
             </div>
         </div>
     </div><!-- ends: .directory_search_area -->
+
 </section>
+
