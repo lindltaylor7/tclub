@@ -20,8 +20,8 @@ class User extends Model
    }
 
    //Relaion polimorfica de uno a uno
-   public function adress()   {
-    return $this->morphOne('App\Models\Adress','adressable');
+   public function address()   {
+    return $this->morphOne('App\Models\Address','addressable');
     }
      //Relacion polimorfica de muchos a muchos
    public function images(){

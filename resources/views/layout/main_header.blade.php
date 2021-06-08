@@ -168,8 +168,8 @@
                 <div class="col-lg-10 offset-lg-1">
                     <div class="search_title_area">
 
-                        <h2 class="title">Triad Club</h2>
-                        <p class="sub_title">All the top locations – from restaurants and clubs, to galleries, famous places and more..</p>
+                        <h2 class="title">{{$nombre}}</h2>
+                        <p class="sub_title">{{$categoria}}</p>
                     </div><!-- ends: .search_title_area -->
                     <form action="/" class="search_form">
                         <div class="atbd_seach_fields_wrapper">
@@ -273,16 +273,18 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="signup_modal_label"><i class="la la-lock"></i> Sign Up</h5>
+                <h5 class="modal-title" id="signup_modal_label"><i class="la la-lock"></i> Registra tu empresa</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <form action="/" id="signup-form">
-                    <input type="email" class="form-control" placeholder="Email" required>
-                    <input type="password" class="form-control" placeholder="Password" required>
-                    <button type="submit" class="btn btn-block btn-lg btn-gradient btn-gradient-two">Sign Up</button>
+                <form action="{{route('business.register')}}" id="signup-form" method="POST">
+                    @csrf
+                    <input type="text" class="form-control" name="name" placeholder="Nombre de tu empresa" required>
+                    <input type="text" class="form-control" name="ruc" placeholder="ruc" required>
+                    <input type="text" class="form-control" name="phone" placeholder="telefono de tu empresa" required>
+                    <button type="submit" class="btn btn-block btn-lg btn-gradient btn-gradient-two">Registrar empresa</button>
                 </form>
                 <div class="form-excerpts">
                     <ul class="list-unstyled">

@@ -1,10 +1,18 @@
 <?php
 
+use App\Http\Controllers\BusinessController;
+use App\Http\Controllers\HomeController;
 use Illuminate\suPPOrt\facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-})->name("home");
+Route::get('/',[HomeController::class,'index'] )->name("home");
+
+Route::post('/register',[BusinessController::class,'store'] )->name("business.register");
+
+
+Route::get('/registro_usuario', function () {
+    return view('registro_usuario');
+})->name("registro_usiario");
+
 
 Route::get('/rubro_unico', function () {
     return view('rubro_unico');
@@ -29,3 +37,5 @@ Route::get('/ciudades', function () {
 Route::get('/rubros', function () {
     return view('rubros');
 })->name('rubros');
+
+
