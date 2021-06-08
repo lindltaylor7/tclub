@@ -2,42 +2,29 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Model;
 
-class User extends Authenticatable
+class User extends Model
 {
-    use HasFactory, Notifiable;
+    protected $guarded = [];
+    use HasFactory;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
+    //Relacion de muchos inverso
+    public function rol(){
+        return $this->belongsTo('App\Models\Rol');
+    }
+   //Relacion de muchos inverso
+   public function business(){
+       return $this->belongsTo('App\Models\Business');
+   }
 
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
-
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
+   //Relaion polimorfica de uno a uno
+   public function adress()   {
+    return $this->morphOne('App\Models\Adress','adressable');
+    }
+     //Relacion polimorfica de muchos a muchos
+   public function images(){
+    return $this->morphMany('App\Models\Image','imageable');
+   }
 }
