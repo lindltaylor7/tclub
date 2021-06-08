@@ -46,7 +46,7 @@ class BusinessController extends Controller
         ]);
         $bussines = Business::create($request->all());
 
-        return redirect()->back();
+        return redirect()->route('user.create',['id'=>$bussines->id]);
 
     }
 

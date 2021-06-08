@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Business;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -22,9 +23,11 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        //
+
+        $empresa = Business::find($id);
+        return view('usuario.register',compact('id','empresa'));
     }
 
     /**
@@ -35,7 +38,10 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        /*$request->validate([
+
+        
+
+        $request->validate([
             'name' => 'required',
             'email' => 'required',
             'password' => 'required',
@@ -45,12 +51,13 @@ class UserController extends Controller
             'type' => "Free",
             'status' => 1,
             'rol_id' => 1,
-            //'business_id' => 
+            'password' => bcrypt($request->get('password'))
+            
         ]);
 
         $user = User::create($request->all());
-        //return redirect('home');
-        */
+        return redirect()->route('home');
+        
     }
 
     /**

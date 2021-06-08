@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\City;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -16,11 +17,12 @@ class HomeController extends Controller
     {
 
 
-        $categoria = Category::find(2);
+        $categorias = Category::all();
+        $cities = City::all();
 
         $nombre = "Lind";
 
-        return view('welcome', compact('nombre','categoria'));
+        return view('welcome', compact('nombre','categorias','cities'));
     }
 
     /**
