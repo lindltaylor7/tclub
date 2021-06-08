@@ -25,6 +25,7 @@ class UserController extends Controller
      */
     public function create($id)
     {
+
         $empresa = Business::find($id);
         return view('usuario',compact('id','empresa'));
     }
@@ -48,6 +49,7 @@ class UserController extends Controller
             'status' => 1,
             'rol_id' => 1,
             'password' => bcrypt($request->get('password'))
+
         ]);
 
         return $request();

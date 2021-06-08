@@ -173,6 +173,7 @@
                     <form action="/" class="search_form">
                         <div class="atbd_seach_fields_wrapper">
                             <div class="single_search_field search_query">
+
                                 <input class="form-control search_fields" type="text" placeholder="Buscar...">
                             </div>
                             <div class="single_search_field search_category">
@@ -266,5 +267,6 @@
         </div>
     </div>
 </div>
+
 
 @include('empresa.register_modal')

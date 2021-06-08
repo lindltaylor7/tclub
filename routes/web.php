@@ -9,6 +9,7 @@ use Illuminate\suPPOrt\facades\Route;
 
 Route::get('/', [HomeController::class,'index'])->name("home");
 
+
 Route::post('/register',[BusinessController::class,'store'])->name('business.register');
 
 Route::get('/new-user/{id}', [UserController::class,'create'])->name("user.create");

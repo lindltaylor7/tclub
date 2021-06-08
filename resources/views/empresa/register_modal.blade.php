@@ -1,3 +1,4 @@
+
 <div class="modal fade" id="signup_modal" tabindex="-1" role="dialog" aria-labelledby="signup_modal_label" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -11,7 +12,9 @@
             </div>
             <div class="modal-body">
 
+
                 <form action="{{route('bussines.register')}}" id="signup-form" method="post">
+
                     @csrf
                     <input type="text" class="form-control" name="name" placeholder="Nombre de la empresa" required>
                     <input type="text" class="form-control" name="ruc" placeholder="RUC" required>
@@ -33,3 +36,4 @@
         </div>
     </div>
 </div>
+
