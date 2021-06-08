@@ -7,16 +7,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Business extends Model
 {
+    protected $fillable = ['name','ruc','phone','status'];
     protected $guarded = [];
     use HasFactory;
 
-    
+
     //Relacion de uno a muchos
     public function offers(){
         return $this->hasMany('App\Models\Offer');
     }
     // Relacion de uno a muchos
-    public function users(){ 
+    public function users(){
         return $this->hasMany('App\Models\User');
     }
 
@@ -34,12 +35,12 @@ class Business extends Model
     public function categories(){
     return $this->belongsToMany('App\Models\Category');
     }
-    
+
     //Relacio de muchos a muchos
     public function cities(){
     return $this->belongsToMany('App\Models\City');
     }
-        
+
    //Relaion polimorfica de uno a uno
    public function adress()   {
    return $this->morphOne('App\Models\Adress','adressable');
