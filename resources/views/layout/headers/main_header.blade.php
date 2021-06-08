@@ -176,28 +176,27 @@
                     <form action="/" class="search_form">
                         <div class="atbd_seach_fields_wrapper">
                             <div class="single_search_field search_query">
-                                <input class="form-control search_fields" type="text" placeholder="Buscar empresa por: ">
+
+                                <input class="form-control search_fields" type="text" placeholder="Buscar...">
                             </div>
                             <div class="single_search_field search_category">
                                 <select class="search_fields" id="at_biz_dir-category">
-                                    <option value="">Seleccione un Rubro</option>
+                                    <option value="">Selecciona una categoria</option>
                                     @foreach ($categorias as $categoria)
-                                        <option value="{{$categoria->id}}">{{$categoria->name}}</option>
+                                    <option value="{{$categoria->id}}">{{$categoria->name}}</option>
                                     @endforeach
-                                 
-                                    
                                 </select>
                             </div>
                             <div class="single_search_field search_location">
                                 <select class="search_fields" id="at_biz_dir-location">
-                                    <option value="">Seleccione una Ciudad</option>
-                                    @foreach ($cities as $city)
-                                        <option value="{{$city->id}}">{{$city->name}}</option>
-                                    @endforeach
+                                    <option value="">Selecciona un lugar</option>
+                                    <option value="ab">AB Simple</option>
+                                    <option value="australia">Australia</option>
+                                    <option value="australia-australia">Australia</option>
                                 </select>
                             </div>
                             <div class="atbd_submit_btn">
-                                <button type="submit" class="btn btn-block btn-gradient btn-gradient-one btn-md btn_search">Search</button>
+                                <button type="submit" class="btn btn-block btn-gradient btn-gradient-one btn-md btn_search">Buscar</button>
                             </div>
                         </div>
                     </form><!-- ends: .search_form -->

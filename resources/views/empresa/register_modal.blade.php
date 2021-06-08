@@ -12,7 +12,9 @@
             </div>
             <div class="modal-body">
 
-                <form action="{{route('bussiness.register')}}" id="signup-form" method="post">
+
+                <form action="{{route('bussines.register')}}" id="signup-form" method="post">
+
                     @csrf
                     <input type="text" class="form-control" name="name" placeholder="Nombre de la empresa" required>
                     <input type="text" class="form-control" name="ruc" placeholder="RUC" required>
@@ -34,3 +36,4 @@
         </div>
     </div>
 </div>
+
