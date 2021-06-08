@@ -39,10 +39,12 @@ class BusinessController extends Controller
             'name' => 'required',
             'phone' => 'required'
         ]);
+
         $request->merge([
             'status' => 1
         ]);
         $bussines = Business::create($request->all());
+
         return redirect()->back();
     }
 

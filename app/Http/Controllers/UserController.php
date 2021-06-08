@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
+use App\Models\User;
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,13 +14,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-
-        $categoria = Category::find(2);
-
-        $nombre = "Lind";
-
-
-        return view('welcome', compact('nombre','categoria'));
+        //
     }
 
     /**
@@ -41,7 +35,22 @@ class HomeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        /*$request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'password' => 'required',
+        ]);
+
+        $request->merge([
+            'type' => "Free",
+            'status' => 1,
+            'rol_id' => 1,
+            //'business_id' => 
+        ]);
+
+        $user = User::create($request->all());
+        //return redirect('home');
+        */
     }
 
     /**

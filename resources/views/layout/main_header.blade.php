@@ -273,7 +273,9 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
+
                 <h5 class="modal-title" id="signup_modal_label"><i class="la la-lock"></i>Registro de Empresa</h5>
+
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -285,6 +287,7 @@
                     <input type="text" class="form-control" name="ruc" placeholder="RUC" required>
                     <input type="text" class="form-control" name="phone" placeholder="Teléfono o Celular" required>
                     <button type="submit" class="btn btn-block btn-lg btn-gradient btn-gradient-two">Registrarse</button>
+
                 </form>
                 <div class="form-excerpts">
                     <ul class="list-unstyled">
