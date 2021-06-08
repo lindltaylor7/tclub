@@ -38,8 +38,6 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-
-
         $request->validate([
             'name' => 'required',
             'email' => 'required',
@@ -54,9 +52,10 @@ class UserController extends Controller
 
         ]);
 
+        return $request();
+
         $user = User::create($request->all());
         return redirect()->route('home');
-
     }
 
     /**

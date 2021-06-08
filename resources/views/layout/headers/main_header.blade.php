@@ -167,11 +167,8 @@
             <div class="row">
                 <div class="col-lg-10 offset-lg-1">
                     <div class="search_title_area">
-
                         <h2 class="title">Triad Club</h2>
-
                         <p class="sub_title">Encuentra las empresas top del Perú</p>
-
                     </div><!-- ends: .search_title_area -->
                     <form action="/" class="search_form">
                         <div class="atbd_seach_fields_wrapper">
@@ -272,3 +269,4 @@
 </div>
 
 @include('empresa.register_modal')
+
