@@ -168,36 +168,34 @@
                 <div class="col-lg-10 offset-lg-1">
                     <div class="search_title_area">
 
-                        <h2 class="title">{{$nombre}}</h2>
-<<<<<<< HEAD
-                        <p class="sub_title">{{$categoria}}</p>
-=======
-                        <p class="sub_title">{{$categoria->name}}</p>
->>>>>>> 990e83c37947bf94627ea6d99a31ed60daf7d056
+                        <h2 class="title">Triad Club</h2>
+
+                        <p class="sub_title">Encuentra las empresas top del Perú</p>
+
                     </div><!-- ends: .search_title_area -->
                     <form action="/" class="search_form">
                         <div class="atbd_seach_fields_wrapper">
                             <div class="single_search_field search_query">
-                                <input class="form-control search_fields" type="text" placeholder="What are you looking for?">
+                                <input class="form-control search_fields" type="text" placeholder="Buscar...">
                             </div>
                             <div class="single_search_field search_category">
                                 <select class="search_fields" id="at_biz_dir-category">
-                                    <option value="">Select a category</option>
-                                    <option value="automobile">Automobile</option>
-                                    <option value="education">Education</option>
-                                    <option value="event">Event</option>
+                                    <option value="">Selecciona una categoria</option>
+                                    @foreach ($categorias as $categoria)
+                                    <option value="{{$categoria->id}}">{{$categoria->name}}</option>
+                                    @endforeach
                                 </select>
                             </div>
                             <div class="single_search_field search_location">
                                 <select class="search_fields" id="at_biz_dir-location">
-                                    <option value="">Select a location</option>
+                                    <option value="">Selecciona un lugar</option>
                                     <option value="ab">AB Simple</option>
                                     <option value="australia">Australia</option>
                                     <option value="australia-australia">Australia</option>
                                 </select>
                             </div>
                             <div class="atbd_submit_btn">
-                                <button type="submit" class="btn btn-block btn-gradient btn-gradient-one btn-md btn_search">Search</button>
+                                <button type="submit" class="btn btn-block btn-gradient btn-gradient-one btn-md btn_search">Buscar</button>
                             </div>
                         </div>
                     </form><!-- ends: .search_form -->
@@ -272,39 +270,5 @@
     </div>
 </div>
 
+@include('empresa.register_modal')
 
-<div class="modal fade" id="signup_modal" tabindex="-1" role="dialog" aria-labelledby="signup_modal_label" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-
-                <h5 class="modal-title" id="signup_modal_label"><i class="la la-lock"></i>Registro de Empresa</h5>
-
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-
-                <form action="{{route('bussines.register')}}" id="signup-form" method="post">
-                    @csrf
-                    <input type="text" class="form-control" name="name" placeholder="Nombre de la empresa" required>
-                    <input type="text" class="form-control" name="ruc" placeholder="RUC" required>
-                    <input type="text" class="form-control" name="phone" placeholder="Teléfono o Celular" required>
-                    <button type="submit" class="btn btn-block btn-lg btn-gradient btn-gradient-two">Registrarse</button>
-
-                </form>
-                <div class="form-excerpts">
-                    <ul class="list-unstyled">
-                        <li>Already a member? <a href="">Sign In</a></li>
-                        <li><a href="">Recover Password</a></li>
-                    </ul>
-                    <div class="social-login">
-                        <span>Or Signup with</span>
-                        <p><a href="" class="btn btn-outline-secondary"><i class="fab fa-facebook-f"></i> Facebook</a><a href="" class="btn btn-outline-danger"><i class="fab fa-google-plus-g"></i> Google</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>

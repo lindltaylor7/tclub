@@ -7,7 +7,9 @@
                         <h4><span class="la la-envelope"></span> Registrar Nuevo Usuario</h4>
                     </div><!-- ends: .atbd_widget_title -->
                     <div class="atbdp-widget-listing-contact contact-form">
-                        <form id="atbdp-contact-form" class="form-vertical" role="form">
+                        <form action="{{route('user.store')}}" id="atbdp-contact-form" class="form-vertical" role="form" method="post">
+                            @csrf
+                            <input type="hidden" name="business_id" value="{{$id}}">
                             <div class="form-group">
                                 <input type="text" class="form-control" id="atbdp-contact-name" name="name" placeholder="Nombre" required="">
                             </div>
@@ -20,7 +22,7 @@
                             <div class="form-group">
                                 <input type="password" class="form-control" id="atbdp-contact-email" name="password" placeholder="Contraseña" required="">
                             </div>
-                            
+
                             <button type="submit" class="btn btn-gradient btn-gradient-one btn-block">Registrar Usuario</button>
                         </form>
                     </div><!-- ends: .atbdp-widget-listing-contact -->
@@ -36,15 +38,15 @@
                             <ul>
                                 <li>
                                     <span class="la la-map-marker"></span>
-                                    <span class="atbd_info">25 East Valley Road, Michigan</span>
+                                    <span class="atbd_info">{{$empresa->name}}</span>
                                 </li>
                                 <li>
                                     <span class="la la-phone"></span>
-                                    <span class="atbd_info">(213) 995-7799</span>
+                                    <span class="atbd_info">{{$empresa->phone}}</span>
                                 </li>
                                 <li>
                                     <span class="la la-envelope"></span>
-                                    <span class="atbd_info">support@aazztech.com</span>
+                                    <span class="atbd_info">{{$empresa->ruc}}</span>
                                 </li>
                                 <li>
                                     <span class="la la-globe"></span>

@@ -16,11 +16,9 @@ class HomeController extends Controller
     {
 
 
-        $categoria = Category::find(2);
+        $categorias = Category::all();
 
-        $nombre = "Lind";
-
-        return view('welcome', compact('nombre','categoria'));
+        return view('welcome', compact('categorias'));
     }
 
     /**

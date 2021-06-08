@@ -3,11 +3,11 @@
 @section('title', 'Inicio')
 
 @section('content')
-    @include('layout.main_header')
-    @include('layout.categories_cards')
-    @include('layout.listing_card')
-    @include('layout.add_triad')
-    @include('layout.places_section')
-    @include('layout.suscribe')
+    @include('layout.headers.main_header')
+    @include('layout.sections.categories_cards')
+    @include('layout.sections.listing_card')
+    @include('layout.sections.add_triad')
+    @include('layout.sections.places_section')
+    @include('layout.sections.suscribe')
     @include('layout.footer')
 @endsection
