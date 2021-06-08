@@ -14,8 +14,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $categoria = Category::find(1);
-        $nombre="Julio";
+
+
+        $categoria = Category::find(2);
+
+        $nombre = "Lind";
 
         return view('welcome', compact('nombre','categoria'));
     }

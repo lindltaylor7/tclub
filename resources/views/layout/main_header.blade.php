@@ -31,7 +31,7 @@
                                                             <li><a href="{{route('rubrounico')}}">Rubro unico</a></li>
                                                             <li><a href="{{route('busqueda_avanzada')}}">Busqueda avanzada</a></li>
                                                             <li><a href="all-listings-list.html">Listing List</a></li>
-                                                            
+
 
                                                             <li><a href="listing-details.html">Listing Details</a></li>
                                                             <li><a href="add-listing.html">Add Listing</a></li>
@@ -169,7 +169,11 @@
                     <div class="search_title_area">
 
                         <h2 class="title">{{$nombre}}</h2>
+<<<<<<< HEAD
                         <p class="sub_title">{{$categoria}}</p>
+=======
+                        <p class="sub_title">{{$categoria->name}}</p>
+>>>>>>> 990e83c37947bf94627ea6d99a31ed60daf7d056
                     </div><!-- ends: .search_title_area -->
                     <form action="/" class="search_form">
                         <div class="atbd_seach_fields_wrapper">
@@ -273,18 +277,22 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="signup_modal_label"><i class="la la-lock"></i> Registra tu empresa</h5>
+
+                <h5 class="modal-title" id="signup_modal_label"><i class="la la-lock"></i>Registro de Empresa</h5>
+
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <form action="{{route('business.register')}}" id="signup-form" method="POST">
+
+                <form action="{{route('bussines.register')}}" id="signup-form" method="post">
                     @csrf
-                    <input type="text" class="form-control" name="name" placeholder="Nombre de tu empresa" required>
-                    <input type="text" class="form-control" name="ruc" placeholder="ruc" required>
-                    <input type="text" class="form-control" name="phone" placeholder="telefono de tu empresa" required>
-                    <button type="submit" class="btn btn-block btn-lg btn-gradient btn-gradient-two">Registrar empresa</button>
+                    <input type="text" class="form-control" name="name" placeholder="Nombre de la empresa" required>
+                    <input type="text" class="form-control" name="ruc" placeholder="RUC" required>
+                    <input type="text" class="form-control" name="phone" placeholder="Teléfono o Celular" required>
+                    <button type="submit" class="btn btn-block btn-lg btn-gradient btn-gradient-two">Registrarse</button>
+
                 </form>
                 <div class="form-excerpts">
                     <ul class="list-unstyled">

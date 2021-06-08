@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Business;
+use App\Models\User;
 use Illuminate\Http\Request;
 
-class BusinessController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -35,19 +35,22 @@ class BusinessController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-
+        /*$request->validate([
             'name' => 'required',
-            'phone' => 'required'
+            'email' => 'required',
+            'password' => 'required',
         ]);
 
         $request->merge([
-            'status' => 1
+            'type' => "Free",
+            'status' => 1,
+            'rol_id' => 1,
+            //'business_id' => 
         ]);
-        $bussines = Business::create($request->all());
 
-        return redirect()->back();
-
+        $user = User::create($request->all());
+        //return redirect('home');
+        */
     }
 
     /**

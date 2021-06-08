@@ -4,14 +4,15 @@ use App\Http\Controllers\BusinessController;
 use App\Http\Controllers\HomeController;
 use Illuminate\suPPOrt\facades\Route;
 
-Route::get('/',[HomeController::class,'index'] )->name("home");
-
-Route::post('/register',[BusinessController::class,'store'] )->name("business.register");
 
 
-Route::get('/registro_usuario', function () {
-    return view('registro_usuario');
-})->name("registro_usiario");
+Route::get('/', [HomeController::class,'index'])->name("home");
+
+Route::post('/register',[BusinessController::class,'store'])->name('business.register');
+
+Route::get('/new-user', function (){
+    return view('usuario');
+})->name("registro");
 
 
 Route::get('/rubro_unico', function () {
