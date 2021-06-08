@@ -7,11 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Rol extends Model
 {
+
+    protected $guarded = [];
     use HasFactory;
 
-    //Relacion de 1 a muchos con User
-    public function users()
-    {
+// Relacion de uno a muchos
+    public function users(){ 
         return $this->hasMany('App\Models\User');
     }
 }

@@ -7,11 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Valoration extends Model
 {
+    protected $guarded = [];
     use HasFactory;
-
-    //Relacion de 1 a muchos desde Business (inversa)
-    public function business()
-    {
+  
+    //Relacion de uno a muchos inversa
+    public function business(){
         return $this->belongsTo('App\Models\Business');
     }
 }

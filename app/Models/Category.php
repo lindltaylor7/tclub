@@ -7,17 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
+    protected $guarded = [];
     use HasFactory;
 
-    //Relacion de muchos a muchos con Business
-    public function businesses()
-    {
-        return $this->belongsToMany('App\Models\Business');
+    //Relacion de muchos a muchos inversa
+    public function businesses() {
+    return $this->belongsToMany('App\Models\Business');
     }
 
-    //Relacion polimorfica de 1 a muchos (reversa)
-    public function images()
-    {
-        return $this->morphMany('App\Models\Image', 'imageable');
-    }
+   //Relacion polimorfica de muchos a muchos
+   public function images(){
+   return $this->morphMany('App\Models\Image','imageable');
+   }
 }

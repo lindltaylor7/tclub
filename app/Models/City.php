@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class City extends Model
 {
+  protected $guarded = [];
     use HasFactory;
 
     //Relacion de 1 a muchos para Address
@@ -15,15 +16,13 @@ class City extends Model
         return $this->hasMany('App\Models\Address');
     }
 
-    //Relación de muchos a muchos con Business
-    public function businesses()
-    {
+      //Relacio de muchos a muchos inversa
+      public function businesses(){
         return $this->belongsToMany('App\Models\Business');
-    }
-
-    //Relacion polimorfica de 1 a muchos (reversa)
-    public function images()
-    {
-        return $this->morphMany('App\Models\Image', 'imageable');
-    }
+        }
+          
+       //Relacion polimorfica de muchos a muchos
+      public function images(){
+        return $this->morphMany('App\Models\Image','imageable');
+      }
 }

@@ -7,11 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Social extends Model
 {
+    protected $guarded = [];
     use HasFactory;
 
-    //Relacion de 1 a 1 con Business (inversa)
-    public function business()
-    {
-        return $this->belongsTo('App\Models\Business');
+
+    // Relacion de uno a uno inversa
+    public function business(){
+    return $this->belongsTo('App\Models\Business');
     }
 }
