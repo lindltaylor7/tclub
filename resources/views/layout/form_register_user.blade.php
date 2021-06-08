@@ -10,7 +10,9 @@
                             </div>
                         </div>
                         <div class="atbdb_content_module_contents">
-                            <form action="/">
+                            <form action="{{route('user.store')}}">
+                                @csrf
+                                <input type="hidden" name="business_id" value={{$id}}>
                                 <div class="form-group">
                                     <label for="address" class="form-label">Apellido y Nombres</label>
                                     <input type="text" class="form-control" name="name"  placeholder="Ingrese sus apellidos y mobres" required>
@@ -25,7 +27,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="password" class="form-label">Password</label>
-                                    <input type="password" class="form-control" placeholder="Ingrese una contraseña facil de recordar">
+                                    <input type="password" class="form-control" name="password" placeholder="Ingrese una contraseña facil de recordar">
                                 </div>
                                 <div class="form-group">
                                     <label class="form-label">Seleccione su rol</label>

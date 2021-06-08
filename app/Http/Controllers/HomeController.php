@@ -16,7 +16,7 @@ class HomeController extends Controller
     {
 
 
-        $categoria = Category::find(2);
+        $categoria = Category::find(1);
 
         $nombre = "Lind";
 

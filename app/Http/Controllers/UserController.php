@@ -22,9 +22,10 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        //
+        
+        return view('usuario',compact('id'));
     }
 
     /**
@@ -35,22 +36,22 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        /*$request->validate([
+        $request->validate([
             'name' => 'required',
             'email' => 'required',
-            'password' => 'required',
+            'password' => 'required'
         ]);
 
         $request->merge([
             'type' => "Free",
             'status' => 1,
-            'rol_id' => 1,
-            //'business_id' => 
+            'rol_id' => 1
         ]);
 
+        return $request();
+
         $user = User::create($request->all());
-        //return redirect('home');
-        */
+        return redirect()->route('home');
     }
 
     /**

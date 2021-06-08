@@ -7,7 +7,7 @@
                         <h4><span class="la la-envelope"></span> Registrar Nuevo Usuario</h4>
                     </div><!-- ends: .atbd_widget_title -->
                     <div class="atbdp-widget-listing-contact contact-form">
-                        <form id="atbdp-contact-form" class="form-vertical" role="form">
+                        <form action="{{route('user.store')}}">
                             <div class="form-group">
                                 <input type="text" class="form-control" id="atbdp-contact-name" name="name" placeholder="Nombre" required="">
                             </div>

@@ -169,11 +169,7 @@
                     <div class="search_title_area">
 
                         <h2 class="title">{{$nombre}}</h2>
-<<<<<<< HEAD
-                        <p class="sub_title">{{$categoria}}</p>
-=======
                         <p class="sub_title">{{$categoria->name}}</p>
->>>>>>> 990e83c37947bf94627ea6d99a31ed60daf7d056
                     </div><!-- ends: .search_title_area -->
                     <form action="/" class="search_form">
                         <div class="atbd_seach_fields_wrapper">
@@ -286,7 +282,7 @@
             </div>
             <div class="modal-body">
 
-                <form action="{{route('bussines.register')}}" id="signup-form" method="post">
+                <form action="{{route('business.register')}}" id="signup-form" method="post">
                     @csrf
                     <input type="text" class="form-control" name="name" placeholder="Nombre de la empresa" required>
                     <input type="text" class="form-control" name="ruc" placeholder="RUC" required>
