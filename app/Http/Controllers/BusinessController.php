@@ -44,10 +44,10 @@ class BusinessController extends Controller
         $request->merge([
             'status' => 1
         ]);
-        
-        $business = Business::create($request->all());
 
-        return redirect()->route('user.create',['id'=>$business->id]);
+        $bussines = Business::create($request->all());
+
+        return redirect()->route('user.create',['id'=>$bussines->id]);
 
     }
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Business;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -24,8 +25,8 @@ class UserController extends Controller
      */
     public function create($id)
     {
-        
-        return view('usuario',compact('id'));
+        $empresa = Business::find($id);
+        return view('usuario',compact('id','empresa'));
     }
 
     /**
@@ -45,7 +46,8 @@ class UserController extends Controller
         $request->merge([
             'type' => "Free",
             'status' => 1,
-            'rol_id' => 1
+            'rol_id' => 1,
+            'password' => bcrypt($request->get('password'))
         ]);
 
         return $request();

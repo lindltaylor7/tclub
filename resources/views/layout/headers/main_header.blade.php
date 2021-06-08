@@ -167,33 +167,32 @@
             <div class="row">
                 <div class="col-lg-10 offset-lg-1">
                     <div class="search_title_area">
-
-                        <h2 class="title">{{$nombre}}</h2>
-                        <p class="sub_title">{{$categoria->name}}</p>
+                        <h2 class="title">Triad Club</h2>
+                        <p class="sub_title">Encuentra las empresas top del Perú</p>
                     </div><!-- ends: .search_title_area -->
                     <form action="/" class="search_form">
                         <div class="atbd_seach_fields_wrapper">
                             <div class="single_search_field search_query">
-                                <input class="form-control search_fields" type="text" placeholder="What are you looking for?">
+                                <input class="form-control search_fields" type="text" placeholder="Buscar...">
                             </div>
                             <div class="single_search_field search_category">
                                 <select class="search_fields" id="at_biz_dir-category">
-                                    <option value="">Select a category</option>
-                                    <option value="automobile">Automobile</option>
-                                    <option value="education">Education</option>
-                                    <option value="event">Event</option>
+                                    <option value="">Selecciona una categoria</option>
+                                    @foreach ($categorias as $categoria)
+                                    <option value="{{$categoria->id}}">{{$categoria->name}}</option>
+                                    @endforeach
                                 </select>
                             </div>
                             <div class="single_search_field search_location">
                                 <select class="search_fields" id="at_biz_dir-location">
-                                    <option value="">Select a location</option>
+                                    <option value="">Selecciona un lugar</option>
                                     <option value="ab">AB Simple</option>
                                     <option value="australia">Australia</option>
                                     <option value="australia-australia">Australia</option>
                                 </select>
                             </div>
                             <div class="atbd_submit_btn">
-                                <button type="submit" class="btn btn-block btn-gradient btn-gradient-one btn-md btn_search">Search</button>
+                                <button type="submit" class="btn btn-block btn-gradient btn-gradient-one btn-md btn_search">Buscar</button>
                             </div>
                         </div>
                     </form><!-- ends: .search_form -->
@@ -268,7 +267,9 @@
     </div>
 </div>
 
+@include('empresa.register_modal')
 
+<<<<<<< HEAD:resources/views/layout/main_header.blade.php
 <div class="modal fade" id="signup_modal" tabindex="-1" role="dialog" aria-labelledby="signup_modal_label" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -304,3 +305,5 @@
         </div>
     </div>
 </div>
+=======
+>>>>>>> 95caca26b7324332653a5bf53f3cadff128e4419:resources/views/layout/headers/main_header.blade.php
