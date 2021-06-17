@@ -69,6 +69,5 @@
                 </div>
             </div>
         </div>
-
     </div><!-- ends: .footer-bottom -->
 </footer><!-- ends: .footer -->

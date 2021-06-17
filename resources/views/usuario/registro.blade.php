@@ -24,6 +24,13 @@
                             <div class="form-group">
                                 <input type="password" class="form-control" id="atbdp-contact-email" name="password" placeholder="Contraseña" required="">
                             </div>
+                            
+                            <div class="form-group">
+                                <div class="col-lg-12 text-center m-top-20">
+                                    <a href="" class="btn btn-gradient btn-gradient-two">Completar  Datos De Su Empresa</a>
+                                </div>  
+                            </div>
+                              
 
                             <button type="submit" class="btn btn-gradient btn-gradient-one btn-block">Registrar Usuario</button>
                         </form>

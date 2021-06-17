@@ -7,47 +7,52 @@ use Illuminate\Database\Eloquent\Model;
 
 class Business extends Model
 {
-    protected $fillable = ['name','ruc','phone','status'];
-    protected $guarded = [];
+
+    protected $fillable = ['name','slogan','description','ruc','phone','status','user_id'];
+    
     use HasFactory;
 
+    protected $guarded = [];
 
-    //Relacion de uno a muchos
-    public function offers(){
-        return $this->hasMany('App\Models\Offer');
-    }
-    // Relacion de uno a muchos
-    public function users(){
-        return $this->hasMany('App\Models\User');
+
+
+    //de 1 a 1 con socials
+    public function social()
+    {
+        return $this->hasOne('App\Models\Social');
     }
 
-    //Relacipn de uno a muchos
-    public function valorations(){
+
+    //1 a muchos inverso
+    public function user()
+    {
+        return $this->belongsTo('App\Models\User');
+    }
+
+    //1 a muchos de ida
+    public function valorations()
+    {
         return $this->hasMany('App\Models\Valoration');
     }
 
-    //Relacion de uno auno
-    public function social(){
-    return $this->hasOne('App\Models\Social');
+    public function offers()
+    {
+        return $this->hasMany('App\Models\Offer');
     }
 
-    //Relacio de muchos a muchos
-    public function categories(){
-    return $this->belongsToMany('App\Models\Category');
-    }
-
-    //Relacio de muchos a muchos
-    public function cities(){
-    return $this->belongsToMany('App\Models\City');
-    }
-
-   //Relaion polimorfica de uno a uno
-   public function address()   {
-   return $this->morphOne('App\Models\Address','addressable');
+   //Relaion  de uno a muchos
+   public function addresses()   {
+   return $this->hasMany('App\Models\Address');
    }
 
    //Relacion polimorfica de muchos a muchos
    public function images(){
     return $this->morphMany('App\Models\Image','imageable');
    }
+
+    //muchos a muchos
+    public function categories()
+    {
+        return $this->belongsToMany('App\Models\Category');
+    }
 }

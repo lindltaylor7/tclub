@@ -1,42 +1,33 @@
 <?php
 
+use App\Http\Controllers\AddressController;
 use App\Http\Controllers\BusinessController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SocialController;
 use App\Http\Controllers\UserController;
+
+use App\Http\Controllers\CityController;
 use Illuminate\suPPOrt\facades\Route;
-
-
 
 Route::get('/', [HomeController::class,'index'])->name("home");
 
 
-Route::post('/register',[BusinessController::class,'store'])->name('business.register');
-
-Route::get('/new-user/{id}', [UserController::class,'create'])->name("user.create");
-Route::post('/new-user/store', [UserController::class,'store'])->name("user.store");
-
-Route::get('/rubro_unico', function () {
-    return view('rubro_unico');
-})->name("rubrounico");
-
-Route::get('/busqueda_avanzada', function () {
-    return view('busqueda_avanzada');
-})->name("busqueda_avanzada");
-
-Route::get('/ciudad', function () {
-    return view('ciudad');
-});
-
-Route::get('/landing', function () {
-    return view('landing');
-});
-
-Route::get('/ciudades', function () {
-    return view('ciudades');
-})->name('ciudades');
-
-Route::get('/rubros', function () {
-    return view('rubros');
-})->name('rubros');
+Route::get('/ciudades', [CityController::class,'index'])->name('ciudad.index');
+Route::get('/ciudades/{id}', [CityController::class,'show'])->name('ciudad.show');
 
 
+Route::get('/rubros', [CategoryController::class,'index'])->name('rubro.index');
+Route::get('/rubros/{id}', [CategoryController::class,'show'])->name('rubro.show');
+
+Route::get('/empresas', [BusinessController::class,'index'])->name('empresa.index');
+Route::get('/empresas/{id}', [BusinessController::class,'show'])->name('empresa.show');
+
+
+Route::post('/user/register', [UserController::class,'store'])->name("user.register");
+Route::get('/user/{id}/dashboard', [UserController::class,'show'])->name("user.dashboard");
+
+Route::get('/business/register/{id}',[BusinessController::class,'create'])->name('bussines.create');
+Route::post('/business/register',[BusinessController::class,'store'])->name('bussines.register');
+Route::post('/business/register/address',[AddressController::class,'store'])->name('address.register');
+Route::post('/business/register/social',[SocialController::class,'store'])->name('social.register');

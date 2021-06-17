@@ -1,10 +1,10 @@
 @extends('layout.template')
 
-@section('title', 'Huancayo')
+@section('title', 'Ciudad')
 
 @section('content')
-    @include('ciudad.header')
-    @include('ciudad.rubros')
-    @include('ciudad.ciudades')
+    @include('layout.headers.header_unico')
+    @include('ciudad.rubros_ciudad')
+    @include('ciudad.all_ciudades')
     @include('layout.footer')
 @endsection

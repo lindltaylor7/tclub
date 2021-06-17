@@ -8,11 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Social extends Model
 {
     protected $guarded = [];
+
     use HasFactory;
 
-
-    // Relacion de uno a uno inversa
-    public function business(){
-    return $this->belongsTo('App\Models\Business');
+    //1 a 1 desde business (inverso)
+    public function business()
+    {
+        return $this->belongsTo('App\Models\Business');
     }
 }
