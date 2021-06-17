@@ -1,5 +1,5 @@
-<section class="intro-wrapper bgimage overlay overlay--dark">
-    <div class="bg_image_holder"><img src="img/intro.jpg" alt=""></div>
+<section class="header-breadcrumb bgimage overlay overlay--dark">
+    <div class="bg_image_holder"><img src="img/breadcrumb1.jpg" alt=""></div>
     <div class="mainmenu-wrapper">
         <div class="menu-area menu1 menu--light">
             <div class="top-menu-area">
@@ -22,17 +22,19 @@
                                             <div class="collapse navbar-collapse" id="direo-navbar-collapse">
                                                 <ul class="navbar-nav">
                                                     <li>
+
                                                         <a href="{{route('home')}}">Home</a>
 
                                                     </li>
                                                     <li class="dropdown has_dropdown">
                                                         <a href="#" class="dropdown-toggle" id="drop3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Listings</a>
                                                         <ul class="dropdown-menu" aria-labelledby="drop3">
+
                                                             <li><a href="{{route('rubrounico')}}">Rubro unico</a></li>
                                                             <li><a href="{{route('busqueda_avanzada')}}">Busqueda avanzada</a></li>
+
+                                                            <li><a href="all-listings-grid.html">Listing Grid</a></li>
                                                             <li><a href="all-listings-list.html">Listing List</a></li>
-
-
                                                             <li><a href="listing-details.html">Listing Details</a></li>
                                                             <li><a href="add-listing.html">Add Listing</a></li>
                                                         </ul>
@@ -162,75 +164,23 @@
             <!-- end  -->
         </div>
     </div><!-- ends: .mainmenu-wrapper -->
-    <div class="directory_content_area">
+
+    <div class="breadcrumb-wrapper content_above">
         <div class="container">
             <div class="row">
-                <div class="col-lg-10 offset-lg-1">
-                    <div class="search_title_area">
-                        <h2 class="title">Triad Club</h2>
-                        <p class="sub_title">Encuentra las empresas top del Perú</p>
-                    </div><!-- ends: .search_title_area -->
-                    <form action="/" class="search_form">
-                        <div class="atbd_seach_fields_wrapper">
-                            <div class="single_search_field search_query">
+                <div class="col-lg-12 text-center">
+                    <h1 class="page-title">@yield('title')</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page"></li>
 
-                                <input class="form-control search_fields" type="text" placeholder="Buscar...">
-                            </div>
-                            <div class="single_search_field search_category">
-                                <select class="search_fields" id="at_biz_dir-category">
-                                    <option value="">Selecciona una categoria</option>
-                                    @foreach ($categorias as $categoria)
-                                    <option value="{{$categoria->id}}">{{$categoria->name}}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                            <div class="single_search_field search_location">
-                                <select class="search_fields" id="at_biz_dir-location">
-                                    <option value="">Selecciona un lugar</option>
-                                    <option value="ab">AB Simple</option>
-                                    <option value="australia">Australia</option>
-                                    <option value="australia-australia">Australia</option>
-                                </select>
-                            </div>
-                            <div class="atbd_submit_btn">
-                                <button type="submit" class="btn btn-block btn-gradient btn-gradient-one btn-md btn_search">Buscar</button>
-                            </div>
-                        </div>
-                    </form><!-- ends: .search_form -->
-                    <div class="directory_home_category_area">
-                        <ul class="categories">
-                            <li>
-                                <a href="">
-                                    <span class="color-primary"><i class="la la-cutlery"></i></span>
-                                    Restaurants
-                                </a>
-                            </li>
-                            <li>
-
-                                <a href="{{route('ciudades')}}">
-                                    <span class="color-success"><i class="la la-map-marker"></i></span>
-                                    Ciudades
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{route('rubros')}}">
-                                    <span class="color-warning"><i class="la la-shopping-cart"></i></span>
-                                    Rubros
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <span class="color-danger"><i class="la la-bed"></i></span>
-                                    Hotels
-                                </a>
-                            </li>
-                        </ul>
-                    </div><!-- ends: .directory_home_category_area -->
-                </div><!-- ends: .col-lg-10 -->
+                        </ol>
+                    </nav>
+                </div>
             </div>
         </div>
-    </div><!-- ends: .directory_search_area -->
-
+    </div><!-- ends: .breadcrumb-wrapper -->
 </section>
 
 
@@ -269,4 +219,32 @@
 </div>
 
 
-@include('empresa.register_modal')
+<div class="modal fade" id="signup_modal" tabindex="-1" role="dialog" aria-labelledby="signup_modal_label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="signup_modal_label"><i class="la la-lock"></i> Sign Up</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="/" id="signup-form">
+                    <input type="email" class="form-control" placeholder="Email" required>
+                    <input type="password" class="form-control" placeholder="Password" required>
+                    <button type="submit" class="btn btn-block btn-lg btn-gradient btn-gradient-two">Sign Up</button>
+                </form>
+                <div class="form-excerpts">
+                    <ul class="list-unstyled">
+                        <li>Already a member? <a href="">Sign In</a></li>
+                        <li><a href="">Recover Password</a></li>
+                    </ul>
+                    <div class="social-login">
+                        <span>Or Signup with</span>
+                        <p><a href="" class="btn btn-outline-secondary"><i class="fab fa-facebook-f"></i> Facebook</a><a href="" class="btn btn-outline-danger"><i class="fab fa-google-plus-g"></i> Google</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

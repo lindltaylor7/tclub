@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\City;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -14,9 +15,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-
-
         $categorias = Category::all();
+
 
         return view('welcome', compact('categorias'));
     }

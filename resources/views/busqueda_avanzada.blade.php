@@ -1,11 +1,9 @@
 @extends('layout.template')
 
-
-@section('title', 'Registro de Usuario')
+@section('title', 'Busqueda avanzada')
 
 @section('content')
     @include('layout.header')
-    @include('usuario.registro')
+    @include('layout.all_listing_busquedaavanzada')
     @include('layout.footer')
-
 @endsection

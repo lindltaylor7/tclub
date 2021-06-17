@@ -1,26 +1,17 @@
-
 <div class="modal fade" id="signup_modal" tabindex="-1" role="dialog" aria-labelledby="signup_modal_label" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-
-                <h5 class="modal-title" id="signup_modal_label"><i class="la la-lock"></i>Registro de Empresa</h5>
-
+                <h5 class="modal-title" id="signup_modal_label"><i class="la la-lock"></i> Sign Up</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-
-
-                <form action="{{route('bussines.register')}}" id="signup-form" method="post">
-
-                    @csrf
-                    <input type="text" class="form-control" name="name" placeholder="Nombre de la empresa" required>
-                    <input type="text" class="form-control" name="ruc" placeholder="RUC" required>
-                    <input type="text" class="form-control" name="phone" placeholder="Teléfono o Celular" required>
-                    <button type="submit" class="btn btn-block btn-lg btn-gradient btn-gradient-two">Registrarse</button>
-
+                <form action="/" id="signup-form">
+                    <input type="email" class="form-control" placeholder="Email" required>
+                    <input type="password" class="form-control" placeholder="Password" required>
+                    <button type="submit" class="btn btn-block btn-lg btn-gradient btn-gradient-two">Sign Up</button>
                 </form>
                 <div class="form-excerpts">
                     <ul class="list-unstyled">
@@ -36,4 +27,3 @@
         </div>
     </div>
 </div>
-

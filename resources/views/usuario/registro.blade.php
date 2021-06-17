@@ -7,7 +7,9 @@
                         <h4><span class="la la-envelope"></span> Registrar Nuevo Usuario</h4>
                     </div><!-- ends: .atbd_widget_title -->
                     <div class="atbdp-widget-listing-contact contact-form">
+
                         <form action="{{route('user.store')}}" id="atbdp-contact-form" class="form-vertical" role="form" method="post">
+
                             @csrf
                             <input type="hidden" name="business_id" value="{{$id}}">
                             <div class="form-group">
