@@ -36,5 +36,3 @@ class CreateBusinessCategoryTable extends Migration
         Schema::dropIfExists('business_category');
     }
 }
-
-

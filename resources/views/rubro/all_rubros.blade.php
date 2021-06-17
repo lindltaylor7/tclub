@@ -18,7 +18,7 @@
                                 <a href="{{route('rubro.show',$categoria->id)}}" class="cat-box">
                                     <div>
                                         <div class="icon">
-                                            <span class="la la-cutlery"></span>
+                                            <span class="{{$categoria->icon}}"></span>
                                         </div>
                                         <h4 class="cat-name">{{$categoria->name}}</h4>
                                         <span class="badge badge-pill badge-success">{{$categoria->businesses->count()}} Empresas</span>
