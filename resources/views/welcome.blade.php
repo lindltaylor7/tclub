@@ -4,10 +4,10 @@
 
 @section('content')
     @include('layout.headers.main_header')
-    @include('layout.sections.categories_cards')
-    @include('layout.sections.listing_card')
-    @include('layout.sections.add_triad')
-    @include('layout.sections.places_section')
-    @include('layout.sections.suscribe')
+    @include('layout.sections.cards_rubros')
+    @include('layout.sections.cards_empresas')
+    @include('layout.sections.more_triad')
+    @include('layout.sections.cards_ciudades')
+    @include('layout.sections.nueva_suscripcion')
     @include('layout.footer')
 @endsection

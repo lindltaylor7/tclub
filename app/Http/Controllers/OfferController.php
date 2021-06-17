@@ -2,12 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Business;
-use App\Models\Category;
-use App\Models\City;
 use Illuminate\Http\Request;
 
-class BusinessController extends Controller
+class OfferController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,11 +13,7 @@ class BusinessController extends Controller
      */
     public function index()
     {
-        $empresas = Business::all();
-        $categorias = Category::all();
-        $ciudades = City::all();
-
-        return view('empresas',compact('empresas','categorias','ciudades'));
+        //
     }
 
     /**
@@ -52,12 +45,7 @@ class BusinessController extends Controller
      */
     public function show($id)
     {
-        $unico = Business::find($id);
-        $categorias = Category::all();
-        $empresas = Business::all();
-        $cat = Business::find($id)->categories()->where('business_id',$id)->first();
-        
-        return view('empresa',compact('unico','categorias','empresas','cat'));
+        //
     }
 
     /**

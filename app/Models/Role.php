@@ -5,15 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Image extends Model
+class Role extends Model
 {
     protected $guarded = [];
 
     use HasFactory;
 
-    //polimorfica de 1 a muchos
-    public function imageable()
+    //1 a muchos de ida
+    public function users()
     {
-        return $this->morphTo();
+        return $this->hasMany('App\Models\User');
     }
+
 }

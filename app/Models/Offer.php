@@ -8,15 +8,18 @@ use Illuminate\Database\Eloquent\Model;
 class Offer extends Model
 {
     protected $guarded = [];
+
     use HasFactory;
 
-    //Relacion de uno a muchos inversa
-    public function business(){
+    //1 a muchos inverso
+    public function business()
+    {
         return $this->belongsTo('App\Models\Business');
     }
 
-    //Relacion polimorfica de muchos a muchos
-    public function images(){
-    return $this->morphMany('App\Models\Image','imageable');
+    //polimorfica
+    public function image()
+    {
+        return $this->morphOne('App\Models\Image', 'imageable');
     }
 }

@@ -1,10 +1,10 @@
 @extends('layout.template')
 
-@section('title', 'Rubros')
-@section('name_page','Todos los Rubros')
+@section('title', 'Empresas')
+@section('name_page','Todas las Empresas')
 
 @section('content')
     @include('layout.headers.header')
-    @include('rubro.all_rubros')
+    @include('empresa.all_empresas')
     @include('layout.footer')
 @endsection

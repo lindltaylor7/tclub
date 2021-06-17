@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,13 +18,17 @@
     <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/select2.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/slick.css')}}">
-    <link rel="stylesheet" href="{{asset('css/style.css')}}">
-
-    <title> </title>
-
+    <link rel="stylesheet" href="{{asset('style.css')}}">
+    <!-- endinject -->
+    <link rel="icon" type="image/png" sizes="32x32" href="{{asset('img/fevicon.png')}}">
 </head>
+
+
 <body>
     @yield('content')
+    
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA0C5etf1GVmL_ldVAichWwFFVcDfa1y_c"></script>
+    <!-- inject:js-->
     <script src="{{asset('js/jquery/jquery-1.12.3.js')}}"></script>
     <script src="{{asset('js/bootstrap/popper.js')}}"></script>
     <script src="{{asset('js/bootstrap/bootstrap.min.js')}}"></script>
@@ -40,8 +45,7 @@
     <script src="{{asset('js/locator.js')}}"></script>
     <script src="{{asset('js/main.js')}}"></script>
     <script src="{{asset('js/map.js')}}"></script>
+    <!-- endinject-->
 </body>
 
 </html>
-
-

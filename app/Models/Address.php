@@ -11,15 +11,14 @@ class Address extends Model
 
     use HasFactory;
 
-    //Relacion de 1 a muchos desde City (inversa)
+    //1 a muchos inverso
+    public function business()
+    {
+        return $this->belongsTo('App\Models\Business');
+    }
+
     public function city()
     {
         return $this->belongsTo('App\Models\City');
-    }
-
-    //Relacion polimorfica de 1 a 1
-    public function addressable()
-    {
-        return $this->morphTo();
     }
 }
