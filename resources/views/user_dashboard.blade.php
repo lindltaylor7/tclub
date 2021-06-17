@@ -6,6 +6,6 @@
     
     @include('usuario.user_dashboard_header')
     @include('usuario.user_dashboard_section')
-    @include('layout.sections.suscribe')
+    @include('layout.sections.nueva_suscripcion')
     @include('layout.footer')
 @endsection

@@ -45,21 +45,17 @@ class UserController extends Controller
             'phone' => 'required',
             'email'=>'required',
             'password'=>'required',
-
         ]);
 
         $request->merge([
-
             'type' =>'Free',
             'status' => 1,
 
             'rol_id' =>1
         ]);
-
-        $users = User::create($request->all());
+      $users = User::create($request->except(['file']));
         if( $request ->file('file')){
             $url= Storage::put('users', $request ->file('file'));
-
             $users->images()->create([
                 'url'=> $url
             ]);

@@ -13,7 +13,15 @@
                 <div class="col-lg-4 col-sm-6">
                     <div class="category-single category--img">
                         <figure class="category--img4">
-                            <img src="{{asset('img/cat1.jpg')}}" alt="">
+                           
+                           @foreach ($categoria->images as $image)
+                           @if($image->url)
+                           <img src="{{asset('storage/'.$image->url)}}" alt="">
+                           @else
+                           <img src="https://uladech.edu.pe/images/stories/noticias/portada/habilidades-digitales-aptitus-big.jpg" alt="">
+                           @endif
+                           @endforeach                   
+                             
                             <figcaption class="overlay-bg">
                                 <a href="{{route('rubro.show',$categoria->id)}}" class="cat-box">
                                     <div>
