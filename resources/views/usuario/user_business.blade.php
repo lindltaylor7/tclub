@@ -8,7 +8,7 @@
                     <article class="atbd_single_listing_wrapper ">
                         <figure class="atbd_listing_thumbnail_area">
                             <div class="atbd_listing_image">
-                                <a href=""><img src="img/p1.jpg" alt="listing image"></a>
+                                <a href=""><img src="{{asset('img/p1.jpg')}}" alt="listing image"></a>
                             </div>
                             <figcaption class="atbd_thumbnail_overlay_content">
                                 <div class="atbd_upper_badge">
@@ -55,7 +55,7 @@
                                     <p><span>Plan Name:</span> Basic Plan</p>
                                     <p><span>Expiration:</span> February 13, 2020</p>
                                     <p><span>Listing Status:</span> Published</p>
-                                /<div>
+                                </div>
                             </div><!-- end .atbd_listing_bottom_content -->
                         </div><!-- ends: .atbd_listing_info -->
                     </article>
