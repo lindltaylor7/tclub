@@ -7,7 +7,7 @@
                         <div class="menu-fullwidth">
                             <div class="logo-wrapper order-lg-0 order-sm-1">
                                 <div class="logo logo-top">
-                                    <a href="{{route('home')}}"><img src="{{asset('img/logo-white.png')}}" alt="logo image" class="img-fluid"></a>
+                                    <a href="{{route('home')}}"><img src="{{asset('img/logo-td.png')}}" width="100" alt="logo image" class="img-fluid"></a>
                                 </div>
                             </div><!-- ends: .logo-wrapper -->
                             <div class="menu-container order-lg-1 order-sm-0">
@@ -33,7 +33,7 @@
                                                 </li>
                                                 <li class="dropdown has_dropdown">
                                                     <a class="dropdown-toggle" href="#" id="drop2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                        Pages
+                                                        Nosotros
                                                     </a>
                                                     <ul class="dropdown-menu" aria-labelledby="drop2">
                                                         <li><a href="author-profile.html">Author Profile</a></li>
@@ -121,3 +121,4 @@
         <!-- end  -->
     </div>
 </div><!-- ends: .mainmenu-wrapper -->
+@include('usuarios.modal.register')

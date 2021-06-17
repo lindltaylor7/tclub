@@ -1,6 +1,6 @@
 <section class="intro-wrapper bgimage overlay overlay--dark">
 
-    <div class="bg_image_holder"><img src="{{asset('img/intro.jpg')}}" alt=""></div>
+    <div class="bg_image_holder"><img src="{{asset('img/portada-main.jpg')}}" alt=""></div>
     @include('layout.main_menu')
     <div class="directory_content_area">
         <div class="container">
@@ -61,5 +61,4 @@
 
 
 @include('layout.modals.modal_login')
-@include('usuario.usuario_register_modal')
 
