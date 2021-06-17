@@ -1,10 +1,11 @@
+
 <?php
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSocialsTable extends Migration
+class CreateOffersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +14,18 @@ class CreateSocialsTable extends Migration
      */
     public function up()
     {
-        Schema::create('socials', function (Blueprint $table) {
+        Schema::create('offers', function (Blueprint $table) {
             $table->id();
-            $table->string('facebookurl',200)->nullable();
-            $table->string('youtubeurl',200)->nullable();
-            $table->string('instagramurl',200)->nullable();
+            $table->string('name',100);
+            $table->string('description',255);
+            $table->double('price',11,2)->nullable();
+            $table->dateTime('start_date');
+            $table->dateTime('end_date');
+            $table->boolean('status');
 
             $table->unsignedBigInteger('business_id');
             $table->foreign('business_id')->references('id')->on('businesses')
-                                                            -> onDelete('cascade');
-
+                                                            ->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -34,6 +37,6 @@ class CreateSocialsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('socials');
+        Schema::dropIfExists('offers');
     }
 }

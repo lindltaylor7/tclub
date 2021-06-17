@@ -4,7 +4,8 @@
 @section('title', 'Rubro unico')
 
 @section('content')
-    @include('layout.header')
-    @include('layout.listing_card_rubro_unico')
+   
+    @include('rubro.rubro_unico_header')
+   @include('rubro.rubro_unico_empresas')
     @include('layout.footer')
 @endsection

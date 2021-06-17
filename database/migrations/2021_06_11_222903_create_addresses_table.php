@@ -15,16 +15,17 @@ class CreateAddressesTable extends Migration
     {
         Schema::create('addresses', function (Blueprint $table) {
 
+            $table->id();
             $table->string('street',50);
             $table->string('number',10);
             $table->string('district',50);
-            $table->unsignedBigInteger('addressable_id');
-            $table->string('addressable_type');
             $table->unsignedBigInteger('city_id');
+            $table->unsignedBigInteger('business_id');           
+            $table->foreign('city_id')->references('id')->on('cities')
+                                                        ->onDelete('cascade');
 
-            $table->primary(['addressable_id', 'addressable_type']);
-            $table->foreign('city_id')
-                    ->references('id')->on('cities')->onDelete('cascade');
+            $table->foreign('business_id')->references('id')->on('businesses')
+                                                            ->onDelete('cascade');
 
             $table->timestamps();
         });
@@ -40,3 +41,4 @@ class CreateAddressesTable extends Migration
         Schema::dropIfExists('addresses');
     }
 }
+

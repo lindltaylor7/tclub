@@ -1,5 +1,5 @@
 <section class="header-breadcrumb bgimage overlay overlay--dark">
-    <div class="bg_image_holder"><img src="{{asset('storage/portada_image/portadam.jpg')}}" alt=""></div>
+    <div class="bg_image_holder"><img src="img/breadcrumb1.jpg" alt=""></div>
     <div class="mainmenu-wrapper">
         <div class="menu-area menu1 menu--light">
             <div class="top-menu-area">
@@ -9,7 +9,7 @@
                             <div class="menu-fullwidth">
                                 <div class="logo-wrapper order-lg-0 order-sm-1">
                                     <div class="logo logo-top">
-                                        <a href="index.html"><img src="img/logo-white.png" alt="logo image" class="img-fluid"></a>
+                                        <a href="{{route('home')}}"><img src="{{asset('img/logo-white.png')}}" alt="logo image" class="img-fluid"></a>
                                     </div>
                                 </div><!-- ends: .logo-wrapper -->
                                 <div class="menu-container order-lg-1 order-sm-0">
@@ -29,7 +29,7 @@
                                                     <li class="dropdown has_dropdown">
                                                         <a href="#" class="dropdown-toggle" id="drop3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Listings</a>
                                                         <ul class="dropdown-menu" aria-labelledby="drop3">
-                                                
+                                                            
                                                             <li><a href="{{route('todosrubros')}}">Todos los Rubros</a></li>
                                                             <li><a href="{{route('rubrounico',1)}}">Rubro unico</a></li>
                                                             <li><a href="{{route('todasempresas')}}">Todas las empresas</a></li>
@@ -166,7 +166,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h1 class="page-title"Registro de Usuario</h1>
+                    <h1 class="page-title">{{$categories->name}}</h1>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>

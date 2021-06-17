@@ -1,5 +1,5 @@
 <section class="intro-wrapper bgimage overlay overlay--dark">
-    <div class="bg_image_holder"><img src="img/intro.jpg" alt=""></div>
+    <div class="bg_image_holder"><img src="{{asset('storage/portada_image/portadaL.jpg')}}" alt=""></div>
     <div class="mainmenu-wrapper">
         <div class="menu-area menu1 menu--light">
             <div class="top-menu-area">
@@ -9,7 +9,7 @@
                             <div class="menu-fullwidth">
                                 <div class="logo-wrapper order-lg-0 order-sm-1">
                                     <div class="logo logo-top">
-                                        <a href="index.html"><img src="img/logo-white.png" alt="logo image" class="img-fluid"></a>
+                                        <a href="{{route('home')}}"><img src="img/logo-white.png" alt="logo image" class="img-fluid"></a>
                                     </div>
                                 </div><!-- ends: .logo-wrapper -->
                                 <div class="menu-container order-lg-1 order-sm-0">
@@ -28,12 +28,9 @@
                                                     <li class="dropdown has_dropdown">
                                                         <a href="#" class="dropdown-toggle" id="drop3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Listings</a>
                                                         <ul class="dropdown-menu" aria-labelledby="drop3">
-                                                            <li><a href="{{route('rubrounico')}}">Rubro unico</a></li>
-                                                            <li><a href="{{route('busqueda_avanzada')}}">Busqueda avanzada</a></li>
-                                                            <li><a href="all-listings-list.html">Listing List</a></li>
-
-
-                                                            <li><a href="listing-details.html">Listing Details</a></li>
+                                                            <li><a href="{{route('todosrubros')}}">Todos los Rubros</a></li>
+                                                            <li><a href="{{route('rubrounico',1)}}">Rubro unico</a></li>
+                                                            <li><a href="{{route('todasempresas')}}">Todas las empresas</a></li>
                                                             <li><a href="add-listing.html">Add Listing</a></li>
                                                         </ul>
                                                     </li>
@@ -119,9 +116,9 @@
                                                     </a>
                                                 </li>
                                                 <li>
-                                                    <a href="" class="access-link" data-toggle="modal" data-target="#login_modal">Login</a>
+                                                    <a href="" class="btn btn-xs btn-gradient btn-gradient-two" data-toggle="modal" data-target="#login_modal">Login</a>
                                                     <span>or</span>
-                                                    <a href="" class="access-link" data-toggle="modal" data-target="#signup_modal">Register</a>
+                                                    <a href="" class="btn btn-xs btn-gradient btn-gradient-two" data-toggle="modal" data-target="#signup_modal">Registrarse</a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -178,7 +175,7 @@
                             </div>
                             <div class="single_search_field search_category">
                                 <select class="search_fields" id="at_biz_dir-category">
-                                    <option value="">Selecciona una categoria</option>
+                                    <option value="1">Selecciona una categoria</option>
                                     @foreach ($categorias as $categoria)
                                     <option value="{{$categoria->id}}">{{$categoria->name}}</option>
                                     @endforeach
@@ -213,7 +210,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="{{route('rubros')}}">
+                                <a href="{{route('todosrubros')}}">
                                     <span class="color-warning"><i class="la la-shopping-cart"></i></span>
                                     Rubros
                                 </a>
@@ -268,5 +265,5 @@
     </div>
 </div>
 
-@include('empresa.register_modal')
+@include('usuario.usuario_register_modal')
 

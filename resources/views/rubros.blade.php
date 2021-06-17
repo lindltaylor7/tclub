@@ -1,12 +1,11 @@
 @extends('layout.template')
 
-@section('title', 'Rubros')
-
-@section('name_page', 'Rubros')
+@section('title', 'Todos los rubros')
 
 @section('content')
-    @include('layout.header')
-    @include('index.card_rubros')
-    @include('index.card_rubros')
+   
+   
+    @include('rubro.rubros_header')
+    @include('rubro.rubros_list')
     @include('layout.footer')
 @endsection

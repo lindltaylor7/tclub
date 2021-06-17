@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Business;
+use App\Models\Category;
+use App\Models\City;
 use App\Models\User;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -15,7 +18,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        
     }
 
     /**
@@ -26,8 +29,6 @@ class UserController extends Controller
     public function create($id)
     {
 
-        $empresa = Business::find($id);
-        return view('usuario',compact('id','empresa'));
     }
 
     /**
@@ -38,24 +39,33 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
+
         $request->validate([
+
             'name' => 'required',
-            'email' => 'required',
-            'password' => 'required'
+            'phone' => 'required',
+            'email'=>'required',
+            'password'=>'required',
+            
         ]);
 
         $request->merge([
-            'type' => "Free",
+            
+            'type' =>'Free',
             'status' => 1,
-            'rol_id' => 1,
-            'password' => bcrypt($request->get('password'))
-
+            'rol_id' =>1
         ]);
 
-        return $request();
+        $users = User::create($request->all());
+        if( $request ->file('file')){
+            $url= Storage::put('users', $request ->file('file'));
+ 
+            $users->images()->create([
+                'url'=> $url
+            ]);
+         }
 
-        $user = User::create($request->all());
-        return redirect()->route('home');
+        return redirect()->route('user.dashboard',['id'=>$users->id]);
     }
 
     /**
@@ -66,7 +76,13 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+         $categorias = Category::all();
+         $cities = City::all();
+         $users = User::find($id);
+         $user = User::find($id);
+         $businesses = User::find($id)->businesses()->where('user_id',$id)->get();
+         $empresas = User::find($id)->businesses();        
+        return view('user_dashboard', compact('users','user', 'businesses','categorias','cities','empresas'));
     }
 
     /**

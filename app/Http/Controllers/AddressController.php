@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Business;
-use App\Models\Category;
-use App\Models\City;
+use App\Models\Address;
+Use App\Models\Business;
+use App\Models\User;
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class AddressController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,10 +16,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $categorias = Category::all();
-        $empresas = Business::all()->take(9);
-
-        return view('welcome', compact('categorias', 'empresas'));
+        //
     }
 
     /**
@@ -29,7 +26,7 @@ class HomeController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -40,7 +37,15 @@ class HomeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+
+            'street' => 'required'
+            
+        ]);
+        
+        $addresses = Address::create($request->all());
+        
+        return redirect()->back();
     }
 
     /**

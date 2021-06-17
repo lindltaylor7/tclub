@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBusinessCategoryTable extends Migration
+class CreateValorationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,14 @@ class CreateBusinessCategoryTable extends Migration
      */
     public function up()
     {
-        Schema::create('business_category', function (Blueprint $table) {
+        Schema::create('valorations', function (Blueprint $table) {
             $table->id();
+            $table->double('puntuation',5,2);
+            $table->integer('visit');
             $table->unsignedBigInteger('business_id');
-            $table->unsignedBigInteger('category_id');
 
-            $table->foreign('business_id')->references('id')->on('businesses')->onDelete('cascade');
-            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+            $table->foreign('business_id')
+                    ->references('id')->on('businesses')->onDelete('cascade');
 
             $table->timestamps();
         });
@@ -32,6 +33,6 @@ class CreateBusinessCategoryTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('business_category');
+        Schema::dropIfExists('valorations');
     }
 }

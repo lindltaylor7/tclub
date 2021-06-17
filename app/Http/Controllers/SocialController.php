@@ -2,12 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Business;
-use App\Models\Category;
-use App\Models\City;
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class SocialController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,10 +13,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $categorias = Category::all();
-        $empresas = Business::all()->take(9);
-
-        return view('welcome', compact('categorias', 'empresas'));
+        //
     }
 
     /**

@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="section-title">
-                    <h2>Best Listings Around the World</h2>
+                    <h2>Empresas del rubro:{{$categories->name}}</h2>
                     <p>Explore the popular listings around the world</p>
                 </div>
             </div>
@@ -73,12 +73,12 @@
                         </article><!-- atbd_single_listing_wrapper -->
                     </div>
                 </div><!-- ends: .col-lg-4 -->                
-                @endforeach         
+                @endforeach
+                   
                 </div>
-                <div class="col-lg-12 text-center m-top-20">
-                    <a href="{{route('todasempresas')}}" class="btn btn-gradient btn-gradient-two">Explororar todas las empresas</a>
-                </div>    
-
+                           
+                @include('layout.sections.pagination')
+                
 
 
             </div>
