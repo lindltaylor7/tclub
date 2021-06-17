@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateValorationsTable extends Migration
+class CreateImagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,11 @@ class CreateValorationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('valorations', function (Blueprint $table) {
+        Schema::create('images', function (Blueprint $table) {
             $table->id();
-
-            $table->double('puntuation',5,2);
-            $table->integer('views');
-
-            $table->unsignedBigInteger('business_id');
-
-            $table->foreign('business_id')->references('id')->on('businesses')->onDelete('cascade');
-
+            $table->string('url',255);
+            $table->unsignedBigInteger('imageable_id');
+            $table->string('imageable_type');
             $table->timestamps();
         });
     }
@@ -34,6 +29,6 @@ class CreateValorationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('valorations');
+        Schema::dropIfExists('images');
     }
 }

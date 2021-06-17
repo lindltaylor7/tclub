@@ -1,4 +1,5 @@
 <section class="intro-wrapper bgimage overlay overlay--dark">
+
     <div class="bg_image_holder"><img src="{{asset('img/intro.jpg')}}" alt=""></div>
     @include('layout.main_menu')
     <div class="directory_content_area">
@@ -16,6 +17,7 @@
                             </div>
                             <div class="single_search_field search_category">
                                 <select class="search_fields" id="at_biz_dir-category">
+
                                     <option value="#">Seleccione un Rubro</option>
                                     @foreach ($categorias as $categoria)
                                         <option value="{{$categoria->id}}">{{$categoria->name}}</option>
@@ -37,6 +39,7 @@
                     </form><!-- ends: .search_form -->
                     <div class="directory_home_category_area">
                         <ul class="categories">
+
                             @foreach ($categorias as $cat)
                                 <li>
                                     <a href="{{route('rubro.show',$cat->id)}}" value="{{$cat->id}}">
@@ -53,5 +56,6 @@
     </div><!-- ends: .directory_search_area -->
 </section><!-- ends: .intro-wrapper -->
 
+
 @include('layout.modals.modal_login')
-@include('usuario.modal_registro')
+@include('usuario.usuario_register_modal')

@@ -1,5 +1,6 @@
 @extends('layout.template')
 
+
 @section('title', 'Rubros')
 @section('name_page','Todos los Rubros')
 

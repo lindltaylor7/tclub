@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Address;
+Use App\Models\Business;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class AddressController extends Controller
@@ -23,7 +26,6 @@ class AddressController extends Controller
      */
     public function create()
     {
-        //
     }
 
     /**
@@ -34,7 +36,16 @@ class AddressController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+
+            'street' => 'required'
+            
+        ]);
+        
+        $addresses = Address::create($request->all());
+        
+        return redirect()->back();
+
     }
 
     /**

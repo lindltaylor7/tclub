@@ -14,18 +14,17 @@ class City extends Model
     //1 a muchos de ida
     public function addresses()
     {
-        return $this->hasMany('App\Models\Address');
-    }
-
-    //muchos a muchos
-    public function categories()
-    {
-        return $this->belongsToMany('App\Models\Category');
+     return $this->hasMany('App\Models\Address');
     }
     
-    //polimorfica
-    public function image()
-    {
-        return $this->morphOne('App\Models\Image', 'imageable');
-    }    
+    //Relacion de muchos a muchos
+    public function categories(){
+      return $this->belongsToMany('App\Models\Category');    
+    }
+    //Relacion polimorfica de muchos a muchos
+    public function images(){
+      return $this->morphMany('App\Models\Image','imageable');
+    }
+
+   
 }

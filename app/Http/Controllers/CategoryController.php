@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Business;
 use App\Models\Category;
+use App\Models\Social;
+
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -16,8 +18,12 @@ class CategoryController extends Controller
     public function index()
     {
         $categorias = Category::all();
+        $empresas = Business::all();
+        $socials = Social::all();
         
-        return view('rubros',compact('categorias'));
+        
+        return view('rubros', compact('categorias', 'empresas'));
+
     }
 
     /**
@@ -49,6 +55,7 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
+
         $categorias = Category::all();
         $unico = Category::find($id);
         $empresas = Category::find($id)->businesses()->where('category_id',$id)->get();

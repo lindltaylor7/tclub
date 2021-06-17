@@ -10,22 +10,18 @@ class User extends Model
     protected $guarded = [];
 
     use HasFactory;
-
-    //1 a muchos inverso
-    public function role()
-    {
-        return $this->belongsTo('App\Models\Role');
+    
+    //Relacion de uno a muchos inverso
+    public function rol(){
+        return $this->belongsTo('App\Models\Rol');
     }
+   //Relacion de uno a muchos
+   public function businesses(){
+       return $this->hasMany('App\Models\Business');
+   }
+     //Relacion polimorfica de muchos a muchos
+   public function images(){
+    return $this->morphMany('App\Models\Image','imageable');
+   }
 
-    //1 a muchos de ida
-    public function businesses()
-    {
-        return $this->hasMany('App\Models\Business');
-    }
-
-    //polimorfica
-    public function image()
-    {
-        return $this->morphOne('App\Models\Image', 'imageable');
-    }
 }

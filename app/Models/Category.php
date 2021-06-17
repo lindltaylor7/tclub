@@ -22,9 +22,12 @@ class Category extends Model
         return $this->belongsToMany('App\Models\City');
     }
 
-    //polimorfica
-    public function image()
-    {
-        return $this->morphOne('App\Models\Image', 'imageable');
-    }
+
+   //Relacion polimorfica de muchos a muchos
+   public function images(){
+   return $this->morphMany('App\Models\Image','imageable');
+   }
+
+
+
 }

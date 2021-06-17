@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Business;
+use App\Models\User;
 use App\Models\Category;
 use App\Models\City;
 use Illuminate\Http\Request;
@@ -16,11 +17,15 @@ class BusinessController extends Controller
      */
     public function index()
     {
+
+
+        $businesses = Business::paginate(6);
+      
         $empresas = Business::all();
         $categorias = Category::all();
         $ciudades = City::all();
 
-        return view('empresas',compact('empresas','categorias','ciudades'));
+        return view('empresas',compact('empresas','categorias','ciudades','businesses'));
     }
 
     /**
@@ -28,9 +33,9 @@ class BusinessController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        //
+        
     }
 
     /**
@@ -41,7 +46,19 @@ class BusinessController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+
+            'name' => 'required',
+            'phone' => 'required'
+        ]);
+        $request->merge([
+            'status' => 1
+        ]);
+
+        $bussines = Business::create($request->all());
+        $bussines ->categories()->attach($request->get('category_id'));
+        return redirect()->route('user.dashboard',['id'=>$bussines->user_id]);
+
     }
 
     /**
@@ -68,7 +85,7 @@ class BusinessController extends Controller
      */
     public function edit($id)
     {
-        //
+      
     }
 
     /**
