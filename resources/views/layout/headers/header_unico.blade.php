@@ -5,11 +5,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h1 class="page-title"Registro de Usuario</h1>
+                    <h1 class="page-title">{{$unico->name}}</h1>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="{{route('home')}}">Inicio</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">@yield('name_page')</li>
+                            <li class="breadcrumb-item active" aria-current="page">{{$unico->name}}</li>
                         </ol>
                     </nav>
                 </div>

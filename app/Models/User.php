@@ -7,10 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class User extends Model
 {
-    protected $fillable = ['name','phone','email','password','type','status','rol_id','business_id'];
     protected $guarded = [];
-    use HasFactory;
 
+    use HasFactory;
+    
     //Relacion de uno a muchos inverso
     public function rol(){
         return $this->belongsTo('App\Models\Rol');
@@ -23,4 +23,5 @@ class User extends Model
    public function images(){
     return $this->morphMany('App\Models\Image','imageable');
    }
+
 }

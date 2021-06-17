@@ -1,10 +1,9 @@
 @extends('layout.template')
 
-@section('title', 'Ciudad')
+@section('title', 'Rubro')
 
 @section('content')
     @include('layout.headers.header_unico')
-    @include('ciudad.rubros_ciudad')
-    @include('ciudad.all_ciudades')
+    @include('rubro.empresas_rubro')
     @include('layout.footer')
 @endsection

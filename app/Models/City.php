@@ -7,10 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class City extends Model
 {
-  protected $guarded = [];
+    protected $guarded = [];
+
     use HasFactory;
 
-    //Relacion de 1 a muchos para Address
+    //1 a muchos de ida
     public function addresses()
     {
      return $this->hasMany('App\Models\Address');
@@ -24,4 +25,6 @@ class City extends Model
     public function images(){
       return $this->morphMany('App\Models\Image','imageable');
     }
+
+   
 }

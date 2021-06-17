@@ -1,10 +1,10 @@
 @extends('layout.template')
 
-@section('title', 'Todas las empresas')
+@section('title', 'Empresas')
+@section('name_page','Todas las Empresas')
 
 @section('content')
-    
-    @include('empresa.empresas_header')
-    @include('empresa.all_business_list')
+    @include('layout.headers.header')
+    @include('empresa.all_empresas')
     @include('layout.footer')
 @endsection

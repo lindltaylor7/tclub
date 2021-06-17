@@ -1,12 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\Business;
 use App\Models\Category;
 use App\Models\City;
 use App\Models\User;
 use Illuminate\Support\Facades\Storage;
+
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -26,9 +26,10 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($id)
+    public function create()
     {
 
+        //
     }
 
     /**
@@ -39,7 +40,6 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-
         $request->validate([
 
             'name' => 'required',
@@ -66,6 +66,7 @@ class UserController extends Controller
          }
 
         return redirect()->route('user.dashboard',['id'=>$users->id]);
+
     }
 
     /**

@@ -13,13 +13,14 @@ class Address extends Model
     use HasFactory;
 
 
-    //Relacion de 1 a muchos inversa
+    //1 a muchos inverso
     public function business()
     {
         return $this->belongsTo('App\Models\Business');
     }
 
-    //Relacion de 1 a muchos desde City (inversa)
+
+
     public function city()
     {
         return $this->belongsTo('App\Models\City');

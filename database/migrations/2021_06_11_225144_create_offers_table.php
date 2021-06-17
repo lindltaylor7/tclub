@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateValorationsTable extends Migration
+class CreateOffersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,15 @@ class CreateValorationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('valorations', function (Blueprint $table) {
+        Schema::create('offers', function (Blueprint $table) {
             $table->id();
 
-            $table->double('puntuation',5,2);
-            $table->integer('views');
+            $table->string('name',100);
+            $table->string('description',255)->nullable();
+            $table->double('price',11,2)->nullable();
+            $table->dateTime('start_date');
+            $table->dateTime('end_date');
+            $table->boolean('status');
 
             $table->unsignedBigInteger('business_id');
 
@@ -34,6 +38,6 @@ class CreateValorationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('valorations');
+        Schema::dropIfExists('offers');
     }
 }

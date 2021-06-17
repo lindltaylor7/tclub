@@ -2,16 +2,16 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 offset-md-2">
-                <h1>Subscribe to Newsletter</h1>
-                <p>Subscribe to get update and information. Don't worry, we won't send spam!</p>
+                <h1>Suscríbete para conocer más</h1>
+                <p>Suscríbete para recibir las últimas novedades. ¡No se preocupe, no le enviaremos SPAM!</p>
                 <form action="/" class="subscribe-form m-top-40">
                     <div class="form-group">
                         <span class="la la-envelope-o"></span>
-                        <input type="text" placeholder="Enter your email" required>
+                        <input type="text" placeholder="Ingrese su email" required>
                     </div>
-                    <button class="btn btn-gradient btn-gradient-one">Submit</button>
+                    <button class="btn btn-gradient btn-gradient-one">Suscribirse</button>
                 </form>
             </div>
         </div>
     </div>
-</section>
+</section><!-- ends: .subscribe-wrapper -->

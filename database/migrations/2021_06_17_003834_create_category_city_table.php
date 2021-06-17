@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBusinessCategoryTable extends Migration
+class CreateCategoryCityTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class CreateBusinessCategoryTable extends Migration
      */
     public function up()
     {
-        Schema::create('business_category', function (Blueprint $table) {
+        Schema::create('category_city', function (Blueprint $table) {
             $table->id();
 
-            $table->unsignedBigInteger('business_id');
+            $table->unsignedBigInteger('city_id');
             $table->unsignedBigInteger('category_id');
 
-            $table->foreign('business_id')->references('id')->on('businesses')->onDelete('cascade');
+            $table->foreign('city_id')->references('id')->on('cities')->onDelete('cascade');
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
 
             $table->timestamps();
@@ -33,8 +33,6 @@ class CreateBusinessCategoryTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('business_category');
+        Schema::dropIfExists('category_city');
     }
 }
-
-

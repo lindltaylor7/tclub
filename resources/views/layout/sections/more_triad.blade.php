@@ -3,8 +3,8 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="section-title">
-                    <h2>Why <span>TriadClub</span> for your Business?</h2>
-                    <p>Explore the popular listings around the world</p>
+                    <h2>¿Por qué usar <span>TRIAD CLUB</span> para tu negocio?</h2>
+                    <p>Sé parte de la red más grande de Empresas del País</p>
                 </div>
             </div>
             <div class="col-lg-12">
@@ -37,12 +37,12 @@
                             </li>
                         </ul><!-- ends: .feature-list-wrapper -->
                         <ul class="action-btns list-unstyled">
-                            <li><a href="" class="btn btn-success">See our Pricing</a></li>
-                            <li><a href="" class="btn btn-primary">Submit Listings</a></li>
+                            <li><a href="#" class="btn btn-success">Saber más</a></li>
+                            <li><a href="" class="btn btn-primary" data-toggle="modal" data-target="#signup_modal">Registrarse</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</section>
+</section><!-- ends: .cta -->

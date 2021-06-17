@@ -26,7 +26,6 @@ class AddressController extends Controller
      */
     public function create()
     {
-
     }
 
     /**
@@ -46,6 +45,7 @@ class AddressController extends Controller
         $addresses = Address::create($request->all());
         
         return redirect()->back();
+
     }
 
     /**
