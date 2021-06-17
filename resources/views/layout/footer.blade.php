@@ -61,7 +61,7 @@
                 <div class="col-lg-12">
                     <div class="footer-bottom--content">
                         <a href="" class="footer-logo"><img src="img/logo.png" alt=""></a>
-                        <p class="m-0 copy-text">©2019 Direo. Made with <span class="la la-heart-o"></span> by <a href="">Aazztech</a></p>
+                        <p class="m-0 copy-text">©2021 Triad Club<span class="la la-heart-o"></span> by <a href="">Triad Software</a></p>
                         <ul class="list-unstyled lng-list">
                             <li><a href="">English</a></li>
                         </ul>

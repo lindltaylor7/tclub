@@ -15,7 +15,6 @@ class CreateSocialsTable extends Migration
     {
         Schema::create('socials', function (Blueprint $table) {
             $table->id();
-
             $table->string('facebook_url',200)->nullable();
             $table->string('youtube_url',200)->nullable();
             $table->string('instagram_url',200)->nullable();

@@ -20,9 +20,9 @@ class CategoryController extends Controller
         $categorias = Category::all();
         $empresas = Business::all();
         $socials = Social::all();
-        
-        
-        return view('rubros', compact('categorias', 'empresas'));
+
+
+        return view('rubros.index', compact('categorias', 'empresas'));
 
     }
 
@@ -60,7 +60,7 @@ class CategoryController extends Controller
         $unico = Category::find($id);
         $empresas = Category::find($id)->businesses()->where('category_id',$id)->get();
 
-        return view('rubro', compact('categorias','unico','empresas'));
+        return view('rubros.show', compact('categorias','unico','empresas'));
     }
 
     /**

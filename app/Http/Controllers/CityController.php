@@ -20,7 +20,7 @@ class CityController extends Controller
         $ciudades = City::all();
         $ciudades_top = City::all()->take(4);
 
-        return view('ciudades', compact('ciudades','ciudades_top'));
+        return view('ciudades.index', compact('ciudades','ciudades_top'));
     }
 
     /**
@@ -58,8 +58,8 @@ class CityController extends Controller
         $ciudad = City::find($id);
 
         $cat = City::find($id)->categories()->where('city_id',$id)->first();
-        
-        return view('ciudad', compact('ciudades','unico','categorias','ciudad','cat'));
+
+        return view('ciudades.show', compact('ciudades','unico','categorias','ciudad','cat'));
 
     }
 
