@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Business;
 use App\Models\Category;
 use App\Models\City;
@@ -43,26 +44,24 @@ class UserController extends Controller
 
             'name' => 'required',
             'phone' => 'required',
-            'email'=>'required',
-            'password'=>'required',
+            'email' => 'required',
+            'password' => 'required',
         ]);
 
         $request->merge([
-            'type' =>'Free',
-            'status' => 1,
-
-            'rol_id' =>1
+            'type' => 'Free',
+            'status' => 1
         ]);
-      $users = User::create($request->except(['file']));
-        if( $request ->file('file')){
-            $url= Storage::put('users', $request ->file('file'));
+
+        $users = User::create($request->except(['file']));
+        if ($request->file('file')) {
+            $url = Storage::put('users', $request->file('file'));
             $users->images()->create([
-                'url'=> $url
+                'url' => $url
             ]);
-         }
+        }
 
-        return redirect()->route('user.dashboard',['id'=>$users->id]);
-
+        return redirect()->route('user.dashboard', ['id' => $users->id]);
     }
 
     /**
@@ -73,13 +72,13 @@ class UserController extends Controller
      */
     public function show($id)
     {
-         $categorias = Category::all();
-         $cities = City::all();
-         $users = User::find($id);
-         $user = User::find($id);
-         $businesses = User::find($id)->businesses()->where('user_id',$id)->get();
-         $empresas = User::find($id)->businesses();
-        return view('user_dashboard', compact('users','user', 'businesses','categorias','cities','empresas'));
+        $categorias = Category::all();
+        $cities = City::all();
+        $users = User::find($id);
+        $user = User::find($id);
+        $businesses = User::find($id)->businesses()->where('user_id', $id)->get();
+        $empresas = User::find($id)->businesses();
+        return view('usuarios.show', compact('users', 'user', 'businesses', 'categorias', 'cities', 'empresas'));
     }
 
     /**

@@ -20,12 +20,11 @@ class BusinessController extends Controller
 
 
         $businesses = Business::paginate(6);
-      
         $empresas = Business::all();
         $categorias = Category::all();
         $ciudades = City::all();
 
-        return view('empresas',compact('empresas','categorias','ciudades','businesses'));
+        return view('empresas.index',compact('empresas','categorias','ciudades','businesses'));
     }
 
     /**
@@ -35,7 +34,7 @@ class BusinessController extends Controller
      */
     public function create($id)
     {
-        
+
     }
 
     /**
@@ -73,8 +72,8 @@ class BusinessController extends Controller
         $categorias = Category::all();
         $empresas = Business::all();
         $cat = Business::find($id)->categories()->where('business_id',$id)->first();
-        
-        return view('empresa',compact('unico','categorias','empresas','cat'));
+
+        return view('empresas.show',compact('unico','categorias','empresas','cat'));
     }
 
     /**
@@ -85,7 +84,7 @@ class BusinessController extends Controller
      */
     public function edit($id)
     {
-      
+
     }
 
     /**
