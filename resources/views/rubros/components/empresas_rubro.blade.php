@@ -16,7 +16,7 @@
                                     <figure class="atbd_listing_thumbnail_area">
                                         <div class="atbd_listing_image">
                                             <a href="">
-                                                <img src="{{asset('img/p1.jpg')}}" alt="listing image">
+                                                <img src="{{asset('img/card-empresas.jpg')}}" alt="listing image">
                                             </a>
                                         </div><!-- ends: .atbd_listing_image -->
                                         <div class="atbd_author atbd_author--thumb">
@@ -29,7 +29,7 @@
                                     <div class="atbd_listing_info">
                                         <div class="atbd_content_upper">
                                             <h4 class="atbd_listing_title">
-                                                <a href="">{{$empresa->name}}</a>
+                                                <a href="{{route('empresa.show',$empresa->id)}}">{{$empresa->name}}</a>
                                             </h4>
                                             <div class="atbd_listing_meta">
                                                 <span class="atbd_meta atbd_listing_rating">{{$empresa->valorations->avg('puntuation')}}<i class="la la-star"></i></span>

@@ -56,7 +56,7 @@
                                                 <input type="checkbox" value="1"><span class="color-success"><i class="la la-clock-o"></i> Abierto ahora</span>
                                             </label>
                                         </div>
-                                        
+
                                     </div>
                                     <div class="filter-checklist">
                                         <h5>Filtrar por Puntuación</h5>
@@ -128,7 +128,7 @@
                             </div><!-- ends: .default-ad-search -->
                         </div>
                     </div><!-- ends: .col-lg-4 -->
-                    
+
                     <div class="col-lg-8 order-0 order-lg-1">
                         <div class="row">
                             @foreach ($empresas as $empresa)
@@ -138,7 +138,7 @@
                                             <figure class="atbd_listing_thumbnail_area">
                                                 <div class="atbd_listing_image">
                                                     <a href="{{route('empresa.show',$empresa->id)}}">
-                                                        <img src="{{asset('img/p1.jpg')}}" alt="listing image">
+                                                        <img src="{{asset('img/card-empresas.jpg')}}" alt="listing image">
                                                     </a>
                                                 </div><!-- ends: .atbd_listing_image -->
                                             </figure><!-- ends: .atbd_listing_thumbnail_area -->
