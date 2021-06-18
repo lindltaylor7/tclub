@@ -7,7 +7,6 @@ use App\Models\Category;
 use App\Models\City;
 use App\Models\User;
 use Illuminate\Support\Facades\Storage;
-
 use Illuminate\Http\Request;
 
 class UserController extends Controller

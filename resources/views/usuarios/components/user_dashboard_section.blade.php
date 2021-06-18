@@ -6,13 +6,19 @@
                     <div class="dashboard-nav-area">
                         <ul class="nav" id="dashboard-tabs" role="tablist">
                             <li class="nav-item">
-                                <a class="nav-link active" id="all-listings" data-toggle="tab" href="#listings" role="tab" aria-controls="listings" aria-selected="true">Mis empresas</a>
+                                <a class="nav-link active" id="all-listings" data-toggle="tab" href="#listings" role="tab" aria-controls="listings" aria-selected="true">Acciones</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Mi perfil de usuario</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" id="faborite-listings" data-toggle="tab" href="#favorite" role="tab" aria-controls="favorite" aria-selected="false">Mis actividades</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="faborite-listings" data-toggle="tab" href="#favorite" role="tab" aria-controls="favorite" aria-selected="false">Ciudades</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="faborite-listings" data-toggle="tab" href="#category" role="category" aria-controls="favorite" aria-selected="false">Categorias</a>
                             </li>
                         </ul>
                         <div class="nav_button">
@@ -28,6 +34,7 @@
         @include('usuarios.components.partials.user_business')
         @include('usuarios.components.partials.user_profile')
         @include('usuarios.components.partials.user_activities')
+        @include('usuarios.components.partials.user_categories')
     </div>
 </section>
 @include('empresas.components.register_modal')

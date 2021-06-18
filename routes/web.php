@@ -31,3 +31,5 @@ Route::get('/business/register/{id}',[BusinessController::class,'create'])->name
 Route::post('/business/register',[BusinessController::class,'store'])->name('bussines.register');
 Route::post('/business/register/address',[AddressController::class,'store'])->name('address.register');
 Route::post('/business/register/social',[SocialController::class,'store'])->name('social.register');
+
+Route::post('/category/register', [CategoryController::class,'store'])->name("category.register");
