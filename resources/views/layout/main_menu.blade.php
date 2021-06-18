@@ -146,6 +146,7 @@
                                             <img src="img/author-avatar.png" alt="" class="rounded-circle">
                                         </div>
                                         <ul class="list-unstyled">
+                                            @if (Auth::check())
                                             <li><a href="{{route('user.dashboard',Auth::id())}}">Mi Dashboard</a></li>
 
                                             <li>
@@ -154,6 +155,16 @@
                                                         Sesión</a>
                                                 </form>
                                             </li>
+                                            @else
+                                            <li>
+                                                <a href="" class="access-link btn btn-xs btn-gradient btn-gradient-two mb-3"
+                                                    data-toggle="modal" data-target="#login_modal">Login</a>
+
+                                                <a href="" class="access-link btn btn-xs btn-gradient btn-gradient-two"
+                                                    data-toggle="modal" data-target="#signup_modal">Registro</a>
+                                            </li>
+                                            @endif
+
                                         </ul>
                                      <!-- ends: .search_area -->
                                     </div><!-- ends: .author-info -->
