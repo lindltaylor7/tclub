@@ -12,13 +12,18 @@
                     @foreach ($ciudades_top as $ciudad_top)
                         <div class="category-place-single">
                             <figure>
-                                <a href="{{route('ciudad.show',$ciudad_top->id)}}"><img src="{{asset('img/place1.jpg')}}" alt=""></a>
+                                <a href="{{route('ciudad.show',$ciudad_top->id)}}">
+                                    @foreach ($ciudad_top->images as $image)
+                                    <img src="{{asset('storage/'.$image->url)}}" alt="imagen ciudad" style="width:545px; height: 270px;">
+                                    @endforeach
+                                </a>
                                 <figcaption>
+
                                     <h3>{{$ciudad_top->name}}</h3>
                                     <p>{{$ciudad_top->addresses->count()}} empresas</p>
                                 </figcaption>
                             </figure>
-                        </div><!-- ends: .category-place-single -->                        
+                        </div><!-- ends: .category-place-single -->
                     @endforeach
                 </div><!-- ends: .col-lg-12 -->
             </div>

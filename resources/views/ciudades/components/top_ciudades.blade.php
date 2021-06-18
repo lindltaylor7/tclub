@@ -12,7 +12,11 @@
                     @foreach ($ciudades_top as $c)
                     <div class="category-place-single">
                         <figure>
-                            <a href="{{route('ciudad.show',$c->id)}}"><img src="{{asset('img/place1.jpg')}}" alt=""></a>
+                            <a href="{{route('ciudad.show',$c->id)}}">
+                                @foreach ($c->images as $image)
+                                <img src="{{asset('storage/'.$image->url)}}" alt="imagen ciudad" style="width:545px; height: 270px;">
+                                @endforeach
+                            </a>
                             <figcaption>
                                 <h3>{{$c->name}}</h3>
                                 <p>({{$c->addresses->count()}})</p>

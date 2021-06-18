@@ -6,7 +6,7 @@
                     <div class="dashboard-nav-area">
                         <ul class="nav" id="dashboard-tabs" role="tablist">
                             <li class="nav-item">
-                                <a class="nav-link active" id="all-listings" data-toggle="tab" href="#listings" role="tab" aria-controls="listings" aria-selected="true">Acciones</a>
+                                <a class="nav-link active" id="all-listings" data-toggle="tab" href="#listings" role="tab" aria-controls="listings" aria-selected="true">Mis Empresas</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Mi perfil de usuario</a>
@@ -14,13 +14,19 @@
                             <li class="nav-item">
                                 <a class="nav-link" id="faborite-listings" data-toggle="tab" href="#favorite" role="tab" aria-controls="favorite" aria-selected="false">Mis actividades</a>
                             </li>
+                            @can('edit.cities')
                             <li class="nav-item">
                                 <a class="nav-link" id="faborite-listings" data-toggle="tab" href="#city" role="tab" aria-controls="city" aria-selected="false">Ciudades</a>
                             </li>
+                            @endcan
+
+                            @can('edit.rubros')
                             <li class="nav-item">
-                                
                                 <a class="nav-link" id="faborite-listings" data-toggle="tab" href="#category" role="category" aria-controls="favorite" aria-selected="false">Categorias</a>
                             </li>
+                            @endcan
+
+
                         </ul>
                         <div class="nav_button">
                             <a href="#" class="btn btn-xs btn-gradient btn-gradient-two" data-toggle="modal" data-target="#Registerb_modal"><span class="la la-plus"></span>Agregar</a>

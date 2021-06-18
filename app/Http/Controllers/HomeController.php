@@ -99,7 +99,7 @@ class HomeController extends Controller
         $credentials = $request->only('email','password');
         if(Auth::attempt($credentials)){
             request()->session()->regenerate();
-            return redirect()->route('user.dashboard',['id'=> 2]);
+            return redirect()->route('user.dashboard',['id'=> Auth::id()]);
         }
         return redirect()->route('home');
 
