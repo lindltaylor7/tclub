@@ -17,7 +17,11 @@
                         </ul>
                         <div class="nav_button">
                             <a href="#" class="btn btn-xs btn-gradient btn-gradient-two" data-toggle="modal" data-target="#Registerb_modal"><span class="la la-plus"></span>Agregar</a>
-                            <a href="" class="btn btn-xs btn-gradient btn-gradient-two">Log Out</a>
+                            <form style="display: inline" action="{{route('logout')}}" method="POST">
+                                @csrf
+                                <a href="#" class="btn btn-xs btn-gradient btn-gradient-two" onclick="this.closest('form').submit()">Log Out</a>
+                            </form>
+
                         </div>
                     </div>
                 </div><!-- ends: .col-lg-12 -->

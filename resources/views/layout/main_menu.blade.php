@@ -79,7 +79,7 @@
                                         <ul class="d-flex list-unstyled align-items-center">
                                             <li>
                                                 <a href="" class="access-link btn btn-xs btn-gradient btn-gradient-two" data-toggle="modal" data-target="#login_modal">Login</a>
-                                                <span>or</span>
+                                                <span>o</span>
                                                 <a href="" class="access-link btn btn-xs btn-gradient btn-gradient-two" data-toggle="modal" data-target="#signup_modal">Registro</a>
                                             </li>
                                         </ul>
@@ -98,7 +98,11 @@
                                             <li><a href="dashboard-listings.html">Mis Empresas</a></li>
                                             <li><a href="dashboard-listings.html">Mis Ofertas</a></li>
                                             <li><a href="add-listing.html">Agregar Empresa</a></li>
-                                            <li><a href="">Cerrar Sesión</a></li>
+                                            <li>
+                                                <form action="{{route('logout')}}" method="POST">
+                                                    <a href="#" onclick="this.closest('form').submit()">Cerrar Sesión</a>
+                                                </form>
+                                            </li>
                                         </ul>
                                         <div class="search_area">
                                             <form action="/">
