@@ -6,7 +6,9 @@ use App\Models\Address;
 use App\Models\Business;
 use App\Models\Category;
 use App\Models\City;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class CityController extends Controller
 {
@@ -28,9 +30,9 @@ class CityController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        //
+        
     }
 
     /**
@@ -41,7 +43,21 @@ class CityController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required'
+        ]);
+        $request->merge([
+            'status' => 1
+        ]);
+
+        $cities = City::create($request->except(['fileCity']));
+        if ($request->file('fileCity')){
+            $url = Storage::put('ciudades', $request->file('fileCity'));
+            $cities->images()->create([
+                'url' => $url
+            ]);
+        }
+        return redirect()->back();
     }
 
     /**
