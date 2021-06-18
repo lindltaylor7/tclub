@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Business;
 use App\Models\Category;
 use App\Models\Social;
-
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class CategoryController extends Controller
 {
@@ -44,7 +44,22 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+
+            'name' => 'required',
+            
+        ]);
+        $request->merge([
+            'status' => 1,
+        ]);
+        $categories = Category::create($request->except(['fileCategory']));
+        if ($request->file('fileCategory')) {
+            $url = Storage::put('rubros', $request->file('fileCategory'));
+            $categories->images()->create([
+                'url' => $url
+            ]);
+        }
+        return redirect()->back();
     }
 
     /**

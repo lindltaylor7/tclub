@@ -9,6 +9,7 @@ use App\Models\City;
 use App\Models\Valoration;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -91,5 +92,22 @@ class HomeController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function login(Request $request)
+    {
+        $credentials = $request->only('email','password');
+        if(Auth::attempt($credentials)){
+            request()->session()->regenerate();
+            return redirect()->route('user.dashboard',['id'=> 2]);
+        }
+        return redirect()->route('home');
+
+    }
+    public function logout(Request $request){
+        Auth::logout();
+        request()->session()->invalidate();
+        request()->session()->regenerateToken();
+        return redirect()->route('home');
     }
 }

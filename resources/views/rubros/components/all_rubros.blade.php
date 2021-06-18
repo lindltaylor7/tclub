@@ -14,11 +14,9 @@
             <div class="col-lg-4 col-sm-6">
                 <div class="category-single category--img">
                     <figure class="category--img4">
-                        @if($categoria->image)
-                        <img src="{{asset('storage/'.$image->url)}}" alt="">
-                        @else
-                        <img src="{{asset('img/cat1.jpg')}}" alt="">
-                        @endif
+                        @foreach ($categoria->images as $image)
+                            <img  src="{{asset('storage/'.$image->url)}}" alt=""> 
+                         @endforeach  
                         <figcaption class="overlay-bg">
                             <a href="{{route('rubro.show',$categoria->id)}}" class="cat-box">
                                 <div>
