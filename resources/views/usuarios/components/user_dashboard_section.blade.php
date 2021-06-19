@@ -16,7 +16,7 @@
                             </li>
                             @can('edit.cities')
                             <li class="nav-item">
-                                <a class="nav-link" id="faborite-listings" data-toggle="tab" href="#city" role="tab" aria-controls="city" aria-selected="false">Ciudades</a>
+                                <a class="nav-link" id="ciudades" data-toggle="tab" href="#ciudad" role="tab" aria-controls="ciudad" aria-selected="false">Ciudades</a>
                             </li>
                             @endcan
 
@@ -26,6 +26,17 @@
                             </li>
                             @endcan
 
+                            @if (session('actualizar_ciudad'))
+                                <script>
+                                    alert("Actualización Completa");
+                                </script>
+                            @endif
+
+                            @if (session('borrar_ciudad'))
+                                <script>
+                                    alert("Borrado Completo");
+                                </script>
+                            @endif
 
                         </ul>
                         <div class="nav_button">
@@ -50,3 +61,4 @@
     </div>
 </section>
 @include('empresas.components.register_modal')
+

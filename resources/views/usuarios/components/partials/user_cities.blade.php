@@ -1,4 +1,4 @@
-<div class="tab-pane fade p-bottom-30" id="city" role="tabpanel" aria-labelledby="all_cities">
+<div class="tab-pane fade p-bottom-30" id="ciudad" role="tab-pane" aria-labelledby="ciudades">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -27,14 +27,10 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach($cities as $city)
+                                        @foreach($cities as $city)
                                             <tr class="text-center">
                                                 <td>
-                                                    @if ($city->status == '1') 
-                                                    <button type="button" class="btn btn-warning la la-pencil"></button> <button type="button" class="btn btn-danger la la-trash"></button>
-                                                    @else
-                                                    <button type="button" class="btn btn-warning la la-pencil"></button> <button type="button" class="btn btn-info la la-check"></button>
-                                                    @endif
+                                                    <button href="#" type="button" class="btn btn-warning la la-pencil" data-toggle="modal" data-target="#Update_modal{{$city->id}}"></button> <button type="button" class="btn btn-danger la la-trash" data-toggle="modal" data-target="#Delete_modal{{$city->id}}" href="#"></button>
                                                 </td>
                                                 <td>{{ $city->name }}</td>
                                                 <td>
@@ -51,9 +47,11 @@
                                                 <td class="text-center">
                                                     @foreach ($city->images as $image)
                                                     <img  widht="75" height="75" src="{{asset('storage/'.$image->url)}}" alt=""> 
-                                                    @endforeach                                    
+                                                    @endforeach
                                                 </td>
                                             </tr>
+                                            @include('usuarios.ciudad_atributes.edit_modal')
+                                            @include('usuarios.ciudad_atributes.delete_modal')
                                         @endforeach
                                         </tbody>
                                     </table>

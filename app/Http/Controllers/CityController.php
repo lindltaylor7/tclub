@@ -57,7 +57,7 @@ class CityController extends Controller
                 'url' => $url
             ]);
         }
-        return redirect()->back();
+        return back()->withInput(['tab'=>'ciudades']);
     }
 
     /**
@@ -87,7 +87,7 @@ class CityController extends Controller
      */
     public function edit($id)
     {
-        //
+
     }
 
     /**
@@ -98,8 +98,23 @@ class CityController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
-        //
+    {  
+        $request->validate([
+            'name' => 'required'
+        ]);
+
+        $ciudad = City::where('id',$id)->first();
+        $ciudad->update($request->except(['_token','_method','fileCityUpdate']));
+
+        if ($request->file('fileCityUpdate')){
+            $ciudad->images()->delete();
+            $url = Storage::put('ciudades', $request->file('fileCityUpdate'));
+            $ciudad->images()->create([
+                'url' => $url
+            ]);
+        }
+
+        return redirect()->back()->with('actualizar_ciudad','Actualización completa');
     }
 
     /**
@@ -110,6 +125,10 @@ class CityController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $ciudad = City::where('id',$id)->first();
+        $ciudad->images()->delete();
+        $ciudad->delete();
+
+        return redirect()->back()->with('borrar_ciudad','Borrado completo');
     }
 }

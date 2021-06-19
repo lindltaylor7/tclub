@@ -30,6 +30,9 @@ Route::post('/business/register/address',[AddressController::class,'store'])->na
 Route::post('/business/register/social',[SocialController::class,'store'])->name('social.register');
 
 Route::post('/ciudad/register',[CityController::class,'store'])->name('ciudad.register');
+Route::put('/ciudad/update/{id}',[CityController::class,'update'])->name('ciudad.update');
+Route::delete('/ciudad/{id}', [CityController::class,'destroy'])->name("ciudad.delete");
+
 Route::post('/category/register', [CategoryController::class,'store'])->name("category.register");
 
 Route::post('login',[HomeController::class,'login'])->name('login');
