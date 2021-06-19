@@ -14,7 +14,7 @@
                     <div class="category-single category--img">
                         <figure class="category--img4">
                             @foreach ($categoria->images as $image)
-                            <img src="{{asset('storage/'.$image->url)}}" alt="">
+                            <img src="{{asset('storage/'.$image->url)}}" alt="Imagen Rubro" style="width: 350px; height: 280px; object-fit: cover;">
                             @endforeach
                             <figcaption class="overlay-bg">
                                 <a href="{{route('rubro.show',$categoria->id)}}" class="cat-box">
