@@ -23,14 +23,14 @@
                             <div class="gallery-images">
 
                                 <div class="single-image">
-                                    <img src="{{asset('img/g1.jpg')}}" alt="">
+                                    <img src="{{asset('img/escuela_grande.jpg')}}" alt="">
                                 </div>
 
                             </div><!-- ends: .gallery-images -->
                             <div class="gallery-thumbs">
 
                                 <div class="single-thumb">
-                                    <img src="{{asset('img/gt1.jpg')}}" alt="">
+                                    <img src="{{asset('img/escuela-mediano.jpg')}}" alt="">
                                 </div>
 
                             </div><!-- ends: .gallery-thumbs -->
@@ -110,7 +110,7 @@
                                     @if($categor->name == $cat->name)
                                         <li>
                                             <div class="atbd_left_img">
-                                                <a href=""><img src="{{asset('img/sl1.jpg')}}" alt="listing image"></a>
+                                                <a href=""><img src="{{asset('img/escuela.png')}}" alt="listing image"></a>
                                             </div>
                                             <div class="atbd_right_content">
                                                 <div class="cate_title">
