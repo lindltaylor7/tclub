@@ -34,6 +34,8 @@ Route::put('/ciudad/update/{id}',[CityController::class,'update'])->name('ciudad
 Route::delete('/ciudad/{id}', [CityController::class,'destroy'])->name("ciudad.delete");
 
 Route::post('/category/register', [CategoryController::class,'store'])->name("category.register");
+Route::put('/category/{id}', [CategoryController::class,'update'])->name("category.update");
+Route::delete('/category/{id}', [CategoryController::class,'destroy'])->name("category.delete");
 
 Route::post('login',[HomeController::class,'login'])->name('login');
 Route::post('logout',[HomeController::class,'logout'])->name('logout');

@@ -8,7 +8,7 @@
                     <article class="atbd_single_listing_wrapper ">
                         <figure class="atbd_listing_thumbnail_area">
                             <div class="atbd_listing_image">
-                                <a href=""><img src="{{asset('img/p1.jpg')}}" alt="listing image"></a>
+                                <a href=""><img src="{{asset('img/privacidad-dise.jpg')}}" alt="listing image"></a>
                             </div>
                             <figcaption class="atbd_thumbnail_overlay_content">
                                 <div class="atbd_upper_badge">
@@ -21,7 +21,6 @@
                                 <div class="atbd_dashboard_tittle_metas">
                                     <h4 class="atbd_listing_title">
                                         <a href="">{{$businesse->name}}</a>
-                                        <a href="">{{$businesse->id}}</a>
                                     </h4>
 
                                 @include('usuarios.empresa_atributes.business_addresses_modal')
@@ -45,7 +44,7 @@
                                                 <a class="dropdown-item" href="" data-toggle="modal"  data-target="#business_offers_modal"><span class="la la-edit color-primary"></span>Agregar Ofertas</a>
                                             </div>
                                         </div>
-                                        <a href="#" class="directory_remove_btn btn btn-sm btn-outline-danger" data-toggle="modal" data-target="#modal-item-remove">Delete</a>
+                                        <a href="#" class="directory_remove_btn btn btn-sm btn-outline-danger" data-toggle="modal" data-target="#Category-remove">Delete</a>
                                     </div>
                                     <!--ends .db_btn_area-->
                                 </div>

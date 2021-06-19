@@ -50,7 +50,9 @@ class UserController extends Controller
         $request->merge([
             'type' => 'Free',
             'status' => 1,
-            'password' => bcrypt($request->get('password'))
+
+
+            'password'=>bcrypt($request->get('password'))
         ]);
 
         $users = User::create($request->except(['file']));

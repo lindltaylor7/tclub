@@ -86,7 +86,9 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $categoria = Category::find($id);
+
+        return $categoria;
     }
 
     /**
@@ -98,9 +100,18 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
-    }
+        $categoria= Category::where('id',$id)->first();
+        $categoria->update($request->except(['_token','_method','fileCategoryUpdate']));
 
+        if ($request->file('fileCategoryUpdate')) {
+            $categoria->images()->delete();
+            $url = Storage::put('rubros', $request->file('fileCategoryUpdate'));
+            $categoria->images()->create([
+                'url' => $url
+            ]);
+        }
+        return redirect()->back()->with('ActualizacionC','Rubro actualizado');
+    }
     /**
      * Remove the specified resource from storage.
      *
@@ -109,6 +120,9 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $categoria = Category::where('id',$id)->first();
+        $categoria ->images()->delete();
+        $categoria->delete();
+        return redirect()->back()->with('EliminarC','Rubro eliminado');
     }
 }
