@@ -31,6 +31,8 @@ Route::post('/business/register/social',[SocialController::class,'store'])->name
 
 Route::post('/ciudad/register',[CityController::class,'store'])->name('ciudad.register');
 Route::post('/category/register', [CategoryController::class,'store'])->name("category.register");
+Route::put('/category/{id}', [CategoryController::class,'update'])->name("category.update");
+Route::delete('/category/{id}', [CategoryController::class,'destroy'])->name("category.delete");
 
 Route::post('login',[HomeController::class,'login'])->name('login');
 Route::post('logout',[HomeController::class,'logout'])->name('logout');

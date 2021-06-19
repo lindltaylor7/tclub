@@ -30,9 +30,9 @@
                                         <tr class="text-center">
                                             <td>
                                                 @if ($categoria->status == '1') 
-                                                <button type="button" class="btn btn-warning la la-pencil"></button> <button type="button" class="btn btn-danger la la-trash"></button>
+                                                <button type="button"  data-toggle="modal" data-target="#Category_update{{$categoria->id}}" class="btn btn-warning la la-pencil"></button> <button type="button" class="btn btn-danger la la-trash" data-toggle="modal" data-target="#Category-remove{{$categoria->id}}"></button>
                                                 @else
-                                                <button type="button" class="btn btn-warning la la-pencil"></button> <button type="button" class="btn btn-info la la-check"></button>
+                                                <button type="button"  data-toggle="modal" data-target="#Category_update{{$categoria->id}}" class="btn btn-warning la la-pencil"></button> <button type="button" class="btn btn-info la la-check" data-toggle="modal" data-target="#Category-remove{{$categoria->id}}"></button>
                                                 @endif
                                             </td>
                                             <td>{!! $categoria->name !!}</td>
@@ -54,6 +54,8 @@
                                                 @endforeach                                    
                                             </td>
                                         </tr>
+                                        @include('usuarios.rubro_atributes.rubro_delete_modal')
+                                        @include('usuarios.rubro_atributes.rubro_update_modal')
                                     @endforeach                               
                                     </tbody>
                                 </table>

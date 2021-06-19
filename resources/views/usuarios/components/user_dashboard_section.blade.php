@@ -25,8 +25,16 @@
                                 <a class="nav-link" id="faborite-listings" data-toggle="tab" href="#category" role="category" aria-controls="favorite" aria-selected="false">Categorias</a>
                             </li>
                             @endcan
-
-
+                            @if (session('ActualizacionC'))
+                                <script>
+                                    alert("Actualización de rubro exitoso");
+                                </script>
+                            @endif
+                            @if (session('EliminarC'))
+                                <script>
+                                    alert("Rubro eliminado con exito");
+                                </script>
+                            @endif
                         </ul>
                         <div class="nav_button">
                             <a href="#" class="btn btn-xs btn-gradient btn-gradient-two" data-toggle="modal" data-target="#Registerb_modal"><span class="la la-plus"></span>Agregar</a>
