@@ -19,13 +19,13 @@ class HomeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    {   
         $categorias = Category::all();
         $ciudades = City::all();
         $empresas = Business::all()->take(6);
         $ciudades_top = City::all()->take(4);
         return view('welcome',compact('categorias','ciudades','empresas','ciudades_top'));
-
+        
     }
 
     /**
@@ -109,5 +109,16 @@ class HomeController extends Controller
         request()->session()->invalidate();
         request()->session()->regenerateToken();
         return redirect()->route('home');
+    }
+
+    public function mostrar(Request $request){
+        $categorias = Category::all();
+        $ciudades = City::all();
+        if($request){
+            $query=trim($request->get('search'));
+            $empresas=Business::where('name', 'LIKE', '%'.$query.'%')->orderBy('id', 'asc')
+                                                                     ->get();
+            return view('empresas.index', compact('empresas', 'categorias', 'ciudades'), ['search'=>$query]);
+        }
     }
 }
