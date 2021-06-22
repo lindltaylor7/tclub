@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Offer;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class OfferController extends Controller
 {
@@ -34,7 +36,25 @@ class OfferController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'start_date' => 'required',
+            'end_date' => 'required'
+        ]);
+        $request->merge([
+            'status' => 1
+        ]);
+
+        $offers = Offer::create($request->except(['fileOffer']));
+
+        if ($request->file('fileOffer')){
+            $url = Storage::put('ofertas', $request->file('fileOffer'));
+            $offers->images()->create([
+                'url' => $url
+            ]);
+        }
+        
+        return redirect()->route('user.dashboard',['id'=>$offers->business->user_id]);
     }
 
     /**
@@ -68,7 +88,24 @@ class OfferController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'start_date' => 'required',
+            'end_date' => 'required'
+        ]);
+
+        $oferta = Offer::where('id',$id)->first();
+        $oferta->update($request->except(['_token','_method','fileOfferUpdate']));
+
+        if ($request->file('fileOfferUpdate')){
+            $oferta->images()->delete();
+            $url = Storage::put('ofertas', $request->file('fileOfferUpdate'));
+            $oferta->images()->create([
+                'url' => $url
+            ]);
+        }
+
+        return redirect()->back()->with('actualizar_ciudad','Actualización completa');
     }
 
     /**
@@ -79,6 +116,10 @@ class OfferController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $oferta = Offer::where('id',$id)->first();
+        $oferta->images()->delete();
+        $oferta->delete();
+
+        return redirect()->back()->with('borrar_oferta','Borrado completo');
     }
 }

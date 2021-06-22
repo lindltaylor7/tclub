@@ -6,37 +6,62 @@
                     <div class="atbd_content_module">
                         <div class="atbd_content_module__tittle_area">
                             <div class="atbd_area_title">
-                                <h4><span class="la la-list"></span>My Fovarite Listings</h4>
+                                <h4><span class="la la-list"></span>Mis Ofertas</h4>
+                                
                             </div>
                         </div>
                         <div class="atbdb_content_module_contents">
                             <div class="table-responsive">
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">Listing Name</th>
-                                            <th scope="col">Category</th>
-                                            <th></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td><a href="">Double Broccoli Quinoa</a></td>
-                                            <td><span class="la la-glass"></span> <a href="">Restaurant</a></td>
-                                            <td><a href="" class="remove-favorite"><span class="la la-times"></span></a></td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="">Easy Brazillian Cheese Bread</a></td>
-                                            <td><span class="la la-glass"></span> <a href="">Restaurant</a></td>
-                                            <td><a href="" class="remove-favorite"><span class="la la-times"></span></a></td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="">Hilton Hawaiian Village</a></td>
-                                            <td><span class="la la-bed"></span> <a href="">Hotel</a></td>
-                                            <td><a href="" class="remove-favorite"><span class="la la-times"></span></a></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                @if ($offers->isEmpty())
+                                    <div>No hay registro de Ofertas</div>
+                                @else
+                                    <table class="table">
+                                        <thead>
+                                            <tr class="text-center">
+                                                <th scope="col">Opciones</th>
+                                                <th scope="col">Oferta</th>
+                                                <th scope="col">Empresa</th>
+                                                <th scope="col">Descripción</th>
+                                                <th scope="col">Fecha Inicial</th>
+                                                <th scope="col">Fecha Final</th>
+                                                <th scope="col">Estado</th>
+                                                <th scope="col">Imagen</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach($offers as $offer)
+                                            <tr class="text-center">
+                                                <td>
+                                                    <button href="#" type="button" class="btn btn-xs btn-warning la la-pencil" data-toggle="modal" data-target="#Update_modal{{$offer->id}}"></button> <button type="button" class="btn btn-xs btn-danger la la-trash" data-toggle="modal" data-target="#Delete_modal{{$offer->id}}" href="#"></button>
+                                                </td>
+                                                <td>{{ $offer->name }}</td>
+                                                <td>{{ $offer->business->name }}</td>
+                                                <td>{{ $offer->description }}</td>
+                                                <td>{{ $offer->start_date }}</td>
+                                                <td>{{ $offer->end_date }}</td>
+                                                <td>
+                                                    @if ($offer->status == '1') 
+                                                        <div class="atbd_listing_meta">
+                                                            <span class="mx-auto atbd_meta atbd_listing_rating">Activo</span>
+                                                        </div>
+                                                    @else
+                                                        <div class="atbd_listing_meta">
+                                                            <span class="mx-auto atbd_meta atbd_badge_close">Inactivo</span>
+                                                        </div>
+                                                    @endif
+                                                </td>
+                                                <td class="text-center">
+                                                    @foreach ($offer->images as $image)
+                                                    <img  widht="75px" height="75px" src="{{asset('storage/'.$image->url)}}" alt=""> 
+                                                    @endforeach
+                                                </td>
+                                            </tr>
+                                            @include('usuarios.oferta_atributes.edit_modal')
+                                            @include('usuarios.oferta_atributes.delete_modal')
+                                        @endforeach
+                                        </tbody>
+                                    </table>
+                                @endif
                             </div>
                         </div><!-- ends: .atbdb_content_module_contents -->
                     </div>

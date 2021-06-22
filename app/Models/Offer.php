@@ -18,8 +18,7 @@ class Offer extends Model
     }
 
     //polimorfica
-    public function image()
-    {
-        return $this->morphOne('App\Models\Image', 'imageable');
-    }
+    public function images(){
+        return $this->morphMany('App\Models\Image','imageable');
+      }
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Business;
 use App\Models\Category;
 use App\Models\City;
+use App\Models\Offer;
 use App\Models\User;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
@@ -80,7 +81,8 @@ class UserController extends Controller
         $user = User::find($id);
         $businesses = User::find($id)->businesses()->where('user_id', $id)->get();
         $empresas = User::find($id)->businesses();
-        return view('usuarios.show', compact('users', 'user', 'businesses', 'categorias', 'cities', 'empresas'));
+        $offers = Offer::all();
+        return view('usuarios.show', compact('users', 'user', 'businesses', 'categorias', 'cities', 'empresas','offers'));
     }
 
     /**

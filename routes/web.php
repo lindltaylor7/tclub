@@ -6,8 +6,9 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SocialController;
 use App\Http\Controllers\UserController;
-
+use App\Http\Controllers\OfferController;
 use App\Http\Controllers\CityController;
+
 use Illuminate\suPPOrt\facades\Route;
 
 Route::get('/', [HomeController::class,'index'])->name("home");
@@ -26,8 +27,17 @@ Route::get('/user/{id}/dashboard', [UserController::class,'show'])->name("user.d
 
 Route::get('/business/register/{id}',[BusinessController::class,'create'])->name('bussines.create');
 Route::post('/business/register',[BusinessController::class,'store'])->name('bussines.register');
+Route::put('/business/update/{id}', [BusinessController::class,'update'])->name('bussines.update');
+Route::delete('/business/{id}', [BusinessController::class,'destroy'])->name('bussines.delete');
+
 Route::post('/business/register/address',[AddressController::class,'store'])->name('address.register');
 Route::post('/business/register/social',[SocialController::class,'store'])->name('social.register');
+
+Route::get('/business/register/offer/{id}',[OfferController::class,'create'])->name('offer.create');
+Route::post('/business/register/offer',[OfferController::class,'store'])->name('offer.register');
+Route::put('/offer/update/{id}',[OfferController::class,'update'])->name('offer.update');
+Route::delete('/offer/{id}', [OfferController::class,'destroy'])->name("offer.delete");
+
 
 Route::post('/ciudad/register',[CityController::class,'store'])->name('ciudad.register');
 Route::put('/ciudad/update/{id}',[CityController::class,'update'])->name('ciudad.update');

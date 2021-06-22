@@ -8,11 +8,13 @@
                     <article class="atbd_single_listing_wrapper ">
                         <figure class="atbd_listing_thumbnail_area">
                             <div class="atbd_listing_image">
-                                <a href=""><img src="{{asset('img/privacidad-dise.jpg')}}" alt="listing image"></a>
+                                @foreach ($businesse->images as $image)
+                                <a href=""><img style="width: 350px; height: 220px; object-fit: cover;" src="{{asset('storage/'.$image->url)}}" alt="listing image"></a>
+                                @endforeach
                             </div>
                             <figcaption class="atbd_thumbnail_overlay_content">
                                 <div class="atbd_upper_badge">
-                                    <span class="atbd_badge atbd_badge_featured">Featured</span>
+                                    <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#Update_imagen{{$businesse->id}}">Cambiar Imagen</button>
                                 </div>
                             </figcaption>
                         </figure>
@@ -20,11 +22,10 @@
                             <div class="atbd_content_upper">
                                 <div class="atbd_dashboard_tittle_metas">
                                     <h4 class="atbd_listing_title">
-                                        <a href="">{{$businesse->name}}</a>
+                                        <a href="{{route('empresa.show',$businesse->id)}}">{{$businesse->name}}</a>
                                     </h4>
 
                                 @include('usuarios.empresa_atributes.business_addresses_modal')
-                                @include('usuarios.empresa_atributes.business_images_modal')
                                 @include('usuarios.empresa_atributes.business_offers_modal')
                                 @include('usuarios.empresa_atributes.business_socials_modal')
 
@@ -40,11 +41,10 @@
                                             <div class="dropdown-menu">
                                                 <a class="dropdown-item" href="" data-toggle="modal"  data-target="#business_addresses_modal"><span class="la la-edit color-primary"></span>Agregar Dirección</a>
                                                 <a class="dropdown-item" href="" data-toggle="modal"  data-target="#business_socials_modal"><span class="la la-edit color-primary"></span>Agregar Redes Sociales</a>
-                                                <a class="dropdown-item" href="" data-toggle="modal"  data-target="#business_images_modal" ><span class="la la-edit color-primary"></span>Agregar Imagenes de Empresa</a>
-                                                <a class="dropdown-item" href="" data-toggle="modal"  data-target="#business_offers_modal"><span class="la la-edit color-primary"></span>Agregar Ofertas</a>
+                                                <a class="dropdown-item" href="" data-toggle="modal"  data-target="#business_offers_modal{{$businesse->id}}"><span class="la la-edit color-primary"></span>Agregar Ofertas</a>
                                             </div>
                                         </div>
-                                        <a href="#" class="directory_remove_btn btn btn-sm btn-outline-danger" data-toggle="modal" data-target="#Category-remove">Delete</a>
+                                        <a href="#" class="directory_remove_btn btn btn-sm btn-outline-danger" data-toggle="modal" data-target="#BusinessRemove{{$businesse->id}}">Delete</a>
                                     </div>
                                     <!--ends .db_btn_area-->
                                 </div>
@@ -61,25 +61,11 @@
                 </div><!-- ends: .atbd_single_listing -->
 
             </div><!-- ends: .col-lg-4 -->
+            @include('usuarios.empresa_atributes.edit_imagen_modal')
+            @include('usuarios.empresa_atributes.delete_modal')
            @endforeach
 
         </div>
     </div>
 </div><!-- ends: .tab-pane -->
 
-<!-- Modal -->
-<div class="modal fade" id="modal-item-remove" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-body text-center p-top-40 p-bottom-50">
-                <span class="la la-exclamation-circle color-warning"></span>
-                <h1 class="display-3 m-bottom-10">Estas seguro?</h1>
-                <p class="m-bottom-30">Deseas eliminar esta empresa?</p>
-                <div class="d-flex justify-content-center">
-                    <button type="button" class="btn btn-secondary m-right-15" data-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-danger">Yes, Delete it!</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
