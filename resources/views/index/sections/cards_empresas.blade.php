@@ -16,12 +16,15 @@
                                     <figure class="atbd_listing_thumbnail_area">
                                         <div class="atbd_listing_image">
                                             <a href="{{route('empresa.show',$empresa->id)}}">
-                                                <img src="{{asset('img/privacidad-dise.jpg')}}" alt="listing image">
+                                                @foreach ($empresa->images as $image)
+                                                <a href="{{route('empresa.show',$empresa->id)}}"><img style="width: 350px; height: 220px; object-fit: cover;" src="{{asset('storage/'.$image->url)}}" alt="listing image"></a>
+                                                @endforeach
+                                                
                                             </a>
                                         </div><!-- ends: .atbd_listing_image -->
                                         
                                         <div class="atbd_author atbd_author--thumb">
-                                            <a href="">
+                                            <a >
                                                 @foreach ($empresa->user->images as $image)
                                                 <img src="{{asset('storage/'.$image->url)}}" alt="Author Image" style="width: 40px ; heigh: 40 px">
                                                 @endforeach

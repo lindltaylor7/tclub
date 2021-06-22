@@ -68,6 +68,8 @@ class BusinessController extends Controller
         }
         
         $businesses ->categories()->attach($request->get('category_id'));
+        $businesses ->social()->create(['facebook_url'=>null , 'youtube_url'=>null, 'instagram_url'=> null]);
+        
 
 
         return redirect()->route('user.dashboard',['id'=>$businesses->user_id]);
