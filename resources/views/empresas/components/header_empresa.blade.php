@@ -32,7 +32,7 @@
                         </div>
                         <div class="atbd_action atbd_share dropdown">
                             <span class="dropdown-toggle" id="social-links" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="menu">
-                                <span class="la la-share"></span>Share
+                                <span class="la la-share"></span>Redes sociales
                             </span>
                             <div class="atbd_director_social_wrap dropdown-menu" aria-labelledby="social-links">
                                 <ul class="list-unstyled">

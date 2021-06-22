@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Social;
 use Illuminate\Http\Request;
 
 class SocialController extends Controller
@@ -32,9 +33,11 @@ class SocialController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
-        //
+        
+        $socials = Social::create($request->all());
+        return redirect()->back();
     }
 
     /**
@@ -68,7 +71,9 @@ class SocialController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $redsocial= Social::where('id',$id)->first();
+        $redsocial->update($request->except(['_token','_method']));
+        return redirect()->back()->with('ActualizacionA','Direccion actualizada');
     }
 
     /**

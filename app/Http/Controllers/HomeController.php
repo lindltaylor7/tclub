@@ -6,6 +6,7 @@ use App\Models\Address;
 use App\Models\Business;
 use App\Models\Category;
 use App\Models\City;
+use App\Models\User;
 use App\Models\Valoration;
 
 use Illuminate\Http\Request;
@@ -21,11 +22,14 @@ class HomeController extends Controller
     public function index()
     {   
         $categorias = Category::all();
+        $users = User::all();
         $ciudades = City::all();
         $empresas = Business::all()->take(6);
         $ciudades_top = City::all()->take(4);
-        return view('welcome',compact('categorias','ciudades','empresas','ciudades_top'));
-        
+
+        return view('welcome',compact('categorias','ciudades','empresas','ciudades_top', 'users'));
+
+
     }
 
     /**

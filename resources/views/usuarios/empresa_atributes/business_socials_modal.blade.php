@@ -1,5 +1,5 @@
 
-<div class="modal fade" id="business_socials_modal" tabindex="-1" role="dialog" aria-labelledby="signup_modal_label" aria-hidden="true">
+<div class="modal fade" id="business_socials_modal{{$businesse->id}}" tabindex="-1" role="dialog" aria-labelledby="signup_modal_label" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -9,25 +9,23 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="" id="signup-form" method="">
+                <form action="{{route('social.register',$businesse->id)}}" id="signup-form" method="post">
                     @csrf
-                    
-                    <div class="form-group">
-                        <label for="title" class="form-label">Youtube</label>
-                        <input type="text" class="form-control" name="youtubeurl"  placeholder="Url de youtube" required>
-                    </div>     
+                    <input type="hidden" name="business_id" value="{{$businesse->id}}">
                     <div class="form-group">
                         <label for="title" class="form-label">Facebook</label>
-                        <input type="text" class="form-control" name="facebookurl"  placeholder="Url de facebook" required>
+                        <input type="text" class="form-control" name="facebook_url"  placeholder="Url de facebook de Empresa" required>
+                    </div>  
+                    <div class="form-group">
+                        <label for="title" class="form-label">Youtube</label>
+                        <input type="text" class="form-control" name="youtube_url"  placeholder="Url de youtube de Empresa" required>
                     </div>  
                     <div class="form-group">
                         <label for="title" class="form-label">Instagram</label>
-                        <input type="text" class="form-control" name="instagramurl"  placeholder="Url de instagram" required>
+                        <input type="text" class="form-control" name="instagram_url"  placeholder="Url de instagram de Empresa" required>
                     </div>     
                     <button type="submit" class="btn btn-block btn-lg btn-gradient btn-gradient-two">Registrar Redes Sociales</button>
-
                 </form>
-               
             </div>
         </div>
     </div>

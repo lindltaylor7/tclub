@@ -68,7 +68,7 @@
     <div class="tab-content p-top-100" id="dashboard-tabs-content">
         @include('usuarios.components.partials.user_business')
         @include('usuarios.components.partials.user_profile')
-        @include('usuarios.components.partials.user_activities')
+        @include('usuarios.components.partials.user_offers')
         @include('usuarios.components.partials.user_cities')
         @include('usuarios.components.partials.user_categories')
     </div>
