@@ -33,9 +33,9 @@
                                                     <a href="{{route('ciudad.index')}}">Ciudades</a>
                                                 </li>
                                                 <li>
-                                                    <a href="{{route('rubro.index')}}">Categorias</a>
+                                                    <a href="{{route('rubro.index')}}">Rubros</a>
                                                 </li>
-                                                <li class="dropdown has_dropdown">
+                                                {{-- <li class="dropdown has_dropdown">
                                                     <a class="dropdown-toggle" href="#" id="drop2" role="button"
                                                         data-toggle="dropdown" aria-haspopup="true"
                                                         aria-expanded="false">
@@ -49,7 +49,7 @@
                                                         <li><a href="faqs.html">Preguntas</a></li>
                                                         <li><a href="about.html">Sobre Nosotros</a></li>
                                                     </ul>
-                                                </li>
+                                                </li> --}}
                                             </ul>
                                         </div>
                                         <!-- /.navbar-collapse -->
@@ -72,17 +72,10 @@
                                     </div>
                                     <div class="search-categories">
                                         <ul class="list-unstyled">
-                                            <li><a href=""><span class="la la-glass bg-danger"></span> Food & Drinks</a>
-                                            </li>
-                                            <li><a href=""><span class="la la-cutlery bg-primary"></span>
-                                                    Restaurants</a></li>
-                                            <li><a href=""><span class="la la-map-marker bg-success"></span> Places</a>
-                                            </li>
-                                            <li><a href=""><span class="la la-shopping-cart bg-secondary"></span>
-                                                    Shopping & Store</a></li>
-                                            <li><a href=""><span class="la la-bed bg-info"></span> Hotels</a></li>
-                                            <li><a href=""><span class="la la-bank bg-warning"></span> Art & History</a>
-                                            </li>
+                                            @foreach ($categorias as $rubro)
+                                                <li><a href="{{route('rubro.show',$rubro->id)}}"><span class="{{$rubro->icon}} bg-success"></span> {{$rubro->name}}</a></li>
+                                            @endforeach
+
                                         </ul>
                                     </div>
                                 </div><!-- ends: .search-wrapper -->
