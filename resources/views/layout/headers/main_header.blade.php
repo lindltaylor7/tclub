@@ -12,11 +12,13 @@
                         <p class="sub_title">Encuentra todas las empresas TOP del Perú</p>
 
                     </div><!-- ends: .search_title_area -->
-                    <form action="/" class="search_form">
+                    <form method="POST" action="{{route('mostrar')}}" class="search_form">
+                        @csrf
+                        
                         <div class="atbd_seach_fields_wrapper">
                             <div class="single_search_field search_query">
 
-                                <input class="form-control search_fields" type="text" placeholder="Buscar...">
+                                <input class="form-control search_fields" name="search" type="search" placeholder="Buscar...">
                             </div>
                             <div class="single_search_field search_category">
                                 <select class="search_fields" id="at_biz_dir-category">
@@ -39,7 +41,7 @@
                                 <button type="submit" class="btn btn-block btn-gradient btn-gradient-one btn-md btn_search">Buscar</button>
                             </div>
                         </div>
-                    </form><!-- ends: .search_form -->
+                    </form>
                     <div class="directory_home_category_area">
                         <ul class="categories">
 

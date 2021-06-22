@@ -12,7 +12,7 @@
                                 <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Mi perfil de usuario</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="faborite-listings" data-toggle="tab" href="#ofertas" role="tab" aria-controls="favorite" aria-selected="false">Mis ofertas</a>
+                                <a class="nav-link" id="faborite-listings" data-toggle="tab" href="#favorite" role="tab" aria-controls="favorite" aria-selected="false">Mis Ofertas</a>
                             </li>
                             @can('edit.cities')
                             <li class="nav-item">
@@ -44,6 +44,11 @@
                             @if (session('EliminarC'))
                                 <script>
                                     alert("Rubro eliminado con exito");
+                                </script>
+                            @endif
+                            @if (session('actualizar_empresa'))
+                                <script>
+                                    alert("Actualización Completa");
                                 </script>
                             @endif
                         </ul>

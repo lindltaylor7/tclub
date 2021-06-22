@@ -30,9 +30,9 @@
                                         <tr class="text-center">
                                             <td>
                                                 @if ($categoria->status == '1') 
-                                                <button type="button"  data-toggle="modal" data-target="#Category_update{{$categoria->id}}" class="btn btn-warning la la-pencil"></button> <button type="button" class="btn btn-danger la la-trash" data-toggle="modal" data-target="#Category-remove{{$categoria->id}}"></button>
+                                                <button type="button"  data-toggle="modal" data-target="#Category_update{{$categoria->id}}" class="btn btn-xs btn-warning la la-pencil"></button> <button type="button" class="btn btn-xs btn-danger la la-trash" data-toggle="modal" data-target="#Category-remove{{$categoria->id}}"></button>
                                                 @else
-                                                <button type="button"  data-toggle="modal" data-target="#Category_update{{$categoria->id}}" class="btn btn-warning la la-pencil"></button> <button type="button" class="btn btn-info la la-check" data-toggle="modal" data-target="#Category-remove{{$categoria->id}}"></button>
+                                                <button type="button"  data-toggle="modal" data-target="#Category_update{{$categoria->id}}" class="btn btn-xs btn-warning la la-pencil"></button> <button type="button" class="btn btn-xs btn-info la la-check" data-toggle="modal" data-target="#Category-remove{{$categoria->id}}"></button>
                                                 @endif
                                             </td>
                                             <td>{!! $categoria->name !!}</td>

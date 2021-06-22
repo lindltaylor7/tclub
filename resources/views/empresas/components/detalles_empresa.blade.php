@@ -11,6 +11,57 @@
                     <div class="atbdb_content_module_contents">
                         <p>{{$unico->description}}</p>
                     </div>
+                </div><!-- ends: .atbd_content_module --> 
+                <div class="atbd_content_module atbd_offer_contents">
+                    <div class="atbd_content_module__tittle_area">
+                        <div class="atbd_area_title">
+                            <h4><span class="la la-file-text-o"></span>Ofertas</h4>
+                        </div>
+                    </div>
+                    <div class="atbdb_content_module_contents">
+                        <div class="row">
+                        @foreach($ofertas as $oferta)
+                        <div class="col-lg-6 col-sm-6">
+                            <div class="atbd_single_listing ">
+                                <article class="atbd_single_listing_wrapper">
+                                    <figure class="atbd_listing_thumbnail_area">
+                                        <div class="atbd_listing_image">
+                                            <a href="#">
+                                                @foreach ($oferta->images as $image)
+                                                    <img style="width: 318px; height: 200px;" src="{{asset('storage/'.$image->url)}}" alt="listing image">
+                                                @endforeach
+                                            </a>
+                                        </div><!-- ends: .atbd_listing_image -->
+                                    </figure><!-- ends: .atbd_listing_thumbnail_area -->
+                                    <div class="atbd_listing_info">
+                                        <div class="atbd_content_upper">
+                                            <h4 class="atbd_listing_title">
+                                                <a href="#">{{$oferta->name}}</a>
+                                            </h4>
+                                            <div class="atbd_listing_meta">
+                                                <span class="atbd_meta atbd_listing_price">S/.{{$oferta->price}}</span>
+                                            </div>
+                                            <div>
+                                                <p>{{$oferta->description}}</p>
+                                            </div>
+                                            <div class="atbd_listing_data_list">
+                                                <ul>
+                                                    <li>
+                                                        <p><span class="la la-calendar-check-o"></span>Fecha Inicial: {{$oferta->start_date}}</p>
+                                                    </li>
+                                                    <li>
+                                                        <p><span class="la la-calendar-check-o"></span>Fecha Final: {{$oferta->end_date}}</p>
+                                                    </li>
+                                                </ul>
+                                            </div><!-- End atbd listing meta -->
+                                        </div><!-- end .atbd_content_upper -->
+                                    </div><!-- ends: .atbd_listing_info -->
+                                </article><!-- atbd_single_listing_wrapper -->
+                            </div>
+                        </div><!-- ends: .col-lg-4 -->
+                    @endforeach
+                    </div>
+                    </div>
                 </div><!-- ends: .atbd_content_module -->
                 <div class="atbd_content_module atbd_listing_gallery">
                     <div class="atbd_content_module__tittle_area">
@@ -21,18 +72,14 @@
                     <div class="atbdb_content_module_contents">
                         <div class="gallery-wrapper">
                             <div class="gallery-images">
-
                                 <div class="single-image">
                                     <img src="{{asset('img/escuela_grande.jpg')}}" alt="">
                                 </div>
-
                             </div><!-- ends: .gallery-images -->
                             <div class="gallery-thumbs">
-
                                 <div class="single-thumb">
                                     <img src="{{asset('img/escuela-mediano.jpg')}}" alt="">
                                 </div>
-
                             </div><!-- ends: .gallery-thumbs -->
                         </div><!-- ends: .gallery-wrapper -->
                     </div>
@@ -47,6 +94,9 @@
                         <div class="map" id="map-one"></div>
                     </div>
                 </div><!-- ends: .atbd_content_module -->
+                
+            </div>
+            <div class="col-lg-4 mt-5 mt-lg-0">
                 <div class="atbd_content_module atbd_contact_information_module">
                     <div class="atbd_content_module__tittle_area">
                         <div class="atbd_area_title">
@@ -82,8 +132,6 @@
                         </div>
                     </div>
                 </div><!-- ends: .atbd_content_module -->
-            </div>
-            <div class="col-lg-4 mt-5 mt-lg-0">
                 <div class="widget atbd_widget widget-card">
                     <div class="atbd_widget_title">
                         <h4><span class="la la-bookmark"></span> Categorias</h4>
@@ -107,7 +155,7 @@
                         <ul class="listings">
                             @foreach($empresas as $empresa)
                                 @foreach ($empresa->categories as $categor)
-                                    @if($categor->name == $cat->name)
+                                    @if($categor->name == $cat->name && $empresa->name != $unico->name)
                                         <li>
                                             <div class="atbd_left_img">
                                                 <a href=""><img src="{{asset('img/escuela.png')}}" alt="listing image"></a>

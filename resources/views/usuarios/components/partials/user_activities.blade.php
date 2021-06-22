@@ -1,4 +1,4 @@
-<div class="tab-pane fade p-bottom-30" id="ciudad" role="tab-pane" aria-labelledby="ciudades">
+<div class="tab-pane fade p-bottom-30" id="favorite" role="tabpanel" aria-labelledby="faborite-listings">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -6,35 +6,41 @@
                     <div class="atbd_content_module">
                         <div class="atbd_content_module__tittle_area">
                             <div class="atbd_area_title">
-                                <h4><span class="la la-list"></span>Ciudades</h4>
-                                <div class="nav_button">
-                                    <a href="#" class="btn btn-xs btn-gradient btn-gradient-two" data-toggle="modal" data-target="#RegisterCity_modal"><span class="la la-plus"></span>Agregar</a>
-                                </div>
+                                <h4><span class="la la-list"></span>Mis Ofertas</h4>
+                                
                             </div>
                         </div>
                         <div class="atbdb_content_module_contents">
                             <div class="table-responsive">
-                                @if ($cities->isEmpty())
-                                    <div>No hay registro de Ciudades</div>
+                                @if ($offers->isEmpty())
+                                    <div>No hay registro de Ofertas</div>
                                 @else
                                     <table class="table">
                                         <thead>
                                             <tr class="text-center">
                                                 <th scope="col">Opciones</th>
-                                                <th scope="col">Nombre</th>
+                                                <th scope="col">Oferta</th>
+                                                <th scope="col">Empresa</th>
+                                                <th scope="col">Descripción</th>
+                                                <th scope="col">Fecha Inicial</th>
+                                                <th scope="col">Fecha Final</th>
                                                 <th scope="col">Estado</th>
                                                 <th scope="col">Imagen</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        @foreach($cities as $city)
+                                            @foreach($offers as $offer)
                                             <tr class="text-center">
                                                 <td>
-                                                    <button href="#" type="button" class="btn btn-xs btn-warning la la-pencil" data-toggle="modal" data-target="#Update_modal{{$city->id}}"></button> <button type="button" class="btn btn-xs btn-danger la la-trash" data-toggle="modal" data-target="#Delete_modal{{$city->id}}" href="#"></button>
+                                                    <button href="#" type="button" class="btn btn-xs btn-warning la la-pencil" data-toggle="modal" data-target="#Update_modal{{$offer->id}}"></button> <button type="button" class="btn btn-xs btn-danger la la-trash" data-toggle="modal" data-target="#Delete_modal{{$offer->id}}" href="#"></button>
                                                 </td>
-                                                <td>{{ $city->name }}</td>
+                                                <td>{{ $offer->name }}</td>
+                                                <td>{{ $offer->business->name }}</td>
+                                                <td>{{ $offer->description }}</td>
+                                                <td>{{ $offer->start_date }}</td>
+                                                <td>{{ $offer->end_date }}</td>
                                                 <td>
-                                                    @if ($city->status == '1') 
+                                                    @if ($offer->status == '1') 
                                                         <div class="atbd_listing_meta">
                                                             <span class="mx-auto atbd_meta atbd_listing_rating">Activo</span>
                                                         </div>
@@ -45,13 +51,13 @@
                                                     @endif
                                                 </td>
                                                 <td class="text-center">
-                                                    @foreach ($city->images as $image)
-                                                    <img  widht="75" height="75" src="{{asset('storage/'.$image->url)}}" alt=""> 
+                                                    @foreach ($offer->images as $image)
+                                                    <img  widht="75px" height="75px" src="{{asset('storage/'.$image->url)}}" alt=""> 
                                                     @endforeach
                                                 </td>
                                             </tr>
-                                            @include('usuarios.ciudad_atributes.edit_modal')
-                                            @include('usuarios.ciudad_atributes.delete_modal')
+                                            @include('usuarios.oferta_atributes.edit_modal')
+                                            @include('usuarios.oferta_atributes.delete_modal')
                                         @endforeach
                                         </tbody>
                                     </table>
@@ -64,6 +70,3 @@
         </div>
     </div>
 </div><!-- ends: .tab-pane -->
-
-
-@include('usuarios.ciudad_atributes.register_modal')

@@ -10,7 +10,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="{{route('bussines.register')}}" id="signup-form" method="post">
+                <form action="{{route('bussines.register')}}" id="signup-form" method="post" enctype="multipart/form-data">
                     @csrf
                     <input type="hidden" name="user_id" value="{{$user->id}}">
                     <div class="form-group">
@@ -43,6 +43,18 @@
                         <label for="title" class="form-label">Teléfono</label>
                         <input type="text" class="form-control" name="phone" placeholder="Teléfono o Celular" required>
                     </div>
+                    <div class="form-group">
+                        <label for="title" class="form-label">Agregue Imagen</label>
+                        <div class="col-lg-3 col-md-4 mb-5 mb-lg-0">
+                                 <input id="fileBusiness" type="file"  name="fileBusiness">
+                        </div>
+
+                            <div class="image-wrapper">
+                                <img id="pictureBusiness" src="https://revistabyte.es/wp-content/uploads/2016/01/Seguridad-TI-768x484.jpg.webp" alt="">
+                            </div>
+                    </div>
+
+
                     <button type="submit" class="btn btn-block btn-lg btn-gradient btn-gradient-two">Registrar empresa</button>
 
                 </form>
@@ -51,3 +63,30 @@
         </div>
     </div>
 </div>
+
+
+<style>
+    .image-wrapper{
+        position:  relative;
+        padding-bottom: 56.25%;
+    }
+    .image-wrapper img{
+        position: absolute;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+</style>
+
+<script>
+//CAMBIAR IMAGEN CUADNO SE SELECCIONE UNA FOTO
+document.getElementById("fileBusiness").addEventListener('change', cambiarImagen);
+function cambiarImagen(event){
+    var file = event.target.files[0];
+    var reader = new FileReader();
+    reader.onload = (event) => {
+        document.getElementById("pictureBusiness").setAttribute('src', event.target.result);
+    };
+    reader.readAsDataURL(file);
+}
+</script>
