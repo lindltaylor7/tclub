@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Social extends Model
 {
+    protected $fillable = ['facebook_url','youtube_url','instagram_url','business_id'];
     protected $guarded = [];
 
     use HasFactory;

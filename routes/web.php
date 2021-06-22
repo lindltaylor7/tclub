@@ -8,6 +8,7 @@ use App\Http\Controllers\SocialController;
 use App\Http\Controllers\UserController;
 
 use App\Http\Controllers\CityController;
+use App\Http\Controllers\OfferController;
 use Illuminate\suPPOrt\facades\Route;
 
 Route::get('/', [HomeController::class,'index'])->name("home");
@@ -22,12 +23,19 @@ Route::get('/empresas', [BusinessController::class,'index'])->name('empresa.inde
 Route::get('/empresas/{id}', [BusinessController::class,'show'])->name('empresa.show');
 
 Route::post('/user/register', [UserController::class,'store'])->name("user.register");
+Route::put('/user/{id}/update', [UserController::class,'update'])->name("user.update");
 Route::get('/user/{id}/dashboard', [UserController::class,'show'])->name("user.dashboard")->middleware('auth');
 
 Route::get('/business/register/{id}',[BusinessController::class,'create'])->name('bussines.create');
 Route::post('/business/register',[BusinessController::class,'store'])->name('bussines.register');
-Route::post('/business/register/address',[AddressController::class,'store'])->name('address.register');
-Route::post('/business/register/social',[SocialController::class,'store'])->name('social.register');
+
+Route::post('/business/{id}/register/address',[AddressController::class,'store'])->name('address.register');
+Route::put('/address/{id}/update',[AddressController::class,'update'])->name('address.update');
+
+Route::post('/business/{id}/register/social',[SocialController::class,'store'])->name('social.register');
+Route::put('/social/{id}/update',[SocialController::class,'update'])->name('social.update');
+
+Route::GET('/business/{id}/register/offer',[OfferController::class,'store'])->name('offer.register');
 
 Route::post('/ciudad/register',[CityController::class,'store'])->name('ciudad.register');
 Route::put('/ciudad/update/{id}',[CityController::class,'update'])->name('ciudad.update');

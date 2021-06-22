@@ -34,14 +34,15 @@ class AddressController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
         $request->validate([
 
-            'street' => 'required'
-            
+            'street' => 'required',
+            'district' => 'required',
+            'city_id' => 'required',
+            'business_id' => 'required'
         ]);
-        
         $addresses = Address::create($request->all());
         
         return redirect()->back();
@@ -79,7 +80,9 @@ class AddressController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $categoria= Address::where('id',$id)->first();
+        $categoria->update($request->except(['_token','_method']));
+        return redirect()->back()->with('ActualizacionR','Red Social actualizada');
     }
 
     /**
