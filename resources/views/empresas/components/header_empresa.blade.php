@@ -1,5 +1,5 @@
 <section class="listing-details-wrapper bgimage">
-    <div class="bg_image_holder"><img src="{{asset('img/plantilla-portada.jpg')}}" alt=""></div>
+    <div class="bg_image_holder">@foreach ($unico->images as $image) <img src="{{asset('storage/'.$image->url)}}" alt="">@endforeach</div>
     @include('layout.main_menu')
     <div class="listing-info content_above">
         <div class="container">

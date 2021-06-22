@@ -6,6 +6,7 @@ use App\Models\Business;
 use App\Models\User;
 use App\Models\Category;
 use App\Models\City;
+use App\Models\Image;
 use App\Models\Offer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -85,9 +86,10 @@ class BusinessController extends Controller
         $categorias = Category::all();
         $empresas = Business::all();
         $ofertas = Offer::all()->where('business_id',$id);
+        $offers = Offer::all()->where('business_id',$id);
         $cat = Business::find($id)->categories()->where('business_id',$id)->first();
 
-        return view('empresas.show',compact('unico','categorias','empresas','ofertas','cat'));
+        return view('empresas.show',compact('unico','categorias','empresas','ofertas','cat','offers'));
     }
 
     /**

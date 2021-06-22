@@ -72,28 +72,27 @@
                     <div class="atbdb_content_module_contents">
                         <div class="gallery-wrapper">
                             <div class="gallery-images">
-                                <div class="single-image">
-                                    <img src="{{asset('img/escuela_grande.jpg')}}" alt="">
-                                </div>
+                                @foreach ($offers as $offer)
+                                    <div class="single-image">
+                                        @foreach ($offer->images as $image)
+                                            <img style="width: 670px; height: 410px;" src="{{asset('storage/'.$image->url)}}" alt="listing image">
+                                        @endforeach
+                                    </div>
+                                @endforeach
                             </div><!-- ends: .gallery-images -->
                             <div class="gallery-thumbs">
-                                <div class="single-thumb">
-                                    <img src="{{asset('img/escuela-mediano.jpg')}}" alt="">
-                                </div>
+                                @foreach ($offers as $offer)
+                                    <div class="single-thumb">
+                                        @foreach ($offer->images as $image)
+                                            <img style="width: 126px; height: 100px;" src="{{asset('storage/'.$image->url)}}" alt="listing image">
+                                        @endforeach   
+                                    </div>
+                                @endforeach
                             </div><!-- ends: .gallery-thumbs -->
                         </div><!-- ends: .gallery-wrapper -->
                     </div>
                 </div><!-- ends: .atbd_content_module -->
-                <div class="atbd_content_module">
-                    <div class="atbd_content_module__tittle_area">
-                        <div class="atbd_area_title">
-                            <h4><span class="la la-map-o"></span>Localización</h4>
-                        </div>
-                    </div>
-                    <div class="atbdb_content_module_contents">
-                        <div class="map" id="map-one"></div>
-                    </div>
-                </div><!-- ends: .atbd_content_module -->
+                
                 
             </div>
             <div class="col-lg-4 mt-5 mt-lg-0">
