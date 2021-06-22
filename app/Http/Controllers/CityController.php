@@ -20,9 +20,10 @@ class CityController extends Controller
     public function index()
     {
         $ciudades = City::all();
+        $categorias = Category::all();
         $ciudades_top = City::all()->take(4);
 
-        return view('ciudades.index', compact('ciudades','ciudades_top'));
+        return view('ciudades.index', compact('ciudades','ciudades_top','categorias'));
     }
 
     /**
@@ -32,7 +33,7 @@ class CityController extends Controller
      */
     public function create($id)
     {
-        
+
     }
 
     /**
@@ -98,7 +99,7 @@ class CityController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {  
+    {
         $request->validate([
             'name' => 'required'
         ]);

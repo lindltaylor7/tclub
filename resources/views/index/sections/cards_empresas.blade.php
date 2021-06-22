@@ -19,14 +19,14 @@
                                                 @foreach ($empresa->images as $image)
                                                 <a href="{{route('empresa.show',$empresa->id)}}"><img style="width: 350px; height: 220px; object-fit: cover;" src="{{asset('storage/'.$image->url)}}" alt="listing image"></a>
                                                 @endforeach
-                                                
+
                                             </a>
                                         </div><!-- ends: .atbd_listing_image -->
-                                        
+
                                         <div class="atbd_author atbd_author--thumb">
                                             <a >
                                                 @foreach ($empresa->user->images as $image)
-                                                <img src="{{asset('storage/'.$image->url)}}" alt="Author Image" style="width: 40px ; heigh: 40 px">
+                                                <img src="{{asset('storage/'.$image->url)}}" alt="Author Image" style="width: 40px; height: 40px; object-fit: cover;">
                                                 @endforeach
                                                 <span class="custom-tooltip">{{$empresa->user->name}}</span>
                                             </a>
