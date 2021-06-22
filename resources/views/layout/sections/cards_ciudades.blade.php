@@ -10,6 +10,7 @@
             <div class="col-lg-12">
                 <div class="cat-places-wrapper">
                     @foreach ($ciudades_top as $ciudad_top)
+                        @if ($ciudad_top->addresses->count() != 0)
                         <div class="category-place-single">
                             <figure>
                                 <a href="{{route('ciudad.show',$ciudad_top->id)}}">
@@ -18,12 +19,12 @@
                                     @endforeach
                                 </a>
                                 <figcaption>
-
                                     <h3>{{$ciudad_top->name}}</h3>
                                     <p>{{$ciudad_top->addresses->count()}} empresas</p>
                                 </figcaption>
                             </figure>
                         </div><!-- ends: .category-place-single -->
+                        @endif
                     @endforeach
                 </div><!-- ends: .col-lg-12 -->
             </div>
@@ -31,7 +32,9 @@
                 <div class="place-list-wrapper">
                     <ul class="list-unstyled">
                         @foreach ($ciudades as $ciudad)
+                        @if ($ciudad->addresses->count() != 0)
                             <li><a href="">{{$ciudad->name}} ({{$ciudad->addresses->count()}})</a></li>
+                        @endif
                         @endforeach
                     </ul>
                 </div>

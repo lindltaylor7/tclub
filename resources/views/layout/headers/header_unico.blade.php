@@ -1,5 +1,9 @@
 <section class="header-breadcrumb bgimage overlay overlay--dark">
-    <div class="bg_image_holder"><img src="{{asset('img/breadcrumb1.jpg')}}" alt=""></div>
+    <div class="bg_image_holder">
+        @foreach ($unico->images as $image)
+            <img src="{{asset('storage/'.$image->url)}}" alt="">
+        @endforeach
+    </div>
     @include('layout.main_menu')
     <div class="breadcrumb-wrapper content_above">
         <div class="container">
