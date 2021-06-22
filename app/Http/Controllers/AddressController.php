@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Address;
 Use App\Models\Business;
+use App\Models\City;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -44,6 +45,14 @@ class AddressController extends Controller
             'business_id' => 'required'
         ]);
         $addresses = Address::create($request->all());
+
+
+
+        $ciudad = City::find($addresses->city_id);
+        $categoria = Business::find($id)->categories()->where('business_id',$id)->first();
+   
+        /*$addresses->city()->attach($request->get('category_id'));*/
+        $categoria->cities()->attach($request->get('city_id'));
         
         return redirect()->back();
 
