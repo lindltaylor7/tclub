@@ -68,9 +68,19 @@
 
                                                     <li>
                                                         <p><a data-toggle="modal" data-target="#edit_redsocial_update{{$businesse->id}}" ><span class="la la-share"></span>Redes Sociales</a></li></p>
+                                                        @isset($businesse->social->facebook_url)
                                                         <a href="{{$businesse->social->facebook_url}}" target="_blank" role="button" class="btn btn-sm btn-outline-info"  aria-haspopup="true"><li class="fab fa-facebook-f color-facebook"></li></a>
+                                                        @endisset
+                                                      
+                                                        @isset($businesse->social->youtube_url)
                                                         <a href="{{$businesse->social->youtube_url}}" target="_blank" role="button" class="btn btn-sm btn-outline-danger"  aria-haspopup="true"><li class="fab fa-youtube color-youtube"></li></a>
+                                                        @endisset
+
+                                                        @isset($businesse->social->facebook_url)
                                                         <a href="{{$businesse->social->facebook_url}}" target="_blank" role="button" class="btn btn-sm btn-outline-primary"  aria-haspopup="true"><li class="fab fa-instagram color-instagram"></li></a>
+                                                        @endisset
+                                                       
+                                                      
                                                         @include('usuarios.empresa_atributes.edit_redsocial_modal')
                                                      </li>
                                                     <!--Ends social share--> 

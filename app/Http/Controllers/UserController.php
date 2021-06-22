@@ -77,12 +77,13 @@ class UserController extends Controller
     {
         $categorias = Category::all();
         $cities = City::all();
+        $ofertas = Offer::all();
         $users = User::find($id);
         $user = User::find($id);
         $businesses = User::find($id)->businesses()->where('user_id', $id)->get();
         $empresas = User::find($id)->businesses();
         $offers = Offer::all();
-        return view('usuarios.show', compact('users', 'user', 'businesses', 'categorias', 'cities', 'empresas','offers'));
+        return view('usuarios.show', compact('users', 'user', 'businesses', 'categorias', 'cities', 'empresas','offers','ofertas'));
     }
 
     /**
