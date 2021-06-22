@@ -49,3 +49,4 @@ Route::delete('/category/{id}', [CategoryController::class,'destroy'])->name("ca
 
 Route::post('login',[HomeController::class,'login'])->name('login');
 Route::post('logout',[HomeController::class,'logout'])->name('logout');
+Route::post('empresas/busqueda', [HomeController::class, 'mostrar'])->name('mostrar');
