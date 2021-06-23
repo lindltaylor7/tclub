@@ -18,11 +18,10 @@
                         <input type="text" class="form-control" name="name" value="{{$city->name}}">
                     </div>
                     <div class="form-group">
-                        <label for="title" class="form-label">Agregue Imagen</label>
+                        <label for="title" class="form-label">Imagen de Ciudad:</label>
                         <div class="col-lg-3 col-md-4 mb-5 mb-lg-0">
                                  <input id="fileCityUpdate" type="file"  name="fileCityUpdate">
                         </div>
-
                             <div class="image-wrapper">
                                 <img id="pictureCityUpdate" src="{{asset('storage/'.$image->url)}}" alt="">
                             </div>

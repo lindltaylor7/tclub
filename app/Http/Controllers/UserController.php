@@ -52,7 +52,6 @@ class UserController extends Controller
             'type' => 'Free',
             'status' => 1,
 
-
             'password'=>bcrypt($request->get('password'))
         ]);
 
@@ -83,7 +82,9 @@ class UserController extends Controller
         $businesses = User::find($id)->businesses()->where('user_id', $id)->get();
         $empresas = User::find($id)->businesses();
         $offers = Offer::all();
-        return view('usuarios.show', compact('users', 'user', 'businesses', 'categorias', 'cities', 'empresas','offers','ofertas'));
+        $negocios = Business::all();
+        $usuarios = User::all();
+        return view('usuarios.show', compact('users', 'user', 'businesses', 'categorias', 'cities', 'empresas','offers','ofertas','negocios','usuarios'));
     }
 
     /**
@@ -119,6 +120,24 @@ class UserController extends Controller
         }
 
         return redirect()->back()->with('ActualizacionU','Datos de usuario actualizada');
+    }
+
+    public function inactive($id)
+    {
+        $usuario = User::find($id);
+        $usuario->update(['status' => 0]);
+        $usuario->save();
+
+        return redirect()->back()->with('desactivar_usuario','Actualización completa');
+    }
+
+    public function active($id)
+    {
+        $usuario = User::find($id);
+        $usuario->update(['status' => 1]);
+        $usuario->save();
+
+        return redirect()->back()->with('activar_usuario','Actualización completa');
     }
 
     /**

@@ -36,11 +36,11 @@
                                                 <td>
                                                     @if ($city->status == '1') 
                                                         <div class="atbd_listing_meta">
-                                                            <span class="mx-auto atbd_meta atbd_listing_rating">Activo</span>
+                                                            <button class="mx-auto atbd_meta atbd_listing_rating" type="button" data-toggle="modal" data-target="#Inactive_modal{{$city->id}}" href="#">Activo</button>
                                                         </div>
                                                     @else
                                                         <div class="atbd_listing_meta">
-                                                            <span class="mx-auto atbd_meta atbd_badge_close">Inactivo</span>
+                                                            <button class="mx-auto atbd_meta atbd_badge_close" type="button" data-toggle="modal" data-target="#Active_modal{{$city->id}}" href="#">Inactivo</button>
                                                         </div>
                                                     @endif
                                                 </td>
@@ -52,6 +52,8 @@
                                             </tr>
                                             @include('usuarios.ciudad_atributes.edit_modal')
                                             @include('usuarios.ciudad_atributes.delete_modal')
+                                            @include('usuarios.ciudad_atributes.inactive_modal')
+                                            @include('usuarios.ciudad_atributes.active_modal')
                                         @endforeach
                                         </tbody>
                                     </table>

@@ -10,7 +10,7 @@
             <div class="col-lg-12">
                 <div class="cat-places-wrapper">
                     @foreach ($ciudades_top as $c)
-                    @if ($c->addresses->count() != 0)
+                    @if (($c->addresses->count() != 0) && ($c->status == 1))
                     <div class="category-place-single">
                         <figure>
                             <a href="{{route('ciudad.show',$c->id)}}">

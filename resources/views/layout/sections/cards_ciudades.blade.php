@@ -10,7 +10,7 @@
             <div class="col-lg-12">
                 <div class="cat-places-wrapper">
                     @foreach ($ciudades_top as $ciudad_top)
-                        @if ($ciudad_top->addresses->count() != 0)
+                        @if (($ciudad_top->addresses->count() != 0) && ($ciudad_top->status == 1))
                         <div class="category-place-single">
                             <figure>
                                 <a href="{{route('ciudad.show',$ciudad_top->id)}}">
@@ -32,7 +32,7 @@
                 <div class="place-list-wrapper">
                     <ul class="list-unstyled">
                         @foreach ($ciudades as $ciudad)
-                        @if ($ciudad->addresses->count() != 0)
+                        @if (($ciudad->addresses->count() != 0) && ($ciudad->status == 1))
                             <li><a href="">{{$ciudad->name}} ({{$ciudad->addresses->count()}})</a></li>
                         @endif
                         @endforeach

@@ -35,7 +35,9 @@
                                             <select class="form-control ad_search_category">
                                                 <option>Seleccionar categoría</option>
                                                 @foreach ($categorias as $categoria)
+                                                @if($categoria->status == 1)
                                                     <option value="{{$categoria->id}}">{{$categoria->name}}</option>
+                                                @endif
                                                 @endforeach
                                             </select>
                                         </div>
@@ -45,7 +47,9 @@
                                             <select class="form-control ad_search_category">
                                                 <option>Seleccione ciudad</option>
                                                 @foreach ($ciudades as $ciudad)
+                                                @if($ciudad->status == 1)
                                                     <option value="{{$ciudad->id}}">{{$ciudad->name}}</option>
+                                                @endif
                                                 @endforeach
                                             </select>
                                         </div>
@@ -132,6 +136,7 @@
                     <div class="col-lg-8 order-0 order-lg-1">
                         <div class="row">
                             @foreach ($empresas as $empresa)
+                            @if($empresa->status == 1)
                                 <div class="col-lg-12">
                                     <div class="atbd_single_listing atbd_listing_list">
                                         <article class="atbd_single_listing_wrapper">
@@ -201,6 +206,7 @@
                                         </article><!-- atbd_single_listing_wrapper -->
                                     </div>
                                 </div><!-- ends: .col-lg-12 -->
+                                @endif
                             @endforeach
                         </div>
                         <div class="row">

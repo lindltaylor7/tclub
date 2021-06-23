@@ -108,6 +108,24 @@ class OfferController extends Controller
         return redirect()->back()->with('actualizar_ciudad','Actualización completa');
     }
 
+    public function inactive($id)
+    {
+        $oferta = Offer::find($id);
+        $oferta->update(['status' => 0]);
+        $oferta->save();
+
+        return redirect()->back()->with('desactivar_oferta','Actualización completa');
+    }
+
+    public function active($id)
+    {
+        $oferta = Offer::find($id);
+        $oferta->update(['status' => 1]);
+        $oferta->save();
+
+        return redirect()->back()->with('activar_oferta','Actualización completa');
+    }
+
     /**
      * Remove the specified resource from storage.
      *

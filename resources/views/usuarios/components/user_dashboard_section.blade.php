@@ -19,10 +19,19 @@
                                 <a class="nav-link" id="ciudades" data-toggle="tab" href="#ciudad" role="tab" aria-controls="ciudad" aria-selected="false">Ciudades</a>
                             </li>
                             @endcan
-
                             @can('edit.rubros')
                             <li class="nav-item">
-                                <a class="nav-link" id="faborite-listings" data-toggle="tab" href="#category" role="category" aria-controls="favorite" aria-selected="false">Categorias</a>
+                                <a class="nav-link" id="categorias" data-toggle="tab" href="#category" role="category" aria-controls="categoria" aria-selected="false">Categorias</a>
+                            </li>
+                            @endcan
+                            @can('edit.empresas')
+                            <li class="nav-item">
+                                <a class="nav-link" id="empresas" data-toggle="tab" href="#all_business" role="all_business" aria-controls="empresa" aria-selected="false">Empresas</a>
+                            </li>
+                            @endcan
+                            @can('edit.usuarios')
+                            <li class="nav-item">
+                                <a class="nav-link" id="usuarios" data-toggle="tab" href="#all_users" role="all_usuarios" aria-controls="usuario" aria-selected="false">Usuarios</a>
                             </li>
                             @endcan
 
@@ -71,6 +80,8 @@
         @include('usuarios.components.partials.user_activities')
         @include('usuarios.components.partials.user_cities')
         @include('usuarios.components.partials.user_categories')
+        @include('usuarios.components.partials.user_all_business')
+        @include('usuarios.components.partials.user_all_users')
     </div>
 </section>
 @include('empresas.components.register_modal')

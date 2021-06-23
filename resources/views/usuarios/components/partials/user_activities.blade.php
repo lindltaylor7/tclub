@@ -42,11 +42,11 @@
                                                 <td>
                                                     @if ($offer->status == '1') 
                                                         <div class="atbd_listing_meta">
-                                                            <span class="mx-auto atbd_meta atbd_listing_rating">Activo</span>
+                                                            <button class="mx-auto atbd_meta atbd_listing_rating" type="button" data-toggle="modal" data-target="#Inactive_oferta{{$offer->id}}" href="#">Activo</button>
                                                         </div>
                                                     @else
                                                         <div class="atbd_listing_meta">
-                                                            <span class="mx-auto atbd_meta atbd_badge_close">Inactivo</span>
+                                                            <button class="mx-auto atbd_meta atbd_badge_close" type="button" data-toggle="modal" data-target="#Active_oferta{{$offer->id}}" href="#">Inactivo</button>
                                                         </div>
                                                     @endif
                                                 </td>
@@ -58,6 +58,8 @@
                                             </tr>
                                             @include('usuarios.oferta_atributes.edit_modal')
                                             @include('usuarios.oferta_atributes.delete_modal')
+                                            @include('usuarios.oferta_atributes.inactive_modal')
+                                        @include('usuarios.oferta_atributes.active_modal')
                                         @endforeach
                                         </tbody>
                                     </table>

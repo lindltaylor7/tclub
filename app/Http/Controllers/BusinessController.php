@@ -128,6 +128,24 @@ class BusinessController extends Controller
         return redirect()->back()->with('actualizar_empresa','Actualización completa');
     }
 
+    public function inactive($id)
+    {
+        $empresa = Business::find($id);
+        $empresa->update(['status' => 0]);
+        $empresa->save();
+
+        return redirect()->back()->with('desactivar_empresa','Actualización completa');
+    }
+
+    public function active($id)
+    {
+        $empresa = Business::find($id);
+        $empresa->update(['status' => 1]);
+        $empresa->save();
+
+        return redirect()->back()->with('activar_empresa','Actualización completa');
+    }
+
     /**
      * Remove the specified resource from storage.
      *

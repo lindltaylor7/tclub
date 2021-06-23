@@ -112,6 +112,24 @@ class CategoryController extends Controller
         }
         return redirect()->back()->with('ActualizacionC','Rubro actualizado');
     }
+
+    public function inactive($id)
+    {
+        $categoria = Category::find($id);
+        $categoria->update(['status' => 0]);
+        $categoria->save();
+
+        return redirect()->back()->with('desactivar_categoria','Actualización completa');
+    }
+
+    public function active($id)
+    {
+        $categoria = Category::find($id);
+        $categoria->update(['status' => 1]);
+        $categoria->save();
+
+        return redirect()->back()->with('activar_categoria','Actualización completa');
+    }
     /**
      * Remove the specified resource from storage.
      *

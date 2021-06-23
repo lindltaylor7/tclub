@@ -10,6 +10,7 @@
         </div>
         <div class="row">
             @foreach ($categorias as $categoria)
+            @if (($categoria->businesses->count() != 0) && ($categoria->status == 1))
                 <div class="col-lg-4 col-sm-6">
                     <div class="category-single category--img">
                         <figure class="category--img4">
@@ -30,6 +31,7 @@
                         </figure>
                     </div><!-- ends: .category-single -->
                 </div><!-- ends: .col -->
+            @endif
             @endforeach
         </div>
     </div>
