@@ -2,6 +2,7 @@
     <div class="container">
         <div class="row">
             @foreach ($businesses as $businesse)
+            @if($businesse->status == 1)
             <div class="col-lg-4 col-sm-6">
                 <div class="atbd_single_listing atbd_listing_card">
                     <article class="atbd_single_listing_wrapper ">
@@ -101,9 +102,11 @@
                                 <div class="atbd_listing_bottom_content">
                                     <div class="atbd_content_left">
                                         @foreach ($businesse->categories as $categor)
+                                        @if($categor->status == 1)
                                         <div class="atbd_listing_category">
                                             <a href="{{route('rubro.show',$categor->id)}}"><span class="{{$categor->icon}}"></span>{{$categor->name}}</a>
                                         </div>
+                                        @endif
                                         @endforeach
                                     </div>
                                     <ul class="atbd_content_right">
@@ -123,6 +126,7 @@
             @include('usuarios.empresa_atributes.business_socials_modal')
             @include('usuarios.empresa_atributes.edit_imagen_modal')
             @include('usuarios.empresa_atributes.delete_modal')
+           @endif
            @endforeach
         </div>
     </div>

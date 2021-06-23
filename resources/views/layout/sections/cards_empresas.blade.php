@@ -10,6 +10,7 @@
             <div class="listing-cards-wrapper col-lg-12">
                 <div class="row">
                     @foreach($empresas as $empresa)
+                    @if($empresa->status == 1)
                         <div class="col-lg-4 col-sm-6">
                             <div class="atbd_single_listing ">
                                 <article class="atbd_single_listing_wrapper">
@@ -70,6 +71,7 @@
                                 </article><!-- atbd_single_listing_wrapper -->
                             </div>
                         </div><!-- ends: .col-lg-4 -->
+                    @endif
                     @endforeach
                     <div class="col-lg-12 text-center m-top-20">
                         <a href="{{route('empresa.index')}}" class="btn btn-gradient btn-gradient-two">Ver Más</a>

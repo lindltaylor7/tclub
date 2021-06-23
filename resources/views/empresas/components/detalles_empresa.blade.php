@@ -21,6 +21,7 @@
                     <div class="atbdb_content_module_contents">
                         <div class="row">
                         @foreach($ofertas as $oferta)
+                        @if ($oferta->status == 1)
                         <div class="col-lg-6 col-sm-6">
                             <div class="atbd_single_listing ">
                                 <article class="atbd_single_listing_wrapper">
@@ -59,7 +60,8 @@
                                 </article><!-- atbd_single_listing_wrapper -->
                             </div>
                         </div><!-- ends: .col-lg-4 -->
-                    @endforeach
+                        @endif
+                        @endforeach
                     </div>
                     </div>
                 </div><!-- ends: .atbd_content_module -->
@@ -138,9 +140,11 @@
                     <div class="widget-body atbdp-widget-categories">
                         <ul class="atbdp_parent_category">
                             @foreach ($categorias as $categoria)
+                            @if($categoria->status == 1)
                                 <li>
                                     <a href="{{route('rubro.show',$categoria->id)}}"><span class="{{$categoria->icon}}"></span>{{$categoria->name}}</a>
                                 </li>
+                                @endif
                             @endforeach
                         </ul>
                     </div><!-- ends: .atbdp -->
@@ -154,7 +158,7 @@
                         <ul class="listings">
                             @foreach($empresas as $empresa)
                                 @foreach ($empresa->categories as $categor)
-                                    @if($categor->name == $cat->name && $empresa->name != $unico->name)
+                                    @if($categor->name == $cat->name && $empresa->name != $unico->name && $empresa->status == 1)
                                         <li>
                                             <div class="atbd_left_img">
                                                 <a href=""><img src="{{asset('img/escuela.png')}}" alt="listing image"></a>

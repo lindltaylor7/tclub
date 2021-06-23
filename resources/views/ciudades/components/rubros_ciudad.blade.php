@@ -10,7 +10,7 @@
         </div>
         <div class="row">
             @foreach ($categorias as $categoria)
-                @if($categoria->name == $cat->name)
+                @if(($categoria->name == $cat->name) && ($categoria->status == 1))
                     <div class="col-lg-4 col-sm-6">
                         <div class="category-single category--img">
                             <figure class="category--img4">

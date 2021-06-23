@@ -118,6 +118,26 @@ class CityController extends Controller
         return redirect()->back()->with('actualizar_ciudad','Actualización completa');
     }
 
+    public function inactive($id)
+    {
+        $ciudad = City::find($id);
+        $ciudad->update(['status' => 0]);
+        $ciudad->save();
+
+
+        return redirect()->back()->with('desactivar_ciudad','Actualización completa');
+    }
+
+    public function active($id)
+    {
+        $ciudad = City::find($id);
+        $ciudad->update(['status' => 1]);
+        $ciudad->save();
+
+
+        return redirect()->back()->with('activar_ciudad','Actualización completa');
+    }
+
     /**
      * Remove the specified resource from storage.
      *
@@ -132,4 +152,6 @@ class CityController extends Controller
 
         return redirect()->back()->with('borrar_ciudad','Borrado completo');
     }
+
+    
 }
