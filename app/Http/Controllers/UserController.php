@@ -75,7 +75,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $categorias = Category::all();
+        $categorias = Category::paginate(5);
         $cities = City::all();
         $ofertas = Offer::all();
         $users = User::find($id);
@@ -109,7 +109,7 @@ class UserController extends Controller
 
         $user= User::where('id',$id)->first();
         $user->update($request->except(['_token','_method','fileUserUpdate']));
-        
+
         if ($request->file('fileUserUpdate')) {
             $user->images()->delete();
             $url = Storage::put('users', $request->file('fileUserUpdate'));

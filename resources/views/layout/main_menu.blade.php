@@ -106,6 +106,12 @@
                                                                     </a>
                                                                     <ul class="dropdown-menu" aria-labelledby="drop2">
                                                                         <li><a href="{{route('user.dashboard',Auth::id())}}">Dashboard</a></li>
+                                                                        <li>
+                                                                        <form style="display: inline" action="{{route('logout')}}" method="POST">
+                                                                            @csrf
+                                                                            <a href="#" onclick="this.closest('form').submit()">Log Out</a>
+                                                                        </form>
+                                                                        </li>
                                                                     </ul>
                                                                 </li>
                                                             </ul>

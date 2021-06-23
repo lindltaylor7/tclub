@@ -11,7 +11,7 @@
                                     <a href="#" class="btn btn-xs btn-gradient btn-gradient-two" data-toggle="modal" data-target="#addCategory_modal"><span class="la la-plus"></span>Agregar</a>
                                 </div>
                             </div>
-                            
+
                         </div>
                         <div class="atbdb_content_module_contents">
                             <div class="table table-hover table-responsive">
@@ -29,7 +29,7 @@
                                         @foreach($categorias as $categoria)
                                         <tr class="text-center">
                                             <td>
-                                                @if ($categoria->status == '1') 
+                                                @if ($categoria->status == '1')
                                                 <button type="button"  data-toggle="modal" data-target="#Category_update{{$categoria->id}}" class="btn btn-xs btn-warning la la-pencil"></button> <button type="button" class="btn btn-xs btn-danger la la-trash" data-toggle="modal" data-target="#Category-remove{{$categoria->id}}"></button>
                                                 @else
                                                 <button type="button"  data-toggle="modal" data-target="#Category_update{{$categoria->id}}" class="btn btn-xs btn-warning la la-pencil"></button> <button type="button" class="btn btn-xs btn-info la la-check" data-toggle="modal" data-target="#Category-remove{{$categoria->id}}"></button>
@@ -37,8 +37,8 @@
                                             </td>
                                             <td>{!! $categoria->name !!}</td>
                                             <td><span class="{{$categoria->icon}}"></span></td>
-                                            
-                                            <td>@if ($categoria->status == '1') 
+
+                                            <td>@if ($categoria->status == '1')
                                                 <div class="atbd_listing_meta">
                                                     <span class="atbd_meta atbd_listing_rating mx-auto">Activo</span>
                                                 </div>
@@ -50,21 +50,24 @@
                                             </td>
                                             <td class="text-center" >
                                                 @foreach ($categoria->images as $image)
-                                                <img  widht="75" height="75" src="{{asset('storage/'.$image->url)}}" alt=""> 
-                                                @endforeach                                    
+                                                <img  widht="75" height="75" src="{{asset('storage/'.$image->url)}}" alt="">
+                                                @endforeach
                                             </td>
                                         </tr>
                                         @include('usuarios.rubro_atributes.rubro_delete_modal')
                                         @include('usuarios.rubro_atributes.rubro_update_modal')
-                                    @endforeach                               
+                                    @endforeach
                                     </tbody>
                                 </table>
+
                             </div>
+                            {{$categorias->links()}}
                         </div><!-- ends: .atbdb_content_module_contents -->
+
                     </div>
                 </div><!--  ends: .atbd_saved_items_wrapper -->
             </div><!-- ends: .col-lg-12 -->
         </div>
-    </div>                        
+    </div>
 </div><!-- ends: .tab-pane -->
 @include('usuarios.rubro_atributes.category_modal_register')

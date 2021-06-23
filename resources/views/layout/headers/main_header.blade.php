@@ -14,24 +14,24 @@
                     </div><!-- ends: .search_title_area -->
                     <form method="POST" action="{{route('mostrar')}}" class="search_form">
                         @csrf
-                        
+
                         <div class="atbd_seach_fields_wrapper">
                             <div class="single_search_field search_query">
 
-                                <input class="form-control search_fields" name="search" type="search" placeholder="Buscar...">
+                                <input class="form-control search_fields" name="search" type="search" placeholder="Buscar..." required>
                             </div>
                             <div class="single_search_field search_category">
-                                <select class="search_fields" id="at_biz_dir-category">
+                                <select name="rubro" class="search_fields" id="at_biz_dir-category">
 
-                                    <option value="#">Seleccione un Rubro</option>
+                                    <option value="" selected="true" disabled="disabled">Seleccione un Rubro</option>
                                     @foreach ($categorias as $categoria)
                                         <option value="{{$categoria->id}}">{{$categoria->name}}</option>
                                     @endforeach
                                 </select>
                             </div>
                             <div class="single_search_field search_location">
-                                <select class="search_fields" id="at_biz_dir-location">
-                                    <option value="#">Seleccione una Ciudad</option>
+                                <select name="ciudad" class="search_fields" id="at_biz_dir-location">
+                                    <option value="" selected="true" disabled="disabled">Seleccione una Ciudad</option>
                                     @foreach ($ciudades as $ciudad)
                                         <option value="{{$ciudad->id}}">{{$ciudad->name}}</option>
                                     @endforeach
