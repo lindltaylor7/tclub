@@ -9,7 +9,7 @@
                                 <a class="nav-link active" id="all-listings" data-toggle="tab" href="#listings" role="tab" aria-controls="listings" aria-selected="true">Mis Empresas</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Mi perfil de usuario</a>
+                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Mi perfil</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" id="faborite-listings" data-toggle="tab" href="#favorite" role="tab" aria-controls="favorite" aria-selected="false">Mis Ofertas</a>
@@ -21,7 +21,7 @@
                             @endcan
                             @can('edit.rubros')
                             <li class="nav-item">
-                                <a class="nav-link" id="categorias" data-toggle="tab" href="#category" role="category" aria-controls="categoria" aria-selected="false">Categorias</a>
+                                <a class="nav-link" id="categorias" data-toggle="tab" href="#category" role="category" aria-controls="categoria" aria-selected="false">Rubros</a>
                             </li>
                             @endcan
                             @can('edit.empresas')
