@@ -84,6 +84,10 @@
                                                         <a href="{{$businesse->social->instagram_url}}" target="_blank" role="button" class="btn btn-sm btn-outline-primary"  aria-haspopup="true"><li class="fab fa-instagram color-instagram"></li></a>
                                                         @endisset
 
+                                                        @isset($businesse->social->web_url)
+                                                        <a href="{{$businesse->social->web_url}}" target="_blank" role="button" class="btn btn-sm btn-outline-secondary"  aria-haspopup="true"><li class="fab fa-chrome color-secondary"></li></a>
+                                                        @endisset
+
 
                                                         @include('usuarios.empresa_atributes.edit_redsocial_modal')
                                                      </li>

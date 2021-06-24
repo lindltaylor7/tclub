@@ -18,6 +18,7 @@ class CreateSocialsTable extends Migration
             $table->string('facebook_url',200)->nullable();
             $table->string('youtube_url',200)->nullable();
             $table->string('instagram_url',200)->nullable();
+            $table->string('web_url',200)->nullable();
             $table->unsignedBigInteger('business_id');
             $table->foreign('business_id')->references('id')->on('businesses')->onDelete('cascade');
             $table->timestamps();

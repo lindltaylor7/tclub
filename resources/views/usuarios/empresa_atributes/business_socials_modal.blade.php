@@ -15,15 +15,19 @@
                     <div class="form-group">
                         <label for="title" class="form-label">Facebook</label>
                         <input type="text" class="form-control" name="facebook_url"  placeholder="Url de facebook de Empresa" required>
-                    </div>  
+                    </div>
                     <div class="form-group">
                         <label for="title" class="form-label">Youtube</label>
                         <input type="text" class="form-control" name="youtube_url"  placeholder="Url de youtube de Empresa" required>
-                    </div>  
+                    </div>
                     <div class="form-group">
                         <label for="title" class="form-label">Instagram</label>
                         <input type="text" class="form-control" name="instagram_url"  placeholder="Url de instagram de Empresa" required>
-                    </div>     
+                    </div>
+                    <div class="form-group">
+                        <label for="title" class="form-label">Pagina Web</label>
+                        <input type="text" class="form-control" name="web_url"  placeholder="Url de pagina web de Empresa" required>
+                    </div>
                     <button type="submit" class="btn btn-block btn-lg btn-gradient btn-gradient-two">Registrar Redes Sociales</button>
                 </form>
             </div>
