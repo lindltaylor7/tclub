@@ -10,12 +10,13 @@
         </div>
         <div class="row">
             @foreach ($categorias as $categoria)
-                @foreach ($categoria->cities as $c)
-                    @if($c->name == $cat->name)
+                @if(($categoria->name == $cat->name) && ($categoria->status == 1))
                     <div class="col-lg-4 col-sm-6">
                         <div class="category-single category--img">
                             <figure class="category--img4">
-                                <img src="{{asset('img/cat1.jpg')}}" alt="">
+                                @foreach ($categoria->images as $image)
+                                    <img  src="{{asset('storage/'.$image->url)}}" alt="" style="width:350px; height:280px; object-fit: cover;">
+                                @endforeach
                                 <figcaption class="overlay-bg">
                                     <a href="{{route('rubro.show',$categoria->id)}}" class="cat-box">
                                         <div>
@@ -23,17 +24,14 @@
                                                 <span class="{{$categoria->icon}}"></span>
                                             </div>
                                             <h4 class="cat-name">{{$categoria->name}}</h4>
-                                            @foreach ($cat as $c)
                                             <span class="badge badge-pill badge-success">{{$categoria->cities->count()}} Empresas</span>
-                                            @endforeach
                                         </div>
                                     </a>
                                 </figcaption>
                             </figure>
                         </div><!-- ends: .category-single -->
                     </div><!-- ends: .col -->
-                    @endif
-                @endforeach
+                @endif
             @endforeach
         </div>
     </div>

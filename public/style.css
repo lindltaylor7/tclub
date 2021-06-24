@@ -5240,19 +5240,19 @@ p {
 }
 
 .btn-gradient.btn-gradient-one {
-  background: linear-gradient(to right, #f5548e, #903af9);
+  background: linear-gradient(to right, #5754f5, #903af9);
 }
 
 .btn-gradient.btn-gradient-one:before {
-  background: linear-gradient(to right, #903af9, #f5548e);
+  background: linear-gradient(to right, #903af9, #5754f5);
 }
 
 .btn-gradient.btn-gradient-two {
-  background: linear-gradient(to right, #f5548e, #fa8b0c);
+  background: linear-gradient(to right, #2a2a30, #0c87fa);
 }
 
 .btn-gradient.btn-gradient-two:before {
-  background: linear-gradient(to right, #fa8b0c, #f5548e);
+  background: linear-gradient(to right, #0c87fa, #2a2a30);
 }
 
 .btn-gradient.btn-xs {

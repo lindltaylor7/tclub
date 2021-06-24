@@ -2,6 +2,7 @@
     <div class="container">
         <div class="row">
             @foreach ($businesses as $businesse)
+            @if(($businesse->status == 1) && ($businesse->user_id == $user->id))
             <div class="col-lg-4 col-sm-6">
                 <div class="atbd_single_listing atbd_listing_card">
                     <article class="atbd_single_listing_wrapper ">
@@ -31,7 +32,7 @@
                                 </div><!-- ends: .atbd_dashboard_tittle_metas -->
                                 <div class="atbd_card_action">
                                     <div class="atbd_listing_meta">
-                                        <span class="atbd_meta atbd_listing_rating">{{$businesse->valorations->avg('puntuation')}}<i class="la la-star"></i></span>
+                                        <span class="atbd_meta atbd_listing_rating">5<i class="la la-star"></i></span>
                                     </div><!-- ends: .atbd listing meta -->
                                     <div class="db_btn_area">
                                         <div class="dropup edit_listing">
@@ -53,8 +54,8 @@
                                 <div class="atbd_content_upper">
                                     <div class="atbd_listing_data_list">
                                         <ul>
-                                            
-                                         
+
+
 
                                             <div class="atbd_listing_data_list">
                                                 <ul>
@@ -69,24 +70,24 @@
                                                     <li>
                                                         <p><a data-toggle="modal" data-target="#edit_redsocial_update{{$businesse->id}}" ><span class="la la-share"></span>Redes Sociales</a></li></p>
 
-                                                       
+
                                                         @isset($businesse->social->facebook_url)
                                                         <a href="{{$businesse->social->facebook_url}}" target="_blank" role="button" class="btn btn-sm btn-outline-info"  aria-haspopup="true"><li class="fab fa-facebook-f color-facebook"></li></a>
                                                         @endisset
-                                                        
+
                                                         @isset($businesse->social->youtube_url)
                                                         <a href="{{$businesse->social->youtube_url}}" target="_blank" role="button" class="btn btn-sm btn-outline-danger"  aria-haspopup="true"><li class="fab fa-youtube color-youtube"></li></a>
                                                         @endisset
-                                                       
-                                                          
+
+
                                                         @isset($businesse->social->instagram_url)
-                                                        <a href="{{$businesse->social->instagram_url}}" target="_blank" role="button" class="btn btn-sm btn-outline-primary"  aria-haspopup="true"><li class="fab fa-instagram color-instagram"></li></a> 
+                                                        <a href="{{$businesse->social->instagram_url}}" target="_blank" role="button" class="btn btn-sm btn-outline-primary"  aria-haspopup="true"><li class="fab fa-instagram color-instagram"></li></a>
                                                         @endisset
-                                                      
+
 
                                                         @include('usuarios.empresa_atributes.edit_redsocial_modal')
                                                      </li>
-                                                    <!--Ends social share--> 
+                                                    <!--Ends social share-->
                                                     <li>
                                                         <p><span class="la la-phone"></span>{{$businesse->phone}}</p>
                                                     </li>
@@ -101,9 +102,11 @@
                                 <div class="atbd_listing_bottom_content">
                                     <div class="atbd_content_left">
                                         @foreach ($businesse->categories as $categor)
+                                        @if($categor->status == 1)
                                         <div class="atbd_listing_category">
                                             <a href="{{route('rubro.show',$categor->id)}}"><span class="{{$categor->icon}}"></span>{{$categor->name}}</a>
                                         </div>
+                                        @endif
                                         @endforeach
                                     </div>
                                     <ul class="atbd_content_right">
@@ -123,6 +126,7 @@
             @include('usuarios.empresa_atributes.business_socials_modal')
             @include('usuarios.empresa_atributes.edit_imagen_modal')
             @include('usuarios.empresa_atributes.delete_modal')
+           @endif
            @endforeach
         </div>
     </div>

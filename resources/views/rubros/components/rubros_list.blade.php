@@ -10,11 +10,10 @@
         </div>
         <div class="row">
             @foreach ($rubros as $rubro)
+            @if($rubro->status == 1)
             <div class="col-lg-4 col-sm-6">
                 <div class="category-single category--img">
                     <figure class="category--img4">
-
-                        
                         @foreach ($rubro->images as $image)
                         @if($image->url)
                         <img src="{{asset('storage/'.$image->url)}}" alt="">
@@ -37,12 +36,8 @@
                     </figure>
                 </div><!-- ends: .category-single -->
             </div><!-- ends: .col -->
-
+            @endif
             @endforeach
-         
-
-
-          
         </div>
     </div>
 </section>

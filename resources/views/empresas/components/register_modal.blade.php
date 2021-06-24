@@ -22,8 +22,10 @@
                         <div class="select-basic">
                             <select name="category_id" class="form-control ad_search_category" id="ad_categroy">
                                 @foreach ($categorias as $categoria)
+                                @if($categoria->status == 1)
                                     <option  value="{{$categoria->id}}">{{$categoria->name}}</option>
-                                    @endforeach
+                                @endif
+                                @endforeach
                             </select>
                         </div>
                     </div><!-- ends: .form-group -->

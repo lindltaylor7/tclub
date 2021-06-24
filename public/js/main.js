@@ -11,7 +11,7 @@
     // initialize select 2
     $(document).ready(function () {
         $("#at_biz_dir-category").select2({
-            placeholder: "Select a category",
+            placeholder: "Seleccione un rubro",
             width: "100%",
             containerCssClass: "form-control"
         });
@@ -19,15 +19,23 @@
         $("#at_biz_dir-location").select2({
             multiple: false,
             width: "100%",
-            placeholder: "Select a location",
+            placeholder: "Seleccione una ciudad",
             containerCssClass: "form-control"
         });
 
         $(".ad_search_category").select2({
-            placeholder: "Select Category",
+            placeholder: "Seleccionar rubro",
             width: "100%",
             containerCssClass: "form-control"
         });
+
+        $(".ad_search_city").select2({
+            placeholder: "Seleccionar ciudad",
+            width: "100%",
+            containerCssClass: "form-control"
+        });
+
+
         $("#atbd_tags").select2({
             tags: true,
             tokenSeparators: [','],

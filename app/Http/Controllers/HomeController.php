@@ -20,16 +20,14 @@ class HomeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {   
+    {
         $categorias = Category::all();
         $users = User::all();
         $ciudades = City::all();
         $empresas = Business::all()->take(6);
         $ciudades_top = City::all()->take(4);
 
-        return view('welcome',compact('categorias','ciudades','empresas','ciudades_top', 'users'));
-
-
+        return view('welcome', compact('categorias', 'ciudades', 'empresas', 'ciudades_top', 'users'));
     }
 
     /**
@@ -100,29 +98,63 @@ class HomeController extends Controller
 
     public function login(Request $request)
     {
-        $credentials = $request->only('email','password');
-        if(Auth::attempt($credentials)){
+        $credentials = $request->only('email', 'password');
+        if (Auth::attempt($credentials)) {
             request()->session()->regenerate();
-            return redirect()->route('user.dashboard',['id'=> Auth::id()]);
+            return redirect()->route('user.dashboard', ['id' => Auth::id()]);
         }
         return redirect()->route('home');
-
     }
-    public function logout(Request $request){
+    public function logout(Request $request)
+    {
         Auth::logout();
         request()->session()->invalidate();
         request()->session()->regenerateToken();
         return redirect()->route('home');
     }
 
-    public function mostrar(Request $request){
-        $categorias = Category::all();
-        $ciudades = City::all();
-        if($request){
-            $query=trim($request->get('search'));
-            $empresas=Business::where('name', 'LIKE', '%'.$query.'%')->orderBy('id', 'asc')
-                                                                     ->get();
-            return view('empresas.index', compact('empresas', 'categorias', 'ciudades'), ['search'=>$query]);
+    public function mostrar(Request $request)
+    {
+        //return $request;
+        if ($request->search && $request->rubro && $request->ciudad) {
+
+            $query = trim($request->get('search'));
+            $empresas = Business::whereHas('categories', function ($query) use($request){
+                $query->where('categories.id',$request->get('rubro'));
+            })
+            ->whereHas('addresses', function ($query) use($request){
+                $query->where('city_id',$request->get('ciudad'));
+            })
+            ->where('name','like','%'.$query.'%')
+            ->get();
+
+        }else if($request->search && $request->rubro){
+
+            $query = trim($request->get('search'));
+            $empresas = Business::whereHas('categories', function ($query) use($request){
+                $query->where('categories.id',$request->get('rubro'));
+            })
+            ->where('name','like','%'.$query.'%')
+            ->get();
+
+        }else if($request->search && $request->ciudad){
+
+            $query = trim($request->get('search'));
+            $empresas = Business::whereHas('addresses', function ($query) use($request){
+                $query->where('city_id',$request->get('ciudad'));
+            })
+            ->where('name','like','%'.$query.'%')
+            ->get();
+
+        }else{
+
+            $query = trim($request->get('search'));
+            $empresas = Business::where('name', 'LIKE', '%' . $query . '%')->orderBy('id', 'asc')
+                ->get();
         }
+            $categorias = Category::all();
+            $ciudades = City::all();
+            return view('empresas.index', compact('empresas', 'categorias', 'ciudades'), ['search' => $query]);
+
     }
 }

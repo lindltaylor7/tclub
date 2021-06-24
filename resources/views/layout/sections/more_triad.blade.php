@@ -41,14 +41,14 @@
                             <li><a href="https://www.youtube.com/watch?v=oU0Dq1_PnlA" class="btn btn-success video-iframe ">Saber más
                                 <span class="la la-youtube-play"></span>
                             </a>
-                            </li>  
-                        </figcaption>                    
-                            <li><a href="" class="btn btn-primary" data-toggle="modal" data-target="#signup_modal">Registrarse</a></li>
+                            </li>
+                        </figcaption>
+                            <li><a href="" class="btn btn-primary ml-2" data-toggle="modal" data-target="#signup_modal">Registrarse</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
-     
+
     </div>
 </section><!-- ends: .cta -->

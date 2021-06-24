@@ -1,4 +1,4 @@
-<div class="modal fade" id="Update_modal{{$city->id}}" tabindex="-1" role="dialog" aria-labelledby="signup_modal_label" aria-hidden="true">
+<div class="modal fade" id="Update_city{{$city->id}}" tabindex="-1" role="dialog" aria-labelledby="signup_modal_label" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -21,6 +21,7 @@
                     
 
                     <div class="form-group">
+
                         <label for="title" class="form-label">Imagen de Ciudad: </label>   
                         <div class="user_pro_img_area" style="padding: 0px;">
                             <div class="col-lg-3 image-info">
@@ -34,6 +35,7 @@
                             <img id="pictureCityUpdate{{$city->id}}" src="{{asset('storage/'.$image->url)}}" alt="">
                         </div> 
                        </div>
+
                     
                     <button type="submit" class="btn btn-block btn-lg btn-gradient btn-gradient-two">Actualizar</button>
                 </form>

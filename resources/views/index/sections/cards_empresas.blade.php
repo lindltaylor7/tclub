@@ -10,6 +10,7 @@
             <div class="listing-cards-wrapper col-lg-12">
                 <div class="row">
                     @foreach($empresas as $empresa)
+                    @if($empresa->status == 1)
                         <div class="col-lg-4 col-sm-6">
                             <div class="atbd_single_listing ">
                                 <article class="atbd_single_listing_wrapper">
@@ -19,14 +20,14 @@
                                                 @foreach ($empresa->images as $image)
                                                 <a href="{{route('empresa.show',$empresa->id)}}"><img style="width: 350px; height: 220px; object-fit: cover;" src="{{asset('storage/'.$image->url)}}" alt="listing image"></a>
                                                 @endforeach
-                                                
+
                                             </a>
                                         </div><!-- ends: .atbd_listing_image -->
-                                        
+
                                         <div class="atbd_author atbd_author--thumb">
                                             <a >
                                                 @foreach ($empresa->user->images as $image)
-                                                <img src="{{asset('storage/'.$image->url)}}" alt="Author Image" style="width: 40px ; heigh: 40 px">
+                                                <img src="{{asset('storage/'.$image->url)}}" alt="Author Image" style="width: 40px; height: 40px; object-fit: cover;">
                                                 @endforeach
                                                 <span class="custom-tooltip">{{$empresa->user->name}}</span>
                                             </a>
@@ -76,6 +77,7 @@
                                 </article><!-- atbd_single_listing_wrapper -->
                             </div>
                         </div><!-- ends: .col-lg-4 -->
+                        @endif
                     @endforeach
                     <div class="col-lg-12 text-center m-top-20">
                         <a href="{{route('empresa.index')}}" class="btn btn-gradient btn-gradient-two">Ver Más</a>

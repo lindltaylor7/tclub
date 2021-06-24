@@ -26,26 +26,33 @@
                     <div class="col-lg-4 order-1 order-lg-0 mt-5 mt-lg-0">
                         <div class="listings-sidebar">
                             <div class="search-area default-ad-search">
-                                <form action="#">
+                                <form action="{{route('mostrar')}}" method="POST">
+                                    @csrf
                                     <div class="form-group">
-                                        <input type="text" placeholder="Buscar..." class="form-control">
+                                        <input name="search" type="text" placeholder="Buscar..." class="form-control">
                                     </div><!-- ends: .form-group -->
                                     <div class="form-group">
+                                        <label for="rubro">Seleccione rubro</label>
                                         <div class="select-basic">
-                                            <select class="form-control ad_search_category">
-                                                <option>Seleccionar categoría</option>
+                                            <select name="rubro" class="form-control ad_search_category">
+                                                <option value="" selected="true" disabled="disabled">Seleccione un Rubro</option>
                                                 @foreach ($categorias as $categoria)
+                                                @if($categoria->status == 1)
                                                     <option value="{{$categoria->id}}">{{$categoria->name}}</option>
+                                                @endif
                                                 @endforeach
                                             </select>
                                         </div>
                                     </div><!-- ends: .form-group -->
                                     <div class="form-group">
+                                        <label for="ciudad">Seleccione ciudad</label>
                                         <div class="select-basic">
-                                            <select class="form-control ad_search_category">
-                                                <option>Seleccione ciudad</option>
+                                            <select name="ciudad" class="form-control ad_search_city">
+                                                <option value="" selected="true" disabled="disabled">Seleccione una ciudad</option>
                                                 @foreach ($ciudades as $ciudad)
+                                                @if($ciudad->status == 1)
                                                     <option value="{{$ciudad->id}}">{{$ciudad->name}}</option>
+                                                @endif
                                                 @endforeach
                                             </select>
                                         </div>
@@ -123,7 +130,7 @@
                                             </div>
                                         </div>
                                     </div><!-- ends: .filter-checklist -->
-                                    <a href="" class="btn btn-gradient btn-gradient-two btn-block btn-icon icon-right m-top-40">Buscar ahora <span class="la la-long-arrow-right"></span></a>
+                                    <button type="submit" href="" class="btn btn-gradient btn-gradient-two btn-block btn-icon icon-right m-top-40">Buscar ahora <span class="la la-long-arrow-right"></span></a>
                                 </form><!-- ends: form -->
                             </div><!-- ends: .default-ad-search -->
                         </div>
@@ -132,6 +139,7 @@
                     <div class="col-lg-8 order-0 order-lg-1">
                         <div class="row">
                             @foreach ($empresas as $empresa)
+                            @if($empresa->status == 1)
                                 <div class="col-lg-12">
                                     <div class="atbd_single_listing atbd_listing_list">
                                         <article class="atbd_single_listing_wrapper">
@@ -139,9 +147,9 @@
                                                 <div class="atbd_listing_image">
                                                     <a href="{{route('empresa.show',$empresa->id)}}">
                                                         @foreach ($empresa->images as $image)
-                                                        <a href=""><img style="width: 350px; height: 280px; object-fit: cover;" src="{{asset('storage/'.$image->url)}}" alt="listing image"></a>
+                                                        <a href="{{route('empresa.show',$empresa->id)}}"><img style="width: 350px; height: 280px; object-fit: cover;" src="{{asset('storage/'.$image->url)}}" alt="listing image"></a>
                                                         @endforeach
-                                                       
+
                                                     </a>
                                                 </div><!-- ends: .atbd_listing_image -->
                                             </figure><!-- ends: .atbd_listing_thumbnail_area -->
@@ -188,7 +196,7 @@
                                                                 <a href="">
 
                                                                     @foreach ($empresa->user->images as $image)
-                                                                    <img src="{{asset('storage/'.$image->url)}}" alt="Author Image" style="width: 40px ; heigh: 40 px">
+                                                                    <img src="{{asset('storage/'.$image->url)}}" alt="Author Image" style="width: 40px ; height: 40px; object-fit: cover;">
                                                                     @endforeach
 
                                                                     <span class="custom-tooltip">{{$empresa->user->name}}</span>
@@ -201,6 +209,7 @@
                                         </article><!-- atbd_single_listing_wrapper -->
                                     </div>
                                 </div><!-- ends: .col-lg-12 -->
+                                @endif
                             @endforeach
                         </div>
                         <div class="row">

@@ -21,5 +21,8 @@ class RoleSeeder extends Seeder
 
         Permission::create(['name'=>'edit.cities'])->assignRole($role1);
         Permission::create(['name'=>'edit.rubros'])->assignRole($role1);
+        Permission::create(['name'=>'edit.empresas'])->assignRole($role1);
+        Permission::create(['name'=>'edit.usuarios'])->assignRole($role1);
+        Permission::create(['name'=>'edit.ofertas_usuario'])->assignRole($role1);
     }
 }

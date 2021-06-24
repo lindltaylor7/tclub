@@ -11,10 +11,13 @@
                                     <a href="#" class="btn btn-xs btn-gradient btn-gradient-two" data-toggle="modal" data-target="#addCategory_modal"><span class="la la-plus"></span>Agregar</a>
                                 </div>
                             </div>
-                            
+
                         </div>
                         <div class="atbdb_content_module_contents">
                             <div class="table table-hover table-responsive">
+                                @if ($categorias->isEmpty())
+                                    <div>No hay registro de Rubros</div>
+                                @else
                                 <table class="table">
                                     <thead>
                                         <tr class="text-center">
@@ -29,42 +32,44 @@
                                         @foreach($categorias as $categoria)
                                         <tr class="text-center">
                                             <td>
-                                                @if ($categoria->status == '1') 
                                                 <button type="button"  data-toggle="modal" data-target="#Category_update{{$categoria->id}}" class="btn btn-xs btn-warning la la-pencil"></button> <button type="button" class="btn btn-xs btn-danger la la-trash" data-toggle="modal" data-target="#Category-remove{{$categoria->id}}"></button>
-                                                @else
-                                                <button type="button"  data-toggle="modal" data-target="#Category_update{{$categoria->id}}" class="btn btn-xs btn-warning la la-pencil"></button> <button type="button" class="btn btn-xs btn-info la la-check" data-toggle="modal" data-target="#Category-remove{{$categoria->id}}"></button>
-                                                @endif
                                             </td>
                                             <td>{!! $categoria->name !!}</td>
                                             <td><span class="{{$categoria->icon}}"></span></td>
-                                            
-                                            <td>@if ($categoria->status == '1') 
+
+                                            <td>@if ($categoria->status == '1')
                                                 <div class="atbd_listing_meta">
-                                                    <span class="atbd_meta atbd_listing_rating mx-auto">Activo</span>
+                                                    <button class="mx-auto atbd_meta atbd_listing_rating" type="button" data-toggle="modal" data-target="#Inactive_rubro{{$categoria->id}}" href="#">Activo</button>
                                                 </div>
                                                 @else
                                                 <div class="atbd_listing_meta">
-                                                    <span class="atbd_meta atbd_badge_close mx-auto">Inactivo</span>
+                                                    <button class="mx-auto atbd_meta atbd_badge_close" type="button" data-toggle="modal" data-target="#Active_rubro{{$categoria->id}}" href="#">Inactivo</button>
                                                 </div>
                                                 @endif
                                             </td>
                                             <td class="text-center" >
                                                 @foreach ($categoria->images as $image)
-                                                <img  widht="75" height="75" src="{{asset('storage/'.$image->url)}}" alt=""> 
-                                                @endforeach                                    
+                                                <img  widht="75" height="75" src="{{asset('storage/'.$image->url)}}" alt="">
+                                                @endforeach
                                             </td>
                                         </tr>
                                         @include('usuarios.rubro_atributes.rubro_delete_modal')
                                         @include('usuarios.rubro_atributes.rubro_update_modal')
-                                    @endforeach                               
+                                        @include('usuarios.rubro_atributes.inactive_modal')
+                                        @include('usuarios.rubro_atributes.active_modal')
+                                    @endforeach
                                     </tbody>
                                 </table>
+                                @endif
+
                             </div>
+                            {{$categorias->links()}}
                         </div><!-- ends: .atbdb_content_module_contents -->
+
                     </div>
                 </div><!--  ends: .atbd_saved_items_wrapper -->
             </div><!-- ends: .col-lg-12 -->
         </div>
-    </div>                        
+    </div>
 </div><!-- ends: .tab-pane -->
 @include('usuarios.rubro_atributes.category_modal_register')
