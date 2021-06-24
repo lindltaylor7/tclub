@@ -17,17 +17,20 @@
                         <input type="text" class="form-control" name="name"  placeholder="Ingrese ciudad" required>
                     </div>
                     <div class="form-group">
-                        <label for="title" class="form-label">Agregue Imagen</label>
-                        <div class="col-lg-3 col-md-4 mb-5 mb-lg-0">
-                                 <input id="fileCity" type="file"  name="fileCity">
+                        <label for="title" class="form-label">Imagen de Ciudad: </label>      
+                    <div class="user_pro_img_area" style="padding: 0px;">
+                        <div class="col-lg-3 image-info">
                         </div>
-
-                            <div class="image-wrapper">
-                                <img id="pictureCity" src="https://revistabyte.es/wp-content/uploads/2016/01/Seguridad-TI-768x484.jpg.webp" alt="">
-                            </div>
+                        <label class="btn btn-sm btn-secondary">Imagen de CIudad</label>
+                        <input id="fileCity" type="file"  name="fileCity">
                     </div>
-                    
-                    <button type="submit" class="btn btn-block btn-lg btn-gradient btn-gradient-two">Guardar</button>
+                    <div class="image-wrapper">
+                        <img id="pictureCity" src="https://revistabyte.es/wp-content/uploads/2016/01/Seguridad-TI-768x484.jpg.webp" alt="">
+                    </div>
+               </div>
+                
+                <button type="submit" class="btn btn-block btn-lg btn-gradient btn-gradient-two">Guardar</button>
+
 
                 </form>
 

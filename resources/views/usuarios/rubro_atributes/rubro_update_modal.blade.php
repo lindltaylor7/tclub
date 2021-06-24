@@ -21,15 +21,27 @@
                         <label for="title" class="form-label">Icono de Rubro</label>
                         <input type="text" class="form-control" id="atbdp-contact-name" name="icon" placeholder="Icono de rubro" required="" value="{{$categoria->icon}}">
                     </div>                         
+                    
+
+
+
+
                     <div class="form-group">
-                        <label for="title" class="form-label">Foto de rubro</label>
-                        <div class="col-lg-3 col-md-4 mb-5 mb-lg-0">
-                                 <input id="fileCategoryUpdate" type="file"  name="fileCategoryUpdate">
+                        <label for="title" class="form-label">Imagen de Rubro: </label>   
+                        <div class="user_pro_img_area" style="padding: 0px;">
+                            <div class="col-lg-3 image-info">
+                              </div>
+
+                                <label class="btn btn-sm btn-secondary">Cargar Imagen de rubro</label>
+                                <input id="fileCategoryUpdate{{$categoria->id}}" type="file"  name="fileCategoryUpdate">
+                                  
                         </div>
-                            <div class="image-wrapper">
-                                <img id="pictureCategoryUpdate" src="{{asset('storage/'.$image->url)}}" alt="">
-                            </div>
-                    </div>
+                        <div class="image-wrapper">
+                                <img id="pictureCategoryUpdate{{$categoria->id}}" src="{{asset('storage/'.$image->url)}}" alt="">
+                        </div> 
+                       </div>
+
+
                     <button type="submit" class="btn btn-block btn-lg btn-gradient btn-gradient-two">Actualizar Rubro</button>
                 </form>
             </div>
@@ -51,12 +63,12 @@
 </style>
 <script>
   //CAMBIAR IMAGEN CUADNO SE SELECCIONE UNA FOTO
-    document.getElementById("fileCategoryUpdate").addEventListener('change', cambiarImagen);
+    document.getElementById("fileCategoryUpdate{{$categoria->id}}").addEventListener('change', cambiarImagen);
     function cambiarImagen(event){
         var file = event.target.files[0];
         var reader = new FileReader();
         reader.onload = (event) => {
-            document.getElementById("pictureCategoryUpdate").setAttribute('src', event.target.result);
+            document.getElementById("pictureCategoryUpdate{{$categoria->id}}").setAttribute('src', event.target.result);
         };
         reader.readAsDataURL(file);
     }

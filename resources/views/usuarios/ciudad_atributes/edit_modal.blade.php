@@ -17,16 +17,23 @@
                         <label for="title" class="form-label">Nombre: (*)</label>
                         <input type="text" class="form-control" name="name" value="{{$city->name}}">
                     </div>
-                    <div class="form-group">
-                        <label for="title" class="form-label">Agregue Imagen</label>
-                        <div class="col-lg-3 col-md-4 mb-5 mb-lg-0">
-                                 <input id="fileCityUpdate" type="file"  name="fileCityUpdate">
-                        </div>
 
-                            <div class="image-wrapper">
-                                <img id="pictureCityUpdate" src="{{asset('storage/'.$image->url)}}" alt="">
-                            </div>
-                    </div>
+                    
+
+                    <div class="form-group">
+                        <label for="title" class="form-label">Imagen de Ciudad: </label>   
+                        <div class="user_pro_img_area" style="padding: 0px;">
+                            <div class="col-lg-3 image-info">
+                              </div>
+
+                                <label class="btn btn-sm btn-secondary">Cargar Imagen de Ciudad</label>
+                                <input id="fileCityUpdate{{$city->id}}" type="file"  name="fileCityUpdate">
+                                  
+                        </div>
+                        <div class="image-wrapper">
+                            <img id="pictureCityUpdate{{$city->id}}" src="{{asset('storage/'.$image->url)}}" alt="">
+                        </div> 
+                       </div>
                     
                     <button type="submit" class="btn btn-block btn-lg btn-gradient btn-gradient-two">Actualizar</button>
                 </form>
@@ -51,12 +58,12 @@
 
 <script>
 //CAMBIAR IMAGEN CUADNO SE SELECCIONE UNA FOTO
-document.getElementById("fileCityUpdate").addEventListener('change', cambiarImagen);
+document.getElementById("fileCityUpdate{{$city->id}}").addEventListener('change', cambiarImagen);
 function cambiarImagen(event){
     var file = event.target.files[0];
     var reader = new FileReader();
     reader.onload = (event) => {
-        document.getElementById("pictureCityUpdate").setAttribute('src', event.target.result);
+        document.getElementById("pictureCityUpdate{{$city->id}}").setAttribute('src', event.target.result);
     };
     reader.readAsDataURL(file);
 }

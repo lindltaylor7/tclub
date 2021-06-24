@@ -32,17 +32,23 @@
                         <label for="title" class="form-label">Password</label>
                         <input type="password" class="form-control" id="atbdp-contact-email" name="password" placeholder="Contraseña" required="">
                     </div>
+
                     <div class="form-group">
-                        <label for="title" class="form-label">Foto de usurio</label>
-                        <div class="col-lg-3 col-md-4 mb-5 mb-lg-0">
-                                 <input id="file" type="file"  name="file">
-                        </div>
-
-                            <div class="image-wrapper">
-                                <img id="picture" src="https://revistabyte.es/wp-content/uploads/2016/01/Seguridad-TI-768x484.jpg.webp" alt="">
-                            </div>
-
+                    <label for="title" class="form-label">Imagen de Usuario: </label>   
+                    <div class="user_pro_img_area" style="padding: 0px;">
+                        <div class="col-lg-3 image-info">
+                          </div>
+                        <div class="custom-file-upload">
+                            <input type="file" id="file" name="file">
+                            <label for="file" class="btn btn-sm btn-secondary">Cargar Imagen de Usuario</label>
+                        </div>           
                     </div>
+                    <div class="image-wrapper">
+                        <img id="picture" src="https://revistabyte.es/wp-content/uploads/2016/01/Seguridad-TI-768x484.jpg.webp" alt="">
+                    </div> 
+                   </div>
+
+                    <br>
                     <button type="submit" class="btn btn-block btn-lg btn-gradient btn-gradient-two">Registrarse</button>
 
                 </form>

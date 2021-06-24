@@ -9,6 +9,7 @@ use App\Models\Offer;
 use App\Models\User;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -51,8 +52,6 @@ class UserController extends Controller
         $request->merge([
             'type' => 'Free',
             'status' => 1,
-
-
             'password'=>bcrypt($request->get('password'))
         ]);
 
@@ -63,8 +62,12 @@ class UserController extends Controller
                 'url' => $url
             ]);
         }
-
-        return redirect()->route('user.dashboard', ['id' => $users->id]);
+        
+        
+        $credentials = $users->only('email','password');
+        Auth::login($users);
+        return redirect()->route('user.dashboard',['id'=> Auth::id()]);
+        
     }
 
     /**

@@ -12,15 +12,25 @@
                     @csrf
                     @method('put')
                     
+                    
+
                     <div class="form-group">
-                        <label for="title" class="form-label">Agregue Imagen</label>
-                        <div class="col-lg-3 col-md-4 mb-5 mb-lg-0">
-                            <input id="fileBusinessUpdate" type="file"  name="fileBusinessUpdate">
+                        <label for="title" class="form-label">Imagen de Empresa: </label>   
+                        <div class="user_pro_img_area" style="padding: 0px;">
+                            <div class="col-lg-3 image-info">
+                              </div>
+
+                                <label class="btn btn-sm btn-secondary">Cargar Imagen de Empresa</label>
+                                <input id="fileBusinessUpdate{{$businesse->id}}" type="file"  name="fileBusinessUpdate">
+                                  
                         </div>
                         <div class="image-wrapper">
-                            <img id="pictureBusinessUpdate" src="{{asset('storage/'.$image->url)}}" alt="">
-                        </div>
-                    </div>
+                            <img id="pictureBusinessUpdate{{$businesse->id}}" src="{{asset('storage/'.$image->url)}}" alt="">
+                        </div> 
+                       </div>
+
+
+
                     
                     <button type="submit" class="btn btn-block btn-lg btn-gradient btn-gradient-two">Actualizar</button>
                 </form>
@@ -45,12 +55,12 @@
 
 <script>
 //CAMBIAR IMAGEN CUADNO SE SELECCIONE UNA FOTO
-document.getElementById("fileBusinessUpdate").addEventListener('change', cambiarImagen);
+document.getElementById("fileBusinessUpdate{{$businesse->id}}").addEventListener('change', cambiarImagen);
 function cambiarImagen(event){
     var file = event.target.files[0];
     var reader = new FileReader();
     reader.onload = (event) => {
-        document.getElementById("pictureBusinessUpdate").setAttribute('src', event.target.result);
+        document.getElementById("pictureBusinessUpdate{{$businesse->id}}").setAttribute('src', event.target.result);
     };
     reader.readAsDataURL(file);
 }

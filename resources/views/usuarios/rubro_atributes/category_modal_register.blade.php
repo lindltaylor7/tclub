@@ -21,14 +21,17 @@
                         <input type="text" class="form-control" id="atbdp-contact-name" name="icon" placeholder="Icono de rubro" required="">
                     </div>                         
                     <div class="form-group">
-                        <label for="title" class="form-label">Foto de rubro</label>
-                        <div class="col-lg-3 col-md-4 mb-5 mb-lg-0">
-                                 <input id="fileCategory" type="file"  name="fileCategory">
+                        <label for="title" class="form-label">Imagen de Rubro: </label>      
+                    <div class="user_pro_img_area" style="padding: 0px;">
+                        <div class="col-lg-3 image-info">
                         </div>
-                            <div class="image-wrapper">
-                                <img id="pictureCategory" src="https://revistabyte.es/wp-content/uploads/2016/01/Seguridad-TI-768x484.jpg.webp" alt="">
-                            </div>
+                        <label class="btn btn-sm btn-secondary">Imagen de Rubro</label>
+                        <input id="fileCategory" type="file"  name="fileCategory">
                     </div>
+                    <div class="image-wrapper">
+                        <img id="pictureCategory" src="https://revistabyte.es/wp-content/uploads/2016/01/Seguridad-TI-768x484.jpg.webp" alt="">
+                    </div>
+                      </div>
                     <button type="submit" class="btn btn-block btn-lg btn-gradient btn-gradient-two">Registrar Rubro</button>
                 </form>
             </div>

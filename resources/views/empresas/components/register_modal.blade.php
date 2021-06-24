@@ -43,16 +43,23 @@
                         <label for="title" class="form-label">Teléfono</label>
                         <input type="text" class="form-control" name="phone" placeholder="Teléfono o Celular" required>
                     </div>
-                    <div class="form-group">
-                        <label for="title" class="form-label">Agregue Imagen</label>
-                        <div class="col-lg-3 col-md-4 mb-5 mb-lg-0">
-                                 <input id="fileBusiness" type="file"  name="fileBusiness">
-                        </div>
+                   
 
-                            <div class="image-wrapper">
-                                <img id="pictureBusiness" src="https://revistabyte.es/wp-content/uploads/2016/01/Seguridad-TI-768x484.jpg.webp" alt="">
-                            </div>
-                    </div>
+                    <div class="form-group">
+                        <label for="title" class="form-label">Imagen de Empresa: </label>   
+                        <div class="user_pro_img_area" style="padding: 0px;">
+                            <div class="col-lg-3 image-info">
+                              </div>
+                              
+                              <label for="file" class="btn btn-sm btn-secondary">Cargar Imagen de Empresa</label>
+                                <input id="fileBusiness" type="file"  name="fileBusiness">
+                                
+                                    
+                        </div>
+                        <div class="image-wrapper">
+                            <img id="pictureBusiness" src="https://revistabyte.es/wp-content/uploads/2016/01/Seguridad-TI-768x484.jpg.webp" alt="">
+                        </div> 
+                       </div>
 
 
                     <button type="submit" class="btn btn-block btn-lg btn-gradient btn-gradient-two">Registrar empresa</button>

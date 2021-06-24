@@ -9,14 +9,12 @@
             <div class="col-lg-3 col-md-4 mb-5 mb-lg-0">                
                 <div class="user_pro_img_area">
                    @foreach ($users->images as $image)
-                   <img src="{{asset('storage/'.$image->url)}}" alt="" style="width:150px ; heigh:150px ;  object-fit: cover;">
+                   <img id="pictureUserUpdate" src="{{asset('storage/'.$image->url)}}" alt=""  style="width: 150px; height: 150px; object-fit: cover;">
                    @endforeach
                     <div class="image-info">
-                        <h6>Imagen de Perfl</h6>
+                        <label class="btn btn-sm btn-secondary">Imagen de Usuario</label>
                     </div>                          
-                    
                     <div class="form-group">
-                        <label for="title" class="form-label">Cargar Imagen de Usuario</label>
                         <div class="col-lg-3 col-md-4 mb-5 mb-lg-0">
                             <input type="file" id="fileUserUpdate" name="fileUserUpdate">
                         </div>                            
@@ -76,3 +74,28 @@
     </Form>
     </div>
 </div><!-- ends: .tab-pane -->
+
+<style>
+    .image-wrapper{
+        position:  relative;
+        padding-bottom: 56.25%;
+    }
+    .image-wrapper img{
+        position: absolute;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+</style>
+<script>
+//CAMBIAR IMAGEN CUADNO SE SELECCIONE UNA FOTO
+document.getElementById("fileUserUpdate").addEventListener('change', cambiarImagen);
+function cambiarImagen(event){
+    var file = event.target.files[0];
+    var reader = new FileReader();
+    reader.onload = (event) => {
+        document.getElementById("pictureUserUpdate").setAttribute('src', event.target.result);
+    };
+    reader.readAsDataURL(file);
+}
+</script>

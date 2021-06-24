@@ -34,16 +34,27 @@
                         <input type="date" class="form-control" name="end_date"  placeholder="Fin de Oferta" required>
                     </div>  
 
-                    <div class="form-group">
-                        <label for="title" class="form-label">Imagen de Campaña</label>
-                        <div class="col-lg-3 col-md-4 mb-5 mb-lg-0">
-                                 <input id="fileOffer" type="file"  name="fileOffer">
-                        </div>
+                    
 
-                            <div class="image-wrapper">
-                                <img id="pictureOffer" src="https://revistabyte.es/wp-content/uploads/2016/01/Seguridad-TI-768x484.jpg.webp" alt="">
-                            </div>
-                    </div>
+
+
+
+
+                    <div class="form-group">
+                        <label for="title" class="form-label">Imagen de Oferta: </label>   
+                        <div class="user_pro_img_area" style="padding: 0px;">
+                            <div class="col-lg-3 image-info">
+                              </div>
+                           
+                                <label for="file" class="btn btn-sm btn-secondary">Cargar Imagen de Oferta</label>
+                                <input id="fileOffer{{$businesse->id}}" type="file"  name="fileOffer">
+                                        
+                        </div>
+                        <div class="image-wrapper">
+                            <img id="pictureOffer{{$businesse->id}}" src="https://revistabyte.es/wp-content/uploads/2016/01/Seguridad-TI-768x484.jpg.webp" alt="">
+                        </div> 
+                       </div>
+
 
                     <button type="submit" class="btn btn-block btn-lg btn-gradient btn-gradient-two">Agregar Oferta</button>
                 </form>
@@ -67,12 +78,12 @@
 
 <script>
 //CAMBIAR IMAGEN CUADNO SE SELECCIONE UNA FOTO
-document.getElementById("fileOffer").addEventListener('change', cambiarImagen);
+document.getElementById("fileOffer{{$businesse->id}}").addEventListener('change', cambiarImagen);
 function cambiarImagen(event){
     var file = event.target.files[0];
     var reader = new FileReader();
     reader.onload = (event) => {
-        document.getElementById("pictureOffer").setAttribute('src', event.target.result);
+        document.getElementById("pictureOffer{{$businesse->id}}").setAttribute('src', event.target.result);
     };
     reader.readAsDataURL(file);
 }
