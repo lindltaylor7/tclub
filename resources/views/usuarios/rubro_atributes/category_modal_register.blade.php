@@ -15,13 +15,26 @@
                     <div class="form-group">
                         <label for="title" class="form-label">Nombre de Rubro</label>
                         <input type="text" class="form-control" id="atbdp-contact-name" name="name" placeholder="Nombre de rubro" required="">
-                    </div> 
+                    </div>
                     <div class="form-group">
                         <label for="title" class="form-label">Icono de Rubro</label>
-                        <input type="text" class="form-control" id="atbdp-contact-name" name="icon" placeholder="Icono de rubro" required="">
-                    </div>                         
+                        <select name="icon" id="icon" class="form-control">
+                            <option value="la la-cutlery">Restaurantes</option>
+                            <option value="la la-mortar-board">Educación</option>
+                            <option value="la la-hospital-o">Salud</option>
+                            <option value="la la-balance-scale">Consultoría</option>
+                            <option value="la la-wifi">Telecomunicaciones</option>
+                            <option value="la la-laptop">Tecnología</option>
+                            <option value="la la-hotel">Hotelería</option>
+                            <option value="la la-building">Constructora</option>
+                            <option value="la la-lightbulb-o">Artesanía</option>
+                            <option value="la la-black-tie">Moda</option>
+                            <option value="la la-dollar">Bancos</option>
+                            <option value="la la-align-left">Otros</option>
+                        </select>
+                    </div>
                     <div class="form-group">
-                        <label for="title" class="form-label">Imagen de Rubro: </label>      
+                        <label for="title" class="form-label">Imagen de Rubro: </label>
                     <div class="user_pro_img_area" style="padding: 0px;">
                         <div class="col-lg-3 image-info">
                         </div>

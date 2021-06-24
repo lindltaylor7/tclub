@@ -103,7 +103,7 @@ class HomeController extends Controller
             request()->session()->regenerate();
             return redirect()->route('user.dashboard', ['id' => Auth::id()]);
         }
-        return redirect()->route('home');
+        return redirect()->route('home')->with('info','Credenciales incorrectas');
     }
     public function logout(Request $request)
     {

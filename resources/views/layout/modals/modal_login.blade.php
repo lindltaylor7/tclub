@@ -8,7 +8,14 @@
                 </button>
             </div>
             <div class="modal-body">
-                <pre>{{Auth::user()}}</pre>
+                @if(session('info'))
+                <script>
+                $(function() {
+                    $('#login_modal').modal('show');
+                });
+                </script>
+                    <p class="text-danger">Credenciales incorrectas</p>
+                @endif
                 <form action="{{route('login')}}" id="login-form" method="POST">
                     @csrf
                     <input type="email" name="email" class="form-control" placeholder="Email" required>
