@@ -37,9 +37,13 @@
                                                 <td>{{$usuario->email}}</td>
                                                 <td>{{$usuario->phone}}</td>
                                                 <td>@if ($usuario->type == 'Free')
-                                                        <span class="atbd_meta atbd_listing_rating">Free</span>
+                                                    <div class="atbd_listing_meta">
+                                                        <span class="mx-auto atbd_meta atbd_listing_rating">{{$usuario->type}}</span>
+                                                    </div>
                                                     @else
-                                                        <span class="atbd_meta atbd_badge_close">Premiun</span>
+                                                    <div class="atbd_listing_meta">
+                                                        <span class="mx-auto atbd_meta atbd_listing_price">{{$usuario->type}}</span>
+                                                    </div>
                                                     @endif
                                                 <td>@if ($usuario->status == '1') 
                                                     <div class="atbd_listing_meta">

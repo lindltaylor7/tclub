@@ -25,8 +25,17 @@
                     </div>
                     <div class="form-group">
                         <label for="title" class="form-label">Teléfono:</label>
-                        <input type="text" class="form-control" name="email" value="{{$usuario->phone}}">
+                        <input type="text" class="form-control" name="phone" value="{{$usuario->phone}}">
                     </div>
+                    <div class="form-group">
+                        <label for="title" class="form-label">Tipo de Usuario:</label>
+                        <div class="select-basic">
+                            <select name="type" class="form-control ad_search_category" id="type">
+                                <option value="Free">Free</option>
+                                <option value="Premium">Premium</option>
+                            </select>
+                        </div>
+                    </div><!-- ends: .form-group -->
                     <div class="form-group">
                         <label for="title" class="form-label">Foto de Perfil:</label>
                         <div class="col-lg-3 col-md-4 mb-5 mb-lg-0">

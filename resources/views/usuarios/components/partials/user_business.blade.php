@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             @foreach ($businesses as $businesse)
-            @if($businesse->status == 1)
+            @if(($businesse->status == 1) && ($businesse->user_id == $user->id))
             <div class="col-lg-4 col-sm-6">
                 <div class="atbd_single_listing atbd_listing_card">
                     <article class="atbd_single_listing_wrapper ">

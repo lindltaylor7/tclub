@@ -30,7 +30,7 @@
                                         @foreach($cities as $city)
                                             <tr class="text-center">
                                                 <td>
-                                                    <button href="#" type="button" class="btn btn-xs btn-warning la la-pencil" data-toggle="modal" data-target="#Update_modal{{$city->id}}"></button> <button type="button" class="btn btn-xs btn-danger la la-trash" data-toggle="modal" data-target="#Delete_modal{{$city->id}}" href="#"></button>
+                                                    <button href="#" type="button" class="btn btn-xs btn-warning la la-pencil" data-toggle="modal" data-target="#Update_city{{$city->id}}"></button> <button type="button" class="btn btn-xs btn-danger la la-trash" data-toggle="modal" data-target="#Delete_city{{$city->id}}" href="#"></button>
                                                 </td>
                                                 <td>{{ $city->name }}</td>
                                                 <td>

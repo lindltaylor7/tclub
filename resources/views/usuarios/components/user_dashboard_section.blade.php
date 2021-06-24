@@ -29,6 +29,11 @@
                                 <a class="nav-link" id="empresas" data-toggle="tab" href="#all_business" role="all_business" aria-controls="empresa" aria-selected="false">Empresas</a>
                             </li>
                             @endcan
+                            @can('edit.ofertas_usuario')
+                            <li class="nav-item">
+                                <a class="nav-link" id="ofertas_usuario" data-toggle="tab" href="#offers_user" role="offers_user" aria-controls="ofertas" aria-selected="false">Ofertas</a>
+                            </li>
+                            @endcan
                             @can('edit.usuarios')
                             <li class="nav-item">
                                 <a class="nav-link" id="usuarios" data-toggle="tab" href="#all_users" role="all_usuarios" aria-controls="usuario" aria-selected="false">Usuarios</a>
@@ -82,6 +87,7 @@
         @include('usuarios.components.partials.user_categories')
         @include('usuarios.components.partials.user_all_business')
         @include('usuarios.components.partials.user_all_users')
+        @include('usuarios.components.partials.ofertas_usuario')
     </div>
 </section>
 @include('empresas.components.register_modal')

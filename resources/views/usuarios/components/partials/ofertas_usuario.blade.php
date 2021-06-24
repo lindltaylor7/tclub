@@ -1,4 +1,4 @@
-<div class="tab-pane fade p-bottom-30" id="favorite" role="tabpanel" aria-labelledby="faborite-listings">
+<div class="tab-pane fade p-bottom-30" id="offers_user" role="tabpanel" aria-labelledby="ofertas">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -6,8 +6,7 @@
                     <div class="atbd_content_module">
                         <div class="atbd_content_module__tittle_area">
                             <div class="atbd_area_title">
-                                <h4><span class="la la-list"></span>Mis Ofertas</h4>
-                                
+                                <h4><span class="la la-list"></span>Todas las Ofertas</h4>
                             </div>
                         </div>
                         <div class="atbdb_content_module_contents">
@@ -30,10 +29,9 @@
                                         </thead>
                                         <tbody>
                                             @foreach($offers as $offer)
-                                            @if($offer->business->user_id == $user->id)
                                             <tr class="text-center">
                                                 <td>
-                                                    <button href="#" type="button" class="btn btn-xs btn-warning la la-pencil" data-toggle="modal" data-target="#Update_modal{{$offer->id}}"></button> <button type="button" class="btn btn-xs btn-danger la la-trash" data-toggle="modal" data-target="#Delete_modal{{$offer->id}}" href="#"></button>
+                                                    <button href="#" type="button" class="btn btn-xs btn-warning la la-pencil" data-toggle="modal" data-target="#Update_oferta{{$offer->id}}"></button> <button type="button" class="btn btn-xs btn-danger la la-trash" data-toggle="modal" data-target="#Delete_oferta{{$offer->id}}" href="#"></button>
                                                 </td>
                                                 <td>{{ $offer->name }}</td>
                                                 <td>{{ $offer->business->name }}</td>
@@ -43,11 +41,11 @@
                                                 <td>
                                                     @if ($offer->status == '1') 
                                                         <div class="atbd_listing_meta">
-                                                            <button class="mx-auto atbd_meta atbd_listing_rating" type="button" data-toggle="modal" data-target="#Inactive_oferta{{$offer->id}}" href="#">Activo</button>
+                                                            <button class="mx-auto atbd_meta atbd_listing_rating" type="button" data-toggle="modal" data-target="#Inactive_ofertas{{$offer->id}}" href="#">Activo</button>
                                                         </div>
                                                     @else
                                                         <div class="atbd_listing_meta">
-                                                            <button class="mx-auto atbd_meta atbd_badge_close" type="button" data-toggle="modal" data-target="#Active_oferta{{$offer->id}}" href="#">Inactivo</button>
+                                                            <button class="mx-auto atbd_meta atbd_badge_close" type="button" data-toggle="modal" data-target="#Active_ofertas{{$offer->id}}" href="#">Inactivo</button>
                                                         </div>
                                                     @endif
                                                 </td>
@@ -57,11 +55,10 @@
                                                     @endforeach
                                                 </td>
                                             </tr>
-                                            @include('usuarios.oferta_atributes.edit_modal')
-                                            @include('usuarios.oferta_atributes.delete_modal')
-                                            @include('usuarios.oferta_atributes.inactive_modal')
-                                        @include('usuarios.oferta_atributes.active_modal')
-                                        @endif
+                                            @include('usuarios.oferta_atributes.edit_modal_all_ofertas')
+                                            @include('usuarios.oferta_atributes.delete_modal_all_ofertas')
+                                            @include('usuarios.oferta_atributes.inactive_modal_all_ofertas')
+                                        @include('usuarios.oferta_atributes.active_modal_all_ofertas')
                                         @endforeach
                                         </tbody>
                                     </table>

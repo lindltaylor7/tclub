@@ -147,7 +147,7 @@
                                                 <div class="atbd_listing_image">
                                                     <a href="{{route('empresa.show',$empresa->id)}}">
                                                         @foreach ($empresa->images as $image)
-                                                        <a href=""><img style="width: 350px; height: 280px; object-fit: cover;" src="{{asset('storage/'.$image->url)}}" alt="listing image"></a>
+                                                        <a href="{{route('empresa.show',$empresa->id)}}"><img style="width: 350px; height: 280px; object-fit: cover;" src="{{asset('storage/'.$image->url)}}" alt="listing image"></a>
                                                         @endforeach
 
                                                     </a>
