@@ -7,7 +7,7 @@
                 <p class="m-bottom-30">¿Deseas activar esta oferta?</p>
                 <div class="d-flex justify-content-center">
                     <button type="button" class="btn btn-secondary m-right-15" data-dismiss="modal">Cancelar</button>
-                    <form action="{{route('offer.active',$offer->id)}}" method="post">
+                    <form action="{{route('ofertas.active',$offer->id)}}" method="post">
                         @csrf
                         @method('put')
                         <button type="submit" class="btn btn-danger">Si, ¡Activar Oferta!</button>

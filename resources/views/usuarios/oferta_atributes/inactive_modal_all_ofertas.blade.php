@@ -7,7 +7,7 @@
                 <p class="m-bottom-30">¿Deseas desactivar esta oferta?</p>
                 <div class="d-flex justify-content-center">
                     <button type="button" class="btn btn-secondary m-right-15" data-dismiss="modal">Cancelar</button>
-                    <form action="{{route('offer.inactive',$offer->id)}}" method="post">
+                    <form action="{{route('ofertas.inactive',$offer->id)}}" method="post">
                         @csrf
                         @method('put')
                         <button type="submit" class="btn btn-danger">Si, ¡Desactivar Oferta!</button>

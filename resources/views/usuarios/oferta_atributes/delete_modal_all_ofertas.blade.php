@@ -7,7 +7,7 @@
                 <p class="m-bottom-30">¿Deseas eliminar esta oferta?</p>
                 <div class="d-flex justify-content-center">
                     <button type="button" class="btn btn-secondary m-right-15" data-dismiss="modal">Cancelar</button>
-                    <form action="{{route('offer.delete',$offer->id)}}" method="post">
+                    <form action="{{route('ofertas.delete',$offer->id)}}" method="post">
                         @csrf
                         @method('delete')
                         <button type="submit" class="btn btn-danger">Si, ¡Borrar Oferta!</button>

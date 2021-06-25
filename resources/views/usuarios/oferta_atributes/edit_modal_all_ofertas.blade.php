@@ -10,7 +10,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="{{route('offer.update',$offer->id)}}" id="signup-form" method="post" enctype="multipart/form-data">
+                <form action="{{route('ofertas.update',$offer->id)}}" id="signup-form" method="post" enctype="multipart/form-data">
                     @csrf
                     @method('put')
                     <div class="form-group">

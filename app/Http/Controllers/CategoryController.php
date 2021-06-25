@@ -59,7 +59,7 @@ class CategoryController extends Controller
                 'url' => $url
             ]);
         }
-        return redirect()->back();
+        return redirect()->back()->with('AgregarC','Rubro creado');
     }
 
     /**
@@ -119,7 +119,7 @@ class CategoryController extends Controller
         $categoria->update(['status' => 0]);
         $categoria->save();
 
-        return redirect()->back()->with('desactivar_categoria','Actualización completa');
+        return redirect()->back()->with('DesactivarC','Actualización completa');
     }
 
     public function active($id)
@@ -128,7 +128,7 @@ class CategoryController extends Controller
         $categoria->update(['status' => 1]);
         $categoria->save();
 
-        return redirect()->back()->with('activar_categoria','Actualización completa');
+        return redirect()->back()->with('ActivarC','Actualización completa');
     }
     /**
      * Remove the specified resource from storage.

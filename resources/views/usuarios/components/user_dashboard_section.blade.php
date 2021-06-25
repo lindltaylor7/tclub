@@ -48,36 +48,268 @@
                             </li>
                             @endcan
 
+
+                            @if (session('crear_ciudad'))
+                            <script>
+                                alert("Ciudad creada con éxito");
+                                $(function () {
+                                    $('#ciudades').tab('show')
+                                })
+                            </script>
+                            @endif
+
                             @if (session('actualizar_ciudad'))
                             <script>
-                                alert("Actualización Completa");
+                                alert("Ciudad actualziada con éxito");
+                                $(function () {
+                                    $('#ciudades').tab('show')
+                                })
                             </script>
                             @endif
                             @if (session('borrar_ciudad'))
                             <script>
-                                alert("Borrado Completo");
+                                alert("Ciudad eliminada con éxito")
+                                $(function () {
+                                    $('#ciudades').tab('show')
+                                })
                             </script>
                             @endif
-                            @if (session('ActualizacionC'))
+                            @if (session('Activar_ciudad'))
                             <script>
-                                alert("Actualización de rubro exitoso")
-                                    $('#categorias').tab('show')
+                                alert("Ciudad activada con éxito")
+                                $(function () {
+                                    $('#ciudades').tab('show')
+                                })
                             </script>
                             @endif
-                            @if (session('EliminarC'))
+                            @if (session('Desactivar_ciudad'))
                             <script>
-                                alert("Rubro eliminado con exito")
+                                alert("Ciudad desactivada con éxito")
+                                $(function () {
+                                    $('#ciudades').tab('show')
+                                })
+                            </script>
+                            @endif
+
+                            @if (session('AgregarC'))
+                            <script>
+                                alert("Rubro creado con éxito")
                                 $(function () {
                                     $('#categorias').tab('show')
                                 })
+                            </script>
+                            @endif
 
-                            </script>
-                            @endif
-                            @if (session('actualizar_empresa'))
+                            @if (session('ActualizacionC'))
                             <script>
-                                alert("Actualización Completa");
+                                alert("Rubro acualidado con éxito")
+                                $(function () {
+                                    $('#categorias').tab('show')
+                                })
                             </script>
                             @endif
+
+                            @if (session('EliminarC'))
+                            <script>
+                                alert("Rubro eliminado con éxito")
+                                $(function () {
+                                    $('#categorias').tab('show')
+                                })
+                            </script>
+                            @endif
+                            @if (session('ActivarC'))
+                            <script>
+                                alert("Rubro activado con éxito")
+                                $(function () {
+                                    $('#categorias').tab('show')
+                                })
+                            </script>
+                            @endif
+                            @if (session('DesactivarC'))
+                            <script>
+                                alert("Rubro descativado con éxito")
+                                $(function () {
+                                    $('#categorias').tab('show')
+                                })
+                            </script>
+                            @endif
+
+                            @if (session('AgregarO'))
+                            <script>
+                                alert("Oferta creada con éxito")
+                                $(function () {
+                                    $('#faborite-listings').tab('show')
+                                })
+                            </script>
+                            @endif
+
+                            @if (session('ActualizarO'))
+                            <script>
+                                alert("Oferta actializada con éxito")
+                                $(function () {
+                                    $('#faborite-listings').tab('show')
+                                })
+                            </script>
+                            @endif
+
+                            @if (session('EliminarO'))
+                            <script>
+                                alert("Oferta eliminada con éxito")
+                                $(function () {
+                                    $('#faborite-listings').tab('show')
+                                })
+                            </script>
+                            @endif
+                            @if (session('ActivarO'))
+                            <script>
+                                alert("Oferta activada con éxito")
+                                $(function () {
+                                    $('#faborite-listings').tab('show')
+                                })
+                            </script>
+                            @endif
+                            @if (session('DesactivarO'))
+                            <script>
+                                alert("Oferta desactivada con éxito")
+                                $(function () {
+                                    $('#faborite-listings').tab('show')
+                                })
+                            </script>
+                            @endif
+
+                           
+
+                            @if (session('ActualizarOAdmin'))
+                            <script>
+                                alert("Oferta actializada con éxito")
+                                $(function () {
+                                    $('#ofertas_usuario').tab('show')
+                                })
+                            </script>
+                            @endif
+
+                            @if (session('EliminarOAdmin'))
+                            <script>
+                                alert("Oferta eliminada con éxito")
+                                $(function () {
+                                    $('#ofertas_usuario').tab('show')
+                                })
+                            </script>
+                            @endif
+                            @if (session('ActivarOAdmin'))
+                            <script>
+                                alert("Oferta activada con éxito")
+                                $(function () {
+                                    $('#ofertas_usuario').tab('show')
+                                })
+                            </script>
+                            @endif
+                            @if (session('DesactivarOAdmin'))
+                            <script>
+                                alert("Oferta desactivada con éxito")
+                                $(function () {
+                                    $('#ofertas_usuario').tab('show')
+                                })
+                            </script>
+                            @endif
+
+
+                            @if (session('ActualizarUsuario'))
+                            <script>
+                                alert("Perfil Actualizado con éxito")
+                                $(function () {
+                                    $('#profile-tab').tab('show')
+                                })
+                            </script>
+                            @endif
+
+
+                            @if (session('ActualizarUsuario_admin'))
+                            <script>
+                                alert("Usuario Actualizado con éxito")
+                                $(function () {
+                                    $('#usuarios').tab('show')
+                                })
+                            </script>
+                            @endif
+
+                            @if (session('borrar_usuario'))
+                            <script>
+                                alert("Perfil Actualizado con éxito")
+                                $(function () {
+                                    $('#usuarios').tab('show')
+                                })
+                            </script>
+                            @endif
+
+
+                            @if (session('ActivarUsuario'))
+                            <script>
+                                alert("Usuario Activado con éxito")
+                                $(function () {
+                                    $('#usuarios').tab('show')
+                                })
+                            </script>
+                            @endif @if (session('DesactivarUsuario'))
+                            <script>
+                                alert("Usuario desactivado con éxito")
+                                $(function () {
+                                    $('#usuarios').tab('show')
+                                })
+                            </script>
+                            @endif
+
+
+
+                            @if (session('borrar_empresa_admin'))
+                            <script>
+                                alert("Empresa Eliminada con éxito")
+                                $(function () {
+                                    $('#empresas').tab('show')
+                                })
+                            </script>
+                            @endif 
+                            @if (session('actualizar_empresa_admin'))
+                            <script>
+                                alert("Empresa Actualizada con éxito")
+                                $(function () {
+                                    $('#empresas').tab('show')
+                                })
+                            </script>
+                            @endif 
+
+                            @if (session('ActivarEmpresa'))
+                            <script>
+                                alert("Empresa Activada con éxito")
+                                $(function () {
+                                    $('#empresas').tab('show')
+                                })
+                            </script>
+                            @endif 
+                            
+                            @if (session('DesactivarEmpresa'))
+                            <script>
+                                alert("Empresa desactivada con éxito")
+                                $(function () {
+                                    $('#empresas').tab('show')
+                                })
+                            </script>
+                            @endif
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            
                         </ul>
                         <div class="nav_button">
                             <a href="#" class="btn btn-xs btn-gradient btn-gradient-two" data-toggle="modal"
