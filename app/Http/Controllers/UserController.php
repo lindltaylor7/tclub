@@ -62,8 +62,8 @@ class UserController extends Controller
                 'url' => $url
             ]);
         }
-        
-        
+
+
         $credentials = $users->only('email','password');
         Auth::login($users);
         return redirect()->route('user.dashboard',['id'=> Auth::id()]);

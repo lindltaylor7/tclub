@@ -52,10 +52,10 @@
                         <div class="user_pro_img_area" style="padding: 0px;">
                             <div class="col-lg-3 image-info">
                               </div>
-                              
-                              <label for="file" class="btn btn-sm btn-secondary">Cargar Imagen de Empresa</label>
+                              <div class="custom-file-upload">
                                 <input id="fileBusiness" type="file"  name="fileBusiness">
-                                
+                               <label for="fileBusiness" class="btn btn-sm btn-secondary">Cargar Imagen de Empresa</label>
+                             </div>                               
                                     
                         </div>
                         <div class="image-wrapper">

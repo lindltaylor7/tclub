@@ -32,8 +32,11 @@
                             <div class="col-lg-3 image-info">
                               </div>
 
-                                <label class="btn btn-sm btn-secondary">Cargar Imagen de rubro</label>
+
+                              <div class="custom-file-upload">
                                 <input id="fileCategoryUpdate{{$categoria->id}}" type="file"  name="fileCategoryUpdate">
+                                <label for="fileCategoryUpdate{{$categoria->id}}" class="btn btn-sm btn-secondary">Cargar Imagen de rubro</label>
+                              </div>
                                   
                         </div>
                         <div class="image-wrapper">

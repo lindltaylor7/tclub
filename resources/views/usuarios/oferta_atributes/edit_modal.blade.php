@@ -41,15 +41,16 @@
                             <div class="col-lg-3 image-info">
                               </div>
 
-                                <label class="btn btn-sm btn-secondary">Cargar Imagen de Oferta</label>
+                              <div class="custom-file-upload">
                                 <input id="fileOfferUpdate{{$offer->id}}" type="file"  name="fileOfferUpdate">
-                                  
+                                <label for="fileOfferUpdate{{$offer->id}}" class="btn btn-sm btn-secondary">Cargar Imagen de Oferta</label>
+                              </div>   
                         </div>
                         @foreach($offer->images as $img)
                         <div class="image-wrapper">
                             <img id="pictureOfferUpdate{{$offer->id}}" src="{{asset('storage/'.$img->url)}}" alt="">
                         </div>
-                    @endforeach
+                         @endforeach
                        </div>
 
                     <button type="submit" class="btn btn-block btn-lg btn-gradient btn-gradient-two">Actualizar</button>
