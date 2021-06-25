@@ -179,4 +179,4 @@
         <!-- end  -->
     </div>
 </div><!-- ends: .mainmenu-wrapper -->
-@include('usuarios.modal.register')
+@include('layout.modals.register')

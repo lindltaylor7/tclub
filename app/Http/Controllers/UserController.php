@@ -123,7 +123,7 @@ class UserController extends Controller
             ]);
         }
 
-        return redirect()->back()->with('ActualizacionU','Datos de usuario actualizada');
+        return redirect()->back()->with('ActualizarUsuario','Datos de usuario actualizada');
     }
 
     public function inactive($id)
@@ -132,7 +132,7 @@ class UserController extends Controller
         $usuario->update(['status' => 0]);
         $usuario->save();
 
-        return redirect()->back()->with('desactivar_usuario','Actualización completa');
+        return redirect()->back()->with('DesactivarUsuario','Actualización completa');
     }
 
     public function active($id)
@@ -141,7 +141,7 @@ class UserController extends Controller
         $usuario->update(['status' => 1]);
         $usuario->save();
 
-        return redirect()->back()->with('activar_usuario','Actualización completa');
+        return redirect()->back()->with('ActivarUsuario','Actualización completa');
     }
 
     /**
@@ -152,6 +152,29 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $usuario = User::where('id',$id)->first();
+        $usuario->images()->delete();
+        $usuario->delete();
+
+        return redirect()->back()->with('borrar_usuario','Borrado completo');
+    }
+
+
+
+    public function updateAdmin(Request $request, $id)
+    {
+
+        $user= User::where('id',$id)->first();
+        $user->update($request->except(['_token','_method','fileUserUpdate']));
+
+        if ($request->file('fileUserUpdate')) {
+            $user->images()->delete();
+            $url = Storage::put('users', $request->file('fileUserUpdate'));
+            $user->images()->create([
+                'url' => $url
+            ]);
+        }
+
+        return redirect()->back()->with('ActualizarUsuario_admin','Datos de usuario actualizada');
     }
 }

@@ -58,7 +58,7 @@ class CityController extends Controller
                 'url' => $url
             ]);
         }
-        return back()->withInput(['tab'=>'ciudades']);
+        return redirect()->back()->with('crear_ciudad','Registro de Ciudad completa');
     }
 
     /**
@@ -125,7 +125,7 @@ class CityController extends Controller
         $ciudad->save();
 
 
-        return redirect()->back()->with('desactivar_ciudad','Actualización completa');
+        return redirect()->back()->with('Desactivar_ciudad','Actualización completa');
     }
 
     public function active($id)
@@ -135,7 +135,7 @@ class CityController extends Controller
         $ciudad->save();
 
 
-        return redirect()->back()->with('activar_ciudad','Actualización completa');
+        return redirect()->back()->with('Activar_ciudad','Actualización completa');
     }
 
     /**

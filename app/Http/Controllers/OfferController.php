@@ -54,7 +54,7 @@ class OfferController extends Controller
             ]);
         }
         
-        return redirect()->route('user.dashboard',['id'=>$offers->business->user_id]);
+        return redirect()->back()->with('AgregarO','AgregarO completa');
     }
 
     /**
@@ -105,7 +105,7 @@ class OfferController extends Controller
             ]);
         }
 
-        return redirect()->back()->with('actualizar_ciudad','Actualización completa');
+        return redirect()->back()->with('ActualizarO','AcctualizarOcompleta');
     }
 
     public function inactive($id)
@@ -114,7 +114,7 @@ class OfferController extends Controller
         $oferta->update(['status' => 0]);
         $oferta->save();
 
-        return redirect()->back()->with('desactivar_oferta','Actualización completa');
+        return redirect()->back()->with('DesactivarO','Actualización completa');
     }
 
     public function active($id)
@@ -123,7 +123,7 @@ class OfferController extends Controller
         $oferta->update(['status' => 1]);
         $oferta->save();
 
-        return redirect()->back()->with('activar_oferta','Actualización completa');
+        return redirect()->back()->with('ActivarO','Actualización completa');
     }
 
     /**
@@ -138,6 +138,61 @@ class OfferController extends Controller
         $oferta->images()->delete();
         $oferta->delete();
 
-        return redirect()->back()->with('borrar_oferta','Borrado completo');
+        return redirect()->back()->with('EliminarO','BorradoO completo');
     }
+
+
+
+
+
+
+    public function updateAdmin(Request $request, $id)
+    {
+        $request->validate([
+            'name' => 'required',
+            'start_date' => 'required',
+            'end_date' => 'required'
+        ]);
+
+        $oferta = Offer::where('id',$id)->first();
+        $oferta->update($request->except(['_token','_method','fileOfferUpdate']));
+
+        if ($request->file('fileOfferUpdate')){
+            $oferta->images()->delete();
+            $url = Storage::put('ofertas', $request->file('fileOfferUpdate'));
+            $oferta->images()->create([
+                'url' => $url
+            ]);
+        }
+
+        return redirect()->back()->with('ActualizarOAdmin','AcctualizarOcompleta');
+    }
+
+    public function inactiveAdmin($id)
+    {
+        $oferta = Offer::find($id);
+        $oferta->update(['status' => 0]);
+        $oferta->save();
+
+        return redirect()->back()->with('DesactivarOAdmin','Actualización completa');
+    }
+
+    public function activeAdmin($id)
+    {
+        $oferta = Offer::find($id);
+        $oferta->update(['status' => 1]);
+        $oferta->save();
+
+        return redirect()->back()->with('ActivarOAdmin','Actualización completa');
+    }
+    public function destroyAdmin($id)
+    {
+        $oferta = Offer::where('id',$id)->first();
+        $oferta->images()->delete();
+        $oferta->delete();
+
+        return redirect()->back()->with('EliminarOAdmin','BorradoO completo');
+    }
+
+
 }

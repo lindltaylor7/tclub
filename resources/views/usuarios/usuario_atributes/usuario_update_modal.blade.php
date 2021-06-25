@@ -39,11 +39,11 @@
                     <div class="form-group">
                         <label for="title" class="form-label">Foto de Perfil:</label>
                         <div class="col-lg-3 col-md-4 mb-5 mb-lg-0">
-                                 <input id="fileUserUpdate" type="file"  name="fileUserUpdate">
+                                 <input id="fileUserUpdate{{$usuario->id}}" type="file"  name="fileUserUpdate">
                         </div>
 
                             <div class="image-wrapper">
-                                <img id="pictureUserUpdate" src="{{asset('storage/'.$image->url)}}" alt="">
+                                <img id="pictureUserUpdate{{$usuario->id}}" src="{{asset('storage/'.$image->url)}}" alt="">
                             </div>
                     </div>
                     
@@ -70,12 +70,12 @@
 
 <script>
 //CAMBIAR IMAGEN CUADNO SE SELECCIONE UNA FOTO
-document.getElementById("fileUserUpdate").addEventListener('change', cambiarImagen);
+document.getElementById("fileUserUpdate{{$usuario->id}}").addEventListener('change', cambiarImagen);
 function cambiarImagen(event){
     var file = event.target.files[0];
     var reader = new FileReader();
     reader.onload = (event) => {
-        document.getElementById("pictureUserUpdate").setAttribute('src', event.target.result);
+        document.getElementById("pictureUserUpdate{{$usuario->id}}").setAttribute('src', event.target.result);
     };
     reader.readAsDataURL(file);
 }

@@ -134,7 +134,7 @@ class BusinessController extends Controller
         $empresa->update(['status' => 0]);
         $empresa->save();
 
-        return redirect()->back()->with('desactivar_empresa','Actualización completa');
+        return redirect()->back()->with('DesactivarEmpresa','Actualización completa');
     }
 
     public function active($id)
@@ -143,7 +143,7 @@ class BusinessController extends Controller
         $empresa->update(['status' => 1]);
         $empresa->save();
 
-        return redirect()->back()->with('activar_empresa','Actualización completa');
+        return redirect()->back()->with('ActivarEmpresa','Actualización completa');
     }
 
     /**
@@ -160,4 +160,38 @@ class BusinessController extends Controller
 
         return redirect()->back()->with('borrar_empresa','Borrado completo');
     }
+
+
+   
+
+    public function updateAdmin(Request $request, $id)
+    {
+        $business = Business::where('id',$id)->first();
+        $business->update($request->except(['_token','_method','fileBusinessUpdate']));
+        
+        if ($request->file('fileBusinessUpdate')){
+            $business->images()->delete();
+            $url = Storage::put('empresas', $request->file('fileBusinessUpdate'));
+            $business->images()->create([
+                'url' => $url
+            ]);
+        }
+
+        return redirect()->back()->with('actualizar_empresa_admin','Actualización completa');
+    }
+
+
+    public function destroyAdmin($id)
+    {
+        $empresa = Business::where('id',$id)->first();
+        $empresa->images()->delete();
+        $empresa->delete();
+
+        return redirect()->back()->with('borrar_empresa_admin','Borrado completo');
+    }
+
+
+
+
+
 }
