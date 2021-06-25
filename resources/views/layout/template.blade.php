@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="{{asset('css/slick.css')}}">
     <link rel="stylesheet" href="{{asset('style.css')}}">
     <!-- endinject -->
-    <link rel="icon" type="image/png" sizes="32x32" href="{{asset('img/fevicon.png')}}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{asset('img/icon-brand.ico')}}">
 </head>
 
 
