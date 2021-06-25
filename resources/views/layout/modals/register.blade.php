@@ -22,7 +22,7 @@
                     </div>
                     <div class="form-group">
                         <label for="title" class="form-label">Telefono</label>
-                        <input type="text" class="form-control" id="atbdp-contact-name" name="phone" placeholder="Teléfono o Celular">
+                        <input type="text" class="form-control" id="atbdp-contact-name" name="phone" placeholder="Teléfono o Celular" maxlength="11">
                     </div>
                     <div class="form-group">
                         <label for="title" class="form-label">E-mail</label>
@@ -54,13 +54,9 @@
                 </form>
                 <div class="form-excerpts">
                     <ul class="list-unstyled">
-                        <li>Already a member? <a href="">Sign In</a></li>
-                        <li><a href="">Recover Password</a></li>
+                        <li>¿Aún no eres miembro? <a href="" data-toggle="modal" data-target="#login_modal">Login</a></li>
+                        <li><a href="">Recuperar contraseña</a></li>
                     </ul>
-                    <div class="social-login">
-                        <span>Or Signup with</span>
-                        <p><a href="" class="btn btn-outline-secondary"><i class="fab fa-facebook-f"></i> Facebook</a><a href="" class="btn btn-outline-danger"><i class="fab fa-google-plus-g"></i> Google</a></p>
-                    </div>
                 </div>
             </div>
         </div>

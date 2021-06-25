@@ -50,7 +50,7 @@
                         <ul class="categories">
 
                             @foreach ($categorias as $cat)
-                            @if($categoria->status == 1)
+                            @if($cat->status == 1)
                                 <li>
                                     <a href="{{route('rubro.show',$cat->id)}}" value="{{$cat->id}}">
                                         <span class="color-success"><i class="{{$cat->icon}}"></i></span>

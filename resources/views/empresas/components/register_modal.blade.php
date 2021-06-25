@@ -39,11 +39,11 @@
                     </div>
                     <div class="form-group">
                         <label for="title" class="form-label">Ruc</label>
-                        <input type="text" class="form-control" name="ruc" placeholder="RUC de tu empresa" required>
+                        <input type="text" class="form-control" name="ruc" placeholder="RUC de tu empresa" maxlength="11" required>
                     </div>
                     <div class="form-group">
                         <label for="title" class="form-label">Teléfono</label>
-                        <input type="text" class="form-control" name="phone" placeholder="Teléfono o Celular" required>
+                        <input type="text" class="form-control" name="phone" placeholder="Teléfono o Celular" maxlength="11" required>
                     </div>
                    
 
