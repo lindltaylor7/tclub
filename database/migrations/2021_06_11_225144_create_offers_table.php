@@ -18,8 +18,8 @@ class CreateOffersTable extends Migration
             $table->string('name',100);
             $table->string('description',255)->nullable();
             $table->double('price',11,2)->nullable();
-            $table->dateTime('start_date');
-            $table->dateTime('end_date');
+            $table->date('start_date');
+            $table->date('end_date');
             $table->boolean('status');
             $table->unsignedBigInteger('business_id');
             $table->foreign('business_id')->references('id')->on('businesses')->onDelete('cascade');

@@ -41,12 +41,21 @@
                         <div class="col-lg-3 col-md-4 mb-5 mb-lg-0">
                                  <input id="fileUserUpdate{{$usuario->id}}" type="file"  name="fileUserUpdate">
                         </div>
-
+                        @if($usuario->images->isNotEmpty())
+                            @foreach($usuario->images as $img)
                             <div class="image-wrapper">
                                 <img id="pictureUserUpdate{{$usuario->id}}" src="{{asset('storage/'.$image->url)}}" alt="">
                             </div>
+                            @endforeach
+                        @else
+                        <div class="image-wrapper">
+                            <img id="pictureUserUpdate{{$usuario->id}}" src="https://revistabyte.es/wp-content/uploads/2016/01/Seguridad-TI-768x484.jpg.webp" alt="">
+                        </div>
+
+                        @endif
+
                     </div>
-                    
+
                     <button type="submit" class="btn btn-block btn-lg btn-gradient btn-gradient-two">Actualizar</button>
                 </form>
             </div>
