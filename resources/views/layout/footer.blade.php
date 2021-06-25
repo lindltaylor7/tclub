@@ -2,7 +2,7 @@
     <div class="footer-top p-bottom-25">
         <div class="container">
             <div class="row">
-                <div class="col-lg-2 col-sm-6">
+                <div class="col-lg-4 col-sm-6">
                     <div class="widget widget_pages">
                         <h2 class="widget-title">Información de la Compañia</h2>
                         <ul class="list-unstyled">
@@ -13,7 +13,7 @@
                         </ul>
                     </div>
                 </div><!-- ends: .col-lg-3 -->
-                <div class="col-lg-3 col-sm-6">
+                <div class="col-lg-4 col-sm-6">
                     <div class="widget widget_social">
                         <h2 class="widget-title">Contáctate con Nosotros</h2>
                         <ul class="list-unstyled social-list">
@@ -22,7 +22,7 @@
                         </ul>
                     </div><!-- ends: .widget -->
                 </div><!-- ends: .col-lg-3 -->
-                <div class="col-lg-6 col-sm-12">
+                <div class="col-lg-4 col-sm-12">
                     <div class="widget widget_text">
                         <h2 class="widget-title">TRIAD CLUB para móviles</h2>
                         <div class="textwidget">
