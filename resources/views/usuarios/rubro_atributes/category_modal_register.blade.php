@@ -38,8 +38,10 @@
                     <div class="user_pro_img_area" style="padding: 0px;">
                         <div class="col-lg-3 image-info">
                         </div>
-                        <label class="btn btn-sm btn-secondary">Imagen de Rubro</label>
+                        <div class="custom-file-upload">
                         <input id="fileCategory" type="file"  name="fileCategory">
+                        <label for="fileCategory" class="btn btn-sm btn-secondary">Imagen de Rubro</label>
+                        </div>
                     </div>
                     <div class="image-wrapper">
                         <img id="pictureCategory" src="https://revistabyte.es/wp-content/uploads/2016/01/Seguridad-TI-768x484.jpg.webp" alt="">

@@ -33,17 +33,27 @@
                         <label for="title" class="form-label">Fecha de expiro:</label>
                         <input type="date" class="form-control" name="end_date" value="{{$offer->end_date}}">
                     </div>
-                    <div class="form-group">
-                        <label for="title" class="form-label">Imagen de Campaña: </label>
-                        <div class="col-lg-3 col-md-4 mb-5 mb-lg-0">
-                                 <input id="fileOfferUpdate" type="file"  name="fileOfferUpdate">
+
+
+
+
+                     <div class="form-group">
+                        <label for="title" class="form-label">Imagen de Oferta: </label>   
+                        <div class="user_pro_img_area" style="padding: 0px;">
+                            <div class="col-lg-3 image-info">
+                              </div>
+
+                              <div class="custom-file-upload">
+                                <input id="fileOfferUpdateAdmin{{$offer->id}}" type="file"  name="fileOfferUpdate">
+                                <label for="fileOfferUpdateAdmin{{$offer->id}}" class="btn btn-sm btn-secondary">Cargar Imagen de Oferta</label>
+                              </div>   
                         </div>
                         @foreach($offer->images as $img)
-                            <div class="image-wrapper">
-                                <img id="pictureOfferUpdate" src="{{asset('storage/'.$img->url)}}" alt="">
-                            </div>
-                        @endforeach
-                    </div>
+                        <div class="image-wrapper">
+                            <img id="pictureOfferUpdateAdmin{{$offer->id}}" src="{{asset('storage/'.$img->url)}}" alt="">
+                        </div>
+                         @endforeach
+                       </div>
 
                     <button type="submit" class="btn btn-block btn-lg btn-gradient btn-gradient-two">Actualizar</button>
                 </form>
@@ -68,12 +78,12 @@
 
 <script>
 //CAMBIAR IMAGEN CUADNO SE SELECCIONE UNA FOTO
-document.getElementById("fileOfferUpdate").addEventListener('change', cambiarImagen);
+document.getElementById("fileOfferUpdateAdmin{{$offer->id}}").addEventListener('change', cambiarImagen);
 function cambiarImagen(event){
     var file = event.target.files[0];
     var reader = new FileReader();
     reader.onload = (event) => {
-        document.getElementById("pictureOfferUpdate").setAttribute('src', event.target.result);
+        document.getElementById("pictureOfferUpdateAdmin{{$offer->id}}").setAttribute('src', event.target.result);
     };
     reader.readAsDataURL(file);
 }

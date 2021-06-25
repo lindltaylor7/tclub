@@ -19,10 +19,11 @@
                         <div class="user_pro_img_area" style="padding: 0px;">
                             <div class="col-lg-3 image-info">
                               </div>
-
-                                <label class="btn btn-sm btn-secondary">Cargar Imagen de Empresa</label>
+                              <div class="custom-file-upload">
+                        
                                 <input id="fileBusinessUpdate{{$businesse->id}}" type="file"  name="fileBusinessUpdate">
-                                  
+                                <label for="fileBusinessUpdate{{$businesse->id}}" class="btn btn-sm btn-secondary">Cargar Imagen de Empresa</label>
+                              </div> 
                         </div>
                         <div class="image-wrapper">
                             <img id="pictureBusinessUpdate{{$businesse->id}}" src="{{asset('storage/'.$image->url)}}" alt="">

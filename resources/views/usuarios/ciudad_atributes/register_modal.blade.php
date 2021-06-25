@@ -21,8 +21,11 @@
                     <div class="user_pro_img_area" style="padding: 0px;">
                         <div class="col-lg-3 image-info">
                         </div>
-                        <label class="btn btn-sm btn-secondary">Imagen de CIudad</label>
+                        <div class="custom-file-upload">
                         <input id="fileCity" type="file"  name="fileCity">
+                        <label for="fileCity" class="btn btn-sm btn-secondary">Imagen de CIudad</label>
+                       
+                        </div>
                     </div>
                     <div class="image-wrapper">
                         <img id="pictureCity" src="https://revistabyte.es/wp-content/uploads/2016/01/Seguridad-TI-768x484.jpg.webp" alt="">

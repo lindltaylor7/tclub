@@ -45,10 +45,10 @@
                         <div class="user_pro_img_area" style="padding: 0px;">
                             <div class="col-lg-3 image-info">
                               </div>
-                           
-                                <label for="file" class="btn btn-sm btn-secondary">Cargar Imagen de Oferta</label>
+                              <div class="custom-file-upload">
                                 <input id="fileOffer{{$businesse->id}}" type="file"  name="fileOffer">
-                                        
+                                <label for="fileOffer{{$businesse->id}}" class="btn btn-sm btn-secondary">Cargar Imagen de Oferta</label>
+                              </div>       
                         </div>
                         <div class="image-wrapper">
                             <img id="pictureOffer{{$businesse->id}}" src="https://revistabyte.es/wp-content/uploads/2016/01/Seguridad-TI-768x484.jpg.webp" alt="">

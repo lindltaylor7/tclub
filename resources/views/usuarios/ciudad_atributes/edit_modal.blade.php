@@ -26,10 +26,11 @@
                         <div class="user_pro_img_area" style="padding: 0px;">
                             <div class="col-lg-3 image-info">
                               </div>
-
-                                <label class="btn btn-sm btn-secondary">Cargar Imagen de Ciudad</label>
+                              <div class="custom-file-upload">
                                 <input id="fileCityUpdate{{$city->id}}" type="file"  name="fileCityUpdate">
-                                  
+                                <label  for="fileCityUpdate{{$city->id}}" class="btn btn-sm btn-secondary">Cargar Imagen de Ciudad</label>
+                                
+                              </div> 
                         </div>
                         <div class="image-wrapper">
                             <img id="pictureCityUpdate{{$city->id}}" src="{{asset('storage/'.$image->url)}}" alt="">
