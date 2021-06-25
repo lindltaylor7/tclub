@@ -54,7 +54,7 @@
                 </form>
                 <div class="form-excerpts">
                     <ul class="list-unstyled">
-                        <li>¿Aún no eres miembro? <a href="" data-toggle="modal" data-target="#login_modal">Login</a></li>
+                        <li>¿Ya eres miembro? <a href="" data-toggle="modal" data-target="#login_modal">Login</a></li>
                         <li><a href="">Recuperar contraseña</a></li>
                     </ul>
                 </div>
