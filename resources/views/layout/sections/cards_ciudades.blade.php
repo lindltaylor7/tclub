@@ -3,8 +3,8 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="section-title">
-                    <h2>Nuestro Perú</h2>
-                    <p>Explora las mejores empresas del país por ciudades</p>
+                    <h2>Los Mejores Productos</h2>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
                 </div>
             </div>
             <div class="col-lg-12">

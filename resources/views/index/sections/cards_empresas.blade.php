@@ -3,8 +3,8 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="section-title">
-                    <h2>Las Mejores Empresas del Perú</h2>
-                    <p>Explora las mejores empresas en todas las ciudades del Perú</p>
+                    <h2>Nuevas Ofertas</h2>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
                 </div>
             </div>
             <div class="listing-cards-wrapper col-lg-12">
@@ -39,8 +39,8 @@
                                                 <a href="{{route('empresa.show',$empresa->id)}}">{{$empresa->name}}</a>
                                             </h4>
                                             <div class="atbd_listing_meta">
-                                                <span class="atbd_meta atbd_listing_rating">{{$empresa->valorations->avg('puntuation')}}<i class="la la-star"></i></span>
-                                                <span class="atbd_meta atbd_badge_open">Abierto ahora</span>
+                                                <span class="atbd_meta atbd_listing_rating">S/. 100.00<i class="la la-star"></i></span>
+                                                <span class="atbd_meta atbd_badge_open">Nuevo</span>
                                             </div><!-- End atbd listing meta -->
                                             <div class="atbd_listing_data_list">
                                                 <ul>

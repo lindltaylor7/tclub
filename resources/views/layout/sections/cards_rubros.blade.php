@@ -3,8 +3,8 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="section-title">
-                    <h2>¿Qué rubro busca Usted?</h2>
-                    <p>Descubra los mejores restaurantes, tiendas, hoteles, centros turísticos y muchos lugares en todo el Perú</p>
+                    <h2>¿Algún producto que busca?</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus quod quae blanditiis dolore.</p>
                 </div>
             </div>
         </div>

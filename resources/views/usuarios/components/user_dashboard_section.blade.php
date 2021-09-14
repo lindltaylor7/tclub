@@ -7,7 +7,7 @@
                         <ul class="nav" id="dashboard-tabs" role="tablist">
                             <li class="nav-item">
                                 <a class="nav-link active" id="all-listings" data-toggle="tab" href="#listings"
-                                    role="tab" aria-controls="listings" aria-selected="true">Mis Empresas</a>
+                                    role="tab" aria-controls="listings" aria-selected="true">Mis Productos</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
@@ -26,13 +26,13 @@
                             @can('edit.rubros')
                             <li class="nav-item">
                                 <a class="nav-link" id="categorias" data-toggle="tab" href="#category" role="category"
-                                    aria-controls="categoria" aria-selected="false">Rubros</a>
+                                    aria-controls="categoria" aria-selected="false">Categorias</a>
                             </li>
                             @endcan
                             @can('edit.empresas')
                             <li class="nav-item">
                                 <a class="nav-link" id="empresas" data-toggle="tab" href="#all_business"
-                                    role="all_business" aria-controls="empresa" aria-selected="false">Empresas</a>
+                                    role="all_business" aria-controls="empresa" aria-selected="false">Productos</a>
                             </li>
                             @endcan
                             @can('edit.ofertas_usuario')
@@ -294,26 +294,11 @@
                                     $('#empresas').tab('show')
                                 })
                             </script>
-                            @endif
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                            
+                            @endif                            
                         </ul>
                         <div class="nav_button">
                             <a href="#" class="btn btn-xs btn-gradient btn-gradient-two" data-toggle="modal"
-                                data-target="#Registerb_modal"><span class="la la-plus"></span>Agregar Empresa</a>
+                                data-target="#Registerb_modal"><span class="la la-plus"></span>Agregar Producto</a>
                             <form style="display: inline" action="{{route('logout')}}" method="POST">
                                 @csrf
                                 <a href="#" class="btn btn-xs btn-gradient btn-gradient-two"

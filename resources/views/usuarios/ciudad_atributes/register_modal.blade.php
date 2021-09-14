@@ -3,7 +3,7 @@
         <div class="modal-content">
             <div class="modal-header">
 
-                <h5 class="modal-title" id="signup_modal_label"><i class="la la-lock"></i>Nueva Ciudad</h5>
+                <h5 class="modal-title" id="signup_modal_label"><i class="la la-lock"></i>Nuevo Producto</h5>
 
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
@@ -17,13 +17,13 @@
                         <input type="text" class="form-control" name="name"  placeholder="Ingrese ciudad" required>
                     </div>
                     <div class="form-group">
-                        <label for="title" class="form-label">Imagen de Ciudad: </label>      
+                        <label for="title" class="form-label">Imagen Referencial: </label>      
                     <div class="user_pro_img_area" style="padding: 0px;">
                         <div class="col-lg-3 image-info">
                         </div>
                         <div class="custom-file-upload">
                         <input id="fileCity" type="file"  name="fileCity">
-                        <label for="fileCity" class="btn btn-sm btn-secondary">Imagen de CIudad</label>
+                        <label for="fileCity" class="btn btn-sm btn-secondary">Imagen Referencial</label>
                        
                         </div>
                     </div>

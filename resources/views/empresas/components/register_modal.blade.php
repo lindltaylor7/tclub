@@ -3,7 +3,7 @@
         <div class="modal-content">
             <div class="modal-header">
 
-                <h5 class="modal-title" id="signup_modal_label"><i class="la la-lock"></i>Registro de Empresa</h5>
+                <h5 class="modal-title" id="signup_modal_label"><i class="la la-lock"></i>Registro de Oferta</h5>
 
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
@@ -18,7 +18,7 @@
                         <input type="text" class="form-control" name="name"  placeholder="Nombre de tu empresa" required>
                     </div>
                     <div class="form-group">
-                        <label for="ad_categroy" class="form-label">Rubro</label>
+                        <label for="ad_categroy" class="form-label">Categoría</label>
                         <div class="select-basic">
                             <select name="category_id" class="form-control ad_search_category" id="ad_categroy">
                                 @foreach ($categorias as $categoria)
@@ -29,32 +29,26 @@
                             </select>
                         </div>
                     </div><!-- ends: .form-group -->
-                    <div class="form-group">
-                        <label for="title" class="form-label">Slogan</label>
-                        <input type="text" class="form-control" name="slogan"  placeholder="Slogan de tu empresa*" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="desc" class="form-label">Descripción</label>
-                        <textarea id="desc" rows="7" class="form-control" name="description" placeholder="Descripción de tu empresa*"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="title" class="form-label">Ruc</label>
-                        <input type="text" class="form-control" name="ruc" placeholder="RUC de tu empresa" maxlength="11" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="title" class="form-label">Teléfono</label>
-                        <input type="text" class="form-control" name="phone" placeholder="Teléfono o Celular" maxlength="11" required>
-                    </div>
-                   
 
                     <div class="form-group">
-                        <label for="title" class="form-label">Imagen de Empresa: </label>   
+                        <input type="input" class="form-control" name="slogan"  value="Slogan de tu empresa*" required>
+                        <label for="desc" class="form-label">Descripción</label>
+                        <input type="input" class="form-control" name="ruc" value="12345124512" required>
+                        <textarea id="desc" rows="7" class="form-control" name="description" placeholder="Descripción de la Oferta*"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="title" class="form-label">Precio</label>
+                        <input type="text" class="form-control" name="phone" placeholder="Precios en soles" maxlength="11" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="title" class="form-label">Imagen Referencial: </label>   
                         <div class="user_pro_img_area" style="padding: 0px;">
                             <div class="col-lg-3 image-info">
                               </div>
                               <div class="custom-file-upload">
                                 <input id="fileBusiness" type="file"  name="fileBusiness">
-                               <label for="fileBusiness" class="btn btn-sm btn-secondary">Cargar Imagen de Empresa</label>
+                               <label for="fileBusiness" class="btn btn-sm btn-secondary">Cargar Imagen</label>
                              </div>                               
                                     
                         </div>
@@ -64,7 +58,7 @@
                        </div>
 
 
-                    <button type="submit" class="btn btn-block btn-lg btn-gradient btn-gradient-two">Registrar empresa</button>
+                    <button type="submit" class="btn btn-block btn-lg btn-gradient btn-gradient-two">Registrar Oferta</button>
 
                 </form>
 

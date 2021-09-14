@@ -3,14 +3,15 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="section-title">
-                    <h2>¿Qué rubro está buscando en {{$ciudad->name}}?</h2>
-                    <p>Descubra los mejores restaurantes, tiendas, hoteles, centros turísticos y muchos lugares en {{$ciudad->name}}</p>
+                    <h2>Nuevas Ofertas en {{$ciudad->name}}?</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga iusto laborum cupiditate totam accusantium quod tenetur.</p>
                 </div>
             </div>
         </div>
         <div class="row">
             @foreach ($categorias as $categoria)
-                @if(($categoria->name == $cat->name) && ($categoria->status == 1))
+            @foreach ($cat as $ca)
+                @if(($categoria->name == $ca->name) && ($categoria->status == 1))
                     <div class="col-lg-4 col-sm-6">
                         <div class="category-single category--img">
                             <figure class="category--img4">
@@ -18,13 +19,14 @@
                                     <img  src="{{asset('storage/'.$image->url)}}" alt="" style="width:350px; height:280px; object-fit: cover;">
                                 @endforeach
                                 <figcaption class="overlay-bg">
-                                    <a href="{{route('rubro.show',$categoria->id)}}" class="cat-box">
+                                    <a href="{{route('rubro.ciudad_rubro',['id_city'=>$ciudad->id, 'id' => $categoria->id])}}" class="cat-box">
                                         <div>
                                             <div class="icon">
                                                 <span class="{{$categoria->icon}}"></span>
                                             </div>
                                             <h4 class="cat-name">{{$categoria->name}}</h4>
-                                            <span class="badge badge-pill badge-success">{{$categoria->cities->count()}} Empresas</span>
+                                            <span class="badge badge-pill badge-success">Ver Todas
+                                            </span>
                                         </div>
                                     </a>
                                 </figcaption>
@@ -32,6 +34,7 @@
                         </div><!-- ends: .category-single -->
                     </div><!-- ends: .col -->
                 @endif
+                @endforeach
             @endforeach
         </div>
     </div>

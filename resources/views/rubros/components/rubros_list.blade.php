@@ -3,8 +3,8 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="section-title">
-                    <h2>¿Que rubro estas buscando?</h2>
-                    <p>Visualizaras los rubros  cuantas empresas tiene</p>
+                    <h2>Nuestros Productos</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
                 </div>
             </div>
         </div>
@@ -29,7 +29,7 @@
                                         <span class="la la-hotel"></span>
                                     </div>
                                     <h4 class="cat-name">{{$rubro->name}}</h4>
-                                    <span class="badge badge-pill badge-success">{{$rubro->businesses->count()}} empresas</span>
+                                    <span class="badge badge-pill badge-success">{{$rubro->businesses->count()}} productos</span>
                                 </div>
                             </a>
                         </figcaption>

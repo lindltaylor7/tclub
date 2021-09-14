@@ -3,14 +3,13 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="section-title">
-                    <h2>Nuestras Ofertas</h2>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+                    <h2>{{$unico->name}}s de {{$ciudad->name}}</h2>
                 </div>
             </div>
             <div class="listing-cards-wrapper col-lg-12">
                 <div class="row">
                     @foreach($empresas as $empresa)
-                    @if(($empresa->status == 1))
+                    @if(($empresa->status == 1) && ($empresa->addresses->first()->city_id == $ciudad->id))
                         <div class="col-lg-4 col-sm-6">
                             <div class="atbd_single_listing ">
                                 <article class="atbd_single_listing_wrapper">
@@ -38,7 +37,7 @@
                                                 <a href="{{route('empresa.show',$empresa->id)}}">{{$empresa->name}}</a>
                                             </h4>
                                             <div class="atbd_listing_meta">
-                                                <span class="atbd_meta atbd_listing_rating">S/. 150.00<i class="la la-star"></i></span>
+                                                <span class="atbd_meta atbd_listing_rating">S/. 100.00<i class="la la-star"></i></span>
                                                 <span class="atbd_meta atbd_badge_open">Nuevo</span>
                                             </div><!-- End atbd listing meta -->
                                             <div class="atbd_listing_data_list">

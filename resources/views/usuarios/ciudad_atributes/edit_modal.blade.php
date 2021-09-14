@@ -3,7 +3,7 @@
         <div class="modal-content">
             <div class="modal-header">
 
-                <h5 class="modal-title" id="signup_modal_label"><i class="la la-lock"></i>Actualizar Ciudad</h5>
+                <h5 class="modal-title" id="signup_modal_label"><i class="la la-lock"></i>Actualizar Producto</h5>
 
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
@@ -18,18 +18,15 @@
                         <input type="text" class="form-control" name="name" value="{{$city->name}}">
                     </div>
 
-                    
-
                     <div class="form-group">
 
-                        <label for="title" class="form-label">Imagen de Ciudad: </label>   
+                        <label for="title" class="form-label">Imagen Referencial: </label>   
                         <div class="user_pro_img_area" style="padding: 0px;">
                             <div class="col-lg-3 image-info">
                               </div>
                               <div class="custom-file-upload">
                                 <input id="fileCityUpdate{{$city->id}}" type="file"  name="fileCityUpdate">
-                                <label  for="fileCityUpdate{{$city->id}}" class="btn btn-sm btn-secondary">Cargar Imagen de Ciudad</label>
-                                
+                                <label  for="fileCityUpdate{{$city->id}}" class="btn btn-sm btn-secondary">Cargar Imagen</label>                                
                               </div> 
                         </div>
                         <div class="image-wrapper">

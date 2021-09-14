@@ -1,6 +1,6 @@
 @extends('layout.template')
 
-@section('title', 'Empresa')
+@section('title', 'Ofertas')
 
 @section('content')
     @include('empresas.components.header_empresa')

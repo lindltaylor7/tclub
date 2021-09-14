@@ -18,6 +18,7 @@ Route::get('/ciudades/{id}', [CityController::class,'show'])->name('ciudad.show'
 
 Route::get('/rubros', [CategoryController::class,'index'])->name('rubro.index');
 Route::get('/rubros/{id}', [CategoryController::class,'show'])->name('rubro.show');
+Route::get('/ciudad/rubros/{id_city}/{id}', [CategoryController::class,'ciudad_rubro'])->name('rubro.ciudad_rubro');
 
 Route::get('/empresas', [BusinessController::class,'index'])->name('empresa.index');
 Route::get('/empresas/{id}', [BusinessController::class,'show'])->name('empresa.show');

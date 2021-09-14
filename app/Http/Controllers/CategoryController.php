@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Business;
 use App\Models\Category;
 use App\Models\Social;
+use App\Models\City;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -74,6 +75,7 @@ class CategoryController extends Controller
         $categorias = Category::all();
         $unico = Category::find($id);
         $empresas = Category::find($id)->businesses()->where('category_id',$id)->get();
+        
 
         return view('rubros.show', compact('categorias','unico','empresas'));
     }
@@ -142,5 +144,15 @@ class CategoryController extends Controller
         $categoria ->images()->delete();
         $categoria->delete();
         return redirect()->back()->with('EliminarC','Rubro eliminado');
+    }
+
+    public function ciudad_rubro($id_city, $id)
+    {
+        $categorias = Category::all();
+        $ciudad = City::find($id_city);
+        $unico = Category::find($id);
+        $empresas = Category::find($id)->businesses()->where('category_id',$id)->get();
+
+        return view('rubros.ciudad_rubro', compact('categorias','unico','empresas','ciudad'));
     }
 }

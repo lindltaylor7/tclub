@@ -3,7 +3,7 @@
         <div class="modal-content">
             <div class="modal-header">
 
-                <h5 class="modal-title" id="signup_modal_label"><i class="la la-lock"></i>Registrar nuevo Rubro</h5>
+                <h5 class="modal-title" id="signup_modal_label"><i class="la la-lock"></i>Registrar nueva Categoría</h5>
 
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
@@ -13,11 +13,11 @@
                 <form action="{{route('category.register')}}" id="signup-form" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
-                        <label for="title" class="form-label">Nombre de Rubro</label>
-                        <input type="text" class="form-control" id="atbdp-contact-name" name="name" placeholder="Nombre de rubro" required="">
+                        <label for="title" class="form-label">Nombre de Categoría</label>
+                        <input type="text" class="form-control" id="atbdp-contact-name" name="name" placeholder="Nombre" required="">
                     </div>
                     <div class="form-group">
-                        <label for="title" class="form-label">Icono de Rubro</label>
+                        <label for="title" class="form-label">Icono de Categoría</label>
                         <select name="icon" id="icon" class="form-control">
                             <option value="la la-cutlery">Restaurantes</option>
                             <option value="la la-mortar-board">Educación</option>
@@ -34,20 +34,20 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="title" class="form-label">Imagen de Rubro: </label>
+                        <label for="title" class="form-label">Imagen Referencial: </label>
                     <div class="user_pro_img_area" style="padding: 0px;">
                         <div class="col-lg-3 image-info">
                         </div>
                         <div class="custom-file-upload">
                         <input id="fileCategory" type="file"  name="fileCategory">
-                        <label for="fileCategory" class="btn btn-sm btn-secondary">Imagen de Rubro</label>
+                        <label for="fileCategory" class="btn btn-sm btn-secondary">Imagen Referencial</label>
                         </div>
                     </div>
                     <div class="image-wrapper">
                         <img id="pictureCategory" src="https://revistabyte.es/wp-content/uploads/2016/01/Seguridad-TI-768x484.jpg.webp" alt="">
                     </div>
                       </div>
-                    <button type="submit" class="btn btn-block btn-lg btn-gradient btn-gradient-two">Registrar Rubro</button>
+                    <button type="submit" class="btn btn-block btn-lg btn-gradient btn-gradient-two">Registrar</button>
                 </form>
             </div>
         </div>

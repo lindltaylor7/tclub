@@ -6,7 +6,7 @@
                     <div class="atbd_content_module">
                         <div class="atbd_content_module__tittle_area">
                             <div class="atbd_area_title">
-                                <h4><span class="la la-list"></span>Rubros</h4>
+                                <h4><span class="la la-list"></span>Categorias</h4>
                                 <div class="nav_button">
                                     <a href="#" class="btn btn-xs btn-gradient btn-gradient-two" data-toggle="modal" data-target="#addCategory_modal"><span class="la la-plus"></span>Agregar</a>
                                 </div>
@@ -16,7 +16,7 @@
                         <div class="atbdb_content_module_contents">
                             <div class="table table-hover table-responsive">
                                 @if ($categorias->isEmpty())
-                                    <div>No hay registro de Rubros</div>
+                                    <div>No hay registro</div>
                                 @else
                                 <table class="table">
                                     <thead>

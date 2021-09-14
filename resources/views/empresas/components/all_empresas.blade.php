@@ -4,8 +4,8 @@
             <div class="col-lg-12">
                 <div class="atbd_generic_header">
                     <div class="atbd_generic_header_title">
-                        <h4>Todas las empresas</h4>
-                        <p>Total de empresas encontradas: {{$empresas->count()}}</p>
+                        <h4>Todas las Ofertas</h4>
+                        <p>Total de ofertas encontradas: {{$empresas->count()}}</p>
                     </div><!-- ends: .atbd_generic_header_title -->
                     <div class="atbd_listing_action_btn btn-toolbar align-items-center" role="toolbar">
                         <!-- Orderby dropdown -->
@@ -32,10 +32,10 @@
                                         <input name="search" type="text" placeholder="Buscar..." class="form-control">
                                     </div><!-- ends: .form-group -->
                                     <div class="form-group">
-                                        <label for="rubro">Seleccione rubro</label>
+                                        <label for="rubro">Seleccione producto</label>
                                         <div class="select-basic">
                                             <select name="rubro" class="form-control ad_search_category">
-                                                <option value="" selected="true" disabled="disabled">Seleccione un Rubro</option>
+                                                <option value="" selected="true" disabled="disabled">Seleccione algún Producto</option>
                                                 @foreach ($categorias as $categoria)
                                                 @if($categoria->status == 1)
                                                     <option value="{{$categoria->id}}">{{$categoria->name}}</option>
@@ -45,10 +45,10 @@
                                         </div>
                                     </div><!-- ends: .form-group -->
                                     <div class="form-group">
-                                        <label for="ciudad">Seleccione ciudad</label>
+                                        <label for="ciudad">Seleccione Categoría</label>
                                         <div class="select-basic">
                                             <select name="ciudad" class="form-control ad_search_city">
-                                                <option value="" selected="true" disabled="disabled">Seleccione una ciudad</option>
+                                                <option value="" selected="true" disabled="disabled">Seleccione alguna Categoría</option>
                                                 @foreach ($ciudades as $ciudad)
                                                 @if($ciudad->status == 1)
                                                     <option value="{{$ciudad->id}}">{{$ciudad->name}}</option>

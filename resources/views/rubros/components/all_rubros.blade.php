@@ -3,9 +3,9 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="section-title">
-                    <h2>¿Qué rubro busca Usted?</h2>
-                    <p>Descubra los mejores restaurantes, tiendas, hoteles, centros turísticos y muchos lugares en todo
-                        el Perú</p>
+                    <h2>Busque su Producto</h2>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus assumenda, sint voluptatum dolores 
+                        exercitationem similique praesentium perspiciatis velit adipisci ipsum iure expedita eos.</p>
                 </div>
             </div>
         </div>

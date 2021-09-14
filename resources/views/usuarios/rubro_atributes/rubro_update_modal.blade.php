@@ -3,7 +3,7 @@
         <div class="modal-content">
             <div class="modal-header">
 
-                <h5 class="modal-title" id="signup_modal_label"><i class="la la-lock"></i>Actualizar Datos de Rubro</h5>
+                <h5 class="modal-title" id="signup_modal_label"><i class="la la-lock"></i>Actualizar Datos de Categoría</h5>
 
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
@@ -14,12 +14,12 @@
                     @csrf
                     @method("put")
                     <div class="form-group">
-                        <label for="title" class="form-label">Nombre de Rubro</label>
-                        <input type="text" class="form-control" id="atbdp-contact-name" name="name" placeholder="Nombre de rubro" required="" value="{{$categoria->name}}">
+                        <label for="title" class="form-label">Nombre de Categoría</label>
+                        <input type="text" class="form-control" id="atbdp-contact-name" name="name" placeholder="Nombre" required="" value="{{$categoria->name}}">
                     </div> 
                     <div class="form-group">
-                        <label for="title" class="form-label">Icono de Rubro</label>
-                        <input type="text" class="form-control" id="atbdp-contact-name" name="icon" placeholder="Icono de rubro" required="" value="{{$categoria->icon}}">
+                        <label for="title" class="form-label">Icono de Categoría</label>
+                        <input type="text" class="form-control" id="atbdp-contact-name" name="icon" placeholder="Icono" required="" value="{{$categoria->icon}}">
                     </div>                         
                     
 

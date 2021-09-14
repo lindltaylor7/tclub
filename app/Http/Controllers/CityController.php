@@ -73,10 +73,11 @@ class CityController extends Controller
         $unico = City::find($id);
         $categorias = Category::all();
         $ciudad = City::find($id);
+        $empresas = City::find($id)->categories()->where('city_id',$id)->get();
 
-        $cat = City::find($id)->categories()->where('city_id',$id)->first();
-
-        return view('ciudades.show', compact('ciudades','unico','categorias','ciudad','cat'));
+        $cat = City::find($id)->categories()->where('city_id',$id)->get();
+        
+        return view('ciudades.show', compact('ciudades','unico','categorias','ciudad','cat','empresas'));
 
     }
 

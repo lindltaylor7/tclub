@@ -7,8 +7,7 @@
                         <div class="menu-fullwidth">
                             <div class="logo-wrapper order-lg-0 order-sm-1">
                                 <div class="logo logo-top">
-                                    <a href="{{route('home')}}"><img src="{{asset('img/logo-td.png')}}" width="100"
-                                            alt="logo image" class="img-fluid"></a>
+                                    <a href="{{route('home')}}"><img src="{{asset('img/logo-demo.jpg')}}" width="100" alt="logo image" class="img-fluid"></a>
                                 </div>
                             </div><!-- ends: .logo-wrapper -->
                             <div class="menu-container order-lg-1 order-sm-0">
@@ -35,21 +34,6 @@
                                                 <li>
                                                     <a href="{{route('rubro.index')}}">Rubros</a>
                                                 </li>
-                                                {{-- <li class="dropdown has_dropdown">
-                                                    <a class="dropdown-toggle" href="#" id="drop2" role="button"
-                                                        data-toggle="dropdown" aria-haspopup="true"
-                                                        aria-expanded="false">
-                                                        Nosotros
-                                                    </a>
-                                                    <ul class="dropdown-menu" aria-labelledby="drop2">
-                                                        <li><a href="author-profile.html">Author Profile</a></li>
-                                                        <li><a href="dashboard-listings.html">Author Dashboard</a></li>
-                                                        <li><a href="pricing-plans.html">Pricing Plans</a></li>
-                                                        <li><a href="checkout.html">Checkout</a></li>
-                                                        <li><a href="faqs.html">Preguntas</a></li>
-                                                        <li><a href="about.html">Sobre Nosotros</a></li>
-                                                    </ul>
-                                                </li> --}}
                                             </ul>
                                         </div>
                                         <!-- /.navbar-collapse -->
@@ -180,3 +164,4 @@
     </div>
 </div><!-- ends: .mainmenu-wrapper -->
 @include('layout.modals.register')
+@include('layout.modals.modal_login')

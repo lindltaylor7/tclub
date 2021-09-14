@@ -6,13 +6,13 @@
                         <div class="atbd_content_module">
                             <div class="atbd_content_module__tittle_area">
                                 <div class="atbd_area_title">
-                                    <h4><span class="la la-list"></span>Todas las Empresas</h4>
+                                    <h4><span class="la la-list"></span>Todas los Productos</h4>
                                 </div>
                             </div>
                             <div class="atbdb_content_module_contents">
                                 <div class="table table-hover table-responsive">
                                     @if ($negocios->isEmpty())
-                                    <div>No hay registro de Empresas</div>
+                                    <div>No hay registro</div>
                                     @else
                                     <table class="table">
                                         <thead>

@@ -8,13 +8,12 @@
                 <div class="col-lg-10 offset-lg-1">
                     <div class="search_title_area">
 
-                        <h2 class="title">TRIAD CLUB</h2>
-                        <p class="sub_title">Encuentra todas las empresas TOP del Perú</p>
+                        <h2 class="title">DEMO CATÁLOGO</h2>
+                        <p class="sub_title">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
 
                     </div><!-- ends: .search_title_area -->
                     <form method="POST" action="{{route('mostrar')}}" class="search_form">
                         @csrf
-
                         <div class="atbd_seach_fields_wrapper">
                             <div class="single_search_field search_query">
 

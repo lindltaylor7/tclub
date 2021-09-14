@@ -4,13 +4,13 @@
             <div class="modal-body text-center p-top-40 p-bottom-50">
                 <span class="la la-exclamation-circle color-warning"></span>
                 <h1 class="display-3 m-bottom-10">¿Estas seguro?</h1>
-                <p class="m-bottom-30">¿Deseas eliminar esta ciudad?</p>
+                <p class="m-bottom-30">¿Deseas eliminar este Producto?</p>
                 <div class="d-flex justify-content-center">
                     <button type="button" class="btn btn-secondary m-right-15" data-dismiss="modal">Cancelar</button>
                     <form action="{{route('ciudad.delete',$city->id)}}" method="post">
                         @csrf
                         @method('delete')
-                        <button type="submit" class="btn btn-danger">Si, ¡Borrar Ciudad!</button>
+                        <button type="submit" class="btn btn-danger">Si, ¡Borrar Producto!</button>
                     </form>
                 </div>
             </div>
